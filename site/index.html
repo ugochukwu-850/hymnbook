@@ -63,8 +63,13 @@ h1 em{font-style:normal;color:var(--accent)}
 
 /* demo */
 .demo{margin:56px auto 0;max-width:1040px;background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:10px;box-shadow:0 40px 90px -30px rgba(0,0,0,.55)}
-.demo video{display:block;width:100%;border-radius:20px;background:#000}
-.demo p{color:var(--text3);font-size:13px;padding:10px 6px 4px}
+.demo img,.shot img{display:block;width:100%;height:auto;border-radius:20px}
+.shot{background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:8px;box-shadow:0 30px 70px -30px rgba(0,0,0,.5)}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:20px;align-items:start}
+.shots figure{margin:0}
+.shots figcaption{padding:14px 6px 0;color:var(--text2);font-size:15px}
+.shots figcaption b{color:var(--text)}
+.shot.wide{grid-column:1/-1}
 
 /* sections */
 section{padding:84px 0}
@@ -116,7 +121,7 @@ footer p{max-width:60ch}
 <nav><div class="wrap">
   <a class="brand" href="#top"><img src="icon-512.png" alt=""><span>Hymn Book<small>Faith Tabernacle</small></span></a>
   <div class="links">
-    <a href="#features">Features</a><a href="#download">Download</a>
+    <a href="#features">Features</a><a href="#see">Screens</a><a href="#download">Download</a>
     <a href="#" data-gh>GitHub</a><a class="pill" href="#download">Get the app</a>
   </div>
 </div></nav>
@@ -131,8 +136,7 @@ footer p{max-width:60ch}
   </div>
   <p class="sub up d3" id="ver">Windows &middot; macOS &middot; Linux</p>
   <div class="demo up d4">
-    <video controls playsinline preload="metadata" poster="poster.jpg"><source src="demo.mp4" type="video/mp4"></video>
-    <p>Turn your sound on &ndash; the hymns play in the video.</p>
+    <img src="img/hero.png" width="1280" height="820" alt="Hymn Book playing a hymn: library on the left, lyrics with the current verse highlighted, and the verse-and-chorus song map at the bottom">
   </div>
 </div></header>
 
@@ -147,6 +151,19 @@ footer p{max-width:60ch}
       <span class="map"><b class="done">1</b><b class="done">C</b><b class="on">2</b><b>C</b><b>3</b><b>C</b><b>4</b><b>C</b></span></p></div>
     <div class="card"><div class="ic">&darr;</div><h3>Lyrics that follow along</h3><p>The words scroll with the song and the verse being sung is highlighted, so you never lose your place.</p></div>
     <div class="card"><div class="ic">&#9681;</div><h3>Light, dark, offline</h3><p>Works without internet. Dark or light, with lyrics as large as you need.</p></div>
+  </div>
+</div></section>
+
+<section id="see"><div class="wrap">
+  <h2>See it in action</h2>
+  <p class="sec-lead">The words follow the song, the verse being sung is highlighted, and every part of the song is one tap away.</p>
+  <div class="shots">
+    <figure><div class="shot"><img loading="lazy" src="img/follow.png" width="1280" height="820" alt="Verse 3 of The Old Rugged Cross highlighted while it plays"></div>
+      <figcaption><b>Lyrics that follow along.</b> The verse being sung is highlighted and scrolled into view; the others fade back.</figcaption></figure>
+    <figure><div class="shot"><img loading="lazy" src="img/light.png" width="1280" height="820" alt="Hymn Book in light mode, paused after verse 2"></div>
+      <figcaption><b>Pause after each verse.</b> Sing at your own pace, then press play for the next verse. Light and dark themes.</figcaption></figure>
+    <figure class="wide"><div class="shot"><img loading="lazy" src="img/player.png" width="1262" height="112" alt="The player: voice buttons S A T B, organ or flute, and the verse and chorus song map"></div>
+      <figcaption><b>Voices and the song map.</b> Soprano, Alto, Tenor, Bass on or off &ndash; and tap any verse or chorus to jump straight to it.</figcaption></figure>
   </div>
 </div></section>
 

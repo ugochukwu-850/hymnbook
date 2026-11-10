@@ -260,20 +260,26 @@ impl Audible {
 
     /// Ease the reader's scroll so lyric block `block` sits near the top.
     /// Child 0 of the scroll area is the title header; blocks follow.
+    ///
+    /// `bounds_for_item` reports a child's *unscrolled* layout position, so the
+    /// offset that puts it at the target height is computed directly from that
+    /// (it does not depend on how far we have already scrolled).
     fn follow(&self, block: usize) {
         let handle = &self.reader_scroll;
         let Some(b) = handle.bounds_for_item(block + 1) else {
             return;
         };
         let view = handle.bounds();
-        let want = f32::from(view.origin.y) + f32::from(view.size.height) * FOLLOW_LINE;
-        let delta = f32::from(b.origin.y) - want;
-        if delta.abs() < 0.5 {
+        let max = f32::from(handle.max_offset().y).max(0.0);
+        let want_top = f32::from(view.origin.y) + f32::from(view.size.height) * FOLLOW_LINE;
+        let target = (-(f32::from(b.origin.y) - want_top)).clamp(-max, 0.0);
+
+        let off = handle.offset();
+        let cur = f32::from(off.y);
+        if (target - cur).abs() < 0.5 {
             return;
         }
-        let off = handle.offset();
-        let max = f32::from(handle.max_offset().y);
-        let y = (f32::from(off.y) - delta * FOLLOW_EASE).clamp(-max, 0.0);
+        let y = cur + (target - cur) * FOLLOW_EASE;
         handle.set_offset(point(off.x, px(y)));
     }
 
