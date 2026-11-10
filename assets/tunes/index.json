@@ -1,0 +1,870 @@
+{
+ "4": {
+  "title": "THE STRIFE IS O'ER THE BATTLE DONE",
+  "source": "Complete/The_Strife_Is_Oer_The_Battle_Done/The_Strife_Is_Oer_The_Battle_Done-Victory-Palestrina.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 140.0,
+  "seconds": 37.3,
+  "aligned": true
+ },
+ "8": {
+  "title": "IMMORTAL, INVISIBLE, GOD ONLY WISE",
+  "source": "Complete/Immortal_Invisible_God_Only_Wise/Immortal_Invisible_God_Only_Wise-St_Denio.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 120.0,
+  "seconds": 24.0,
+  "aligned": true
+ },
+ "10": {
+  "title": "FOR THE BEAUTY OF THE EARTH",
+  "source": "Complete/For_The_Beauty_Of_The_Earth/For_The_Beauty_Of_The_Earth-Dix.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 28.8,
+  "aligned": true
+ },
+ "14": {
+  "title": "PRAISE MY SOUL THE KING",
+  "source": "Complete/Praise_My_Soul_The_King_Of_Heaven/Praise_My_Soul_The_King_Of_Heaven-Praise_My_Soul-Lauda_Anima.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 120.0,
+  "seconds": 25.0,
+  "aligned": true
+ },
+ "46": {
+  "title": "O LORD WE PRAISE THEE",
+  "source": "Complete/O_Lord_We_Praise_Thee/O_Lord_We_Praise_Thee-Gott_Sei_Gelobet_Und_Gebenedeiet.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 160.0,
+  "seconds": 61.5,
+  "aligned": true
+ },
+ "51": {
+  "title": "O FOR A THOUSAND TONGUES TO SING",
+  "source": "Complete/O_For_A_Thousand_Tongues/O_For_A_Thousand_Tongues-Azmon.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 200.0,
+  "seconds": 14.4,
+  "aligned": true
+ },
+ "54": {
+  "title": "COME, THOU FOUNT",
+  "source": "Complete/Come_Thou_Fount/Come_Thou_Fount-Nettleton.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 90.0,
+  "seconds": 32.0,
+  "aligned": true
+ },
+ "60": {
+  "title": "O LORD OF HEAVEN!",
+  "source": "Complete/O_Lord_Of_Heaven_and_Earth_and_Sea/O_Lord_Of_Heaven_and_Earth_and_Sea-Es_Ist_Kein_Tag.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 19.2,
+  "aligned": true
+ },
+ "67": {
+  "title": "A THOUSAND TONGUES!",
+  "source": "Complete/O_For_A_Thousand_Tongues/O_For_A_Thousand_Tongues-Azmon.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 200.0,
+  "seconds": 14.4,
+  "aligned": true
+ },
+ "69": {
+  "title": "TO GOD BE THE GLORY",
+  "source": "Complete/To_God_Be_the_Glory/To_God_Be_the_Glory-To_God_Be_the_Glory.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 120.0,
+  "seconds": 48.0,
+  "aligned": true
+ },
+ "77": {
+  "title": "ALL HAIL THE POWER!",
+  "source": "Complete/All_Hail_The_Power_Of_Jesus_Name/All_Hail_The_Power_Of_Jesus_Name-Coronation.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 120.0,
+  "seconds": 28.0,
+  "aligned": true
+ },
+ "87": {
+  "title": "JESUS SHALL REIGN WHERE'ER THE SUN",
+  "source": "Complete/Jesus_Shall_Reign/Jesus_Shall_Reign-Duke_Street.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 120.0,
+  "seconds": 32.0,
+  "aligned": true
+ },
+ "99": {
+  "title": "DID YOU THINK TO PRAY?",
+  "source": "Complete/Did_You_Think_To_Pray/Did_You_Think_To_Pray-Stockbridge.abc",
+  "voices": [
+   "S1",
+   "S2"
+  ],
+  "bpm": 120.0,
+  "seconds": 36.0,
+  "aligned": true
+ },
+ "133": {
+  "title": "MY FAITH LOOKS UP TO THEE",
+  "source": "Complete/My_Faith_Looks_Up_To_Thee/My_Faith_Looks_Up_To_Thee-Olivet.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 33.6,
+  "aligned": true
+ },
+ "134": {
+  "title": "ROCK OF AGES!",
+  "source": "Complete/Rock_of_Ages/Rock_of_Ages-Toplady.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 170.0,
+  "seconds": 25.4,
+  "aligned": true
+ },
+ "138": {
+  "title": "WHAT A FRIEND WE HAVE IN JESUS!",
+  "source": "Complete/What_A_Friend_We_Have_In_Jesus/What_A_Friend_We_Have_In_Jesus-untitled.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 38.4,
+  "aligned": true
+ },
+ "141": {
+  "title": "PASS ME NOT!",
+  "source": "Complete/Pass_Me_Not_O_Gentle_Savior/Pass_Me_Not_O_Gentle_Savior-Pass_Me_Not_O_Gentle_Savior.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 38.4,
+  "aligned": true
+ },
+ "145": {
+  "title": "I NEED THEE EVERY HOUR",
+  "source": "Complete/I_Need_Thee_Every_Hour/I_Need_Thee_Every_Hour-I_Need_Thee_Every_Hour.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 80.0,
+  "seconds": 36.0,
+  "aligned": true
+ },
+ "146": {
+  "title": "NEARER, MY GOD, TO THEE",
+  "source": "Complete/Nearer_My_God_To_Thee/Nearer_My_God_To_Thee-Bethany.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 160.0,
+  "seconds": 36.0,
+  "aligned": true
+ },
+ "181": {
+  "title": "HOLY GHOST, WITH LIGHT DIVINE",
+  "source": "Complete/Holy_Ghost_With_Light_Divine/Holy_Ghost_With_Light_Divine-Canterbury-Song_13.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 19.2,
+  "aligned": true
+ },
+ "247": {
+  "title": "ALMIGHTY GOD",
+  "source": "Complete/Almighty_God_Your_Word_Is_Cast/Almighty_God_Your_Word_Is_Cast-St_Anne.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 19.2,
+  "aligned": true
+ },
+ "263": {
+  "title": "THE COMFORTER HAS COME",
+  "source": "Complete/The_Comforter_Has_Come/The_Comforter_Has_Come-The_Comforter_Has_Come.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 95.0,
+  "seconds": 56.8,
+  "aligned": true
+ },
+ "325": {
+  "title": "A GREAT DAY COMING",
+  "source": "Complete/Theres_A_Great_Day_Coming/Theres_A_Great_Day_Coming-Theres_A_Great_Day_Coming.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 80.0,
+  "seconds": 48.0,
+  "aligned": true
+ },
+ "345": {
+  "title": "SOULS OF MEN! WHY WILL YE SCATTER?",
+  "source": "Complete/Souls_of_Men_Why_Will_Ye_Scatter/Souls_of_Men_Why_Will_Ye_Scatter-In_Babilone.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 38.4,
+  "aligned": true
+ },
+ "387": {
+  "title": "I KNOW WHOM I HAVE BELIEVED",
+  "source": "Complete/I_Know_Whom_I_Have_Believed/I_Know_Whom_I_Have_Believed-I_Know_Whom_I_Have_Believed.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 38.4,
+  "aligned": true
+ },
+ "406": {
+  "title": "HOW A FIRM A FOUNDATION",
+  "source": "Complete/How_Firm_A_Foundation/How_Firm_A_Foundation-Foundation-Protection.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 125.0,
+  "seconds": 30.7,
+  "aligned": true
+ },
+ "424": {
+  "title": "CHRIST AROSE",
+  "source": "Complete/Christ_Arose/Christ_Arose-Christ_Arose.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 48.0,
+  "aligned": true
+ },
+ "425": {
+  "title": "GLORIOUS THINGS OF THEE ARE SPOKEN",
+  "source": "Complete/Glorious_Things_of_Thee_Are_Spoken/Glorious_Things_of_Thee_Are_Spoken-Austria_Haydn-Austrian_Hymn.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 38.4,
+  "aligned": true
+ },
+ "427": {
+  "title": "O GOD, OUR HELP IN AGES PAST",
+  "source": "Complete/Our_God_Our_Help_In_Ages_Past/Our_God_Our_Help_In_Ages_Past-St_Anne.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 19.2,
+  "aligned": true
+ },
+ "429": {
+  "title": "THE LORD'S MY SHEPHERD",
+  "source": "Complete/The_Lords_My_Shepherd/The_Lords_My_Shepherd-Marosa-Brother_James_Air.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 140.0,
+  "seconds": 42.0,
+  "aligned": true
+ },
+ "444": {
+  "title": "I KNOW WHOM I HAVE BELIEVED",
+  "source": "Complete/I_Know_Whom_I_Have_Believed/I_Know_Whom_I_Have_Believed-I_Know_Whom_I_Have_Believed.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 38.4,
+  "aligned": true
+ },
+ "445": {
+  "title": "BLESSED ASSURANCE",
+  "source": "Complete/Blessed_Assurance/Blessed_Assurance-Blessed_Assurance-Assurance.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 43.2,
+  "aligned": true
+ },
+ "447": {
+  "title": "I KNOW THAT MY REDEEMER LIVES",
+  "source": "Complete/I_Know_That_My_Redeemer_Lives/I_Know_That_My_Redeemer_Lives-Duke_Street.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 140.0,
+  "seconds": 27.4,
+  "aligned": true
+ },
+ "448": {
+  "title": "IT IS WELL",
+  "source": "Complete/It_Is_Well_With_My_Soul/It_Is_Well_With_My_Soul-It_Is_Well-Ville_Du_Havre.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 50.4,
+  "aligned": true
+ },
+ "449": {
+  "title": "THE SOLID ROCK",
+  "source": "Complete/My_Hope_Is_Built/My_Hope_Is_Built-Melita.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 28.8,
+  "aligned": true
+ },
+ "450": {
+  "title": "FAITH OF OUR FATHERS",
+  "source": "Complete/Faith_Of_Our_Fathers/Faith_Of_Our_Fathers-St_Catherine.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 120.0,
+  "seconds": 36.0,
+  "aligned": true
+ },
+ "457": {
+  "title": "AMAZING GRACE",
+  "source": "Complete/Amazing_Grace/Amazing_Grace-New_Britain.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 28.8,
+  "aligned": true
+ },
+ "474": {
+  "title": "HE KEEPS ME SINGING",
+  "source": "Complete/He_Keeps_Me_Singing/He_Keeps_Me_Singing-He_Keeps_Me_Singing-Melody_of_Love.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 38.4,
+  "aligned": true
+ },
+ "584": {
+  "title": "WHITER THAN THE SNOW",
+  "source": "Complete/Whiter_Than_Snow/Whiter_Than_Snow-Whiter_Than_Snow.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 80.0,
+  "seconds": 54.0,
+  "aligned": true
+ },
+ "590": {
+  "title": "THE OLD RUGGED CROSS",
+  "source": "Complete/The_Old_Rugged_Cross/The_Old_Rugged_Cross-Old_Rugged_Cross.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 140.0,
+  "seconds": 41.1,
+  "aligned": true
+ },
+ "607": {
+  "title": "HALLELUJAH! WHAT SAVIOUR",
+  "source": "Complete/Hallelujah_What_a_Savior/Hallelujah_What_a_Savior-Hallelujah_What_a_Savior.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 110.0,
+  "seconds": 17.5,
+  "aligned": true
+ },
+ "609": {
+  "title": "WHEN I SURVEY THE WONDROUS CROSS",
+  "source": "Complete/When_I_Survey_The_Wondrous_Cross/When_I_Survey_The_Wondrous_Cross-Duke_Street.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 130.0,
+  "seconds": 29.5,
+  "aligned": true
+ },
+ "662": {
+  "title": "CONSECRATION",
+  "source": "Complete/Take_My_Life_And_Let_It_Be/Take_My_Life_And_Let_It_Be-Mozart.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 140.0,
+  "seconds": 20.6,
+  "aligned": true
+ },
+ "675": {
+  "title": "RESCUE THE PERISHING",
+  "source": "Complete/Rescue_the_Perishing/Rescue_the_Perishing-Rescue_the_Perishing.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 28.8,
+  "aligned": true
+ },
+ "689": {
+  "title": "COME YE DISCONSOLATE",
+  "source": "Complete/Come_Ye_Disconsolate/Come_Ye_Disconsolate-Consolator_Webbe.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 120.0,
+  "seconds": 32.0,
+  "aligned": true
+ },
+ "693": {
+  "title": "ONE THING NEEDFUL",
+  "source": "Complete/One_Things_Needful/One_Things_Needful-Eins_Ist_Not.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 120.0,
+  "seconds": 40.5,
+  "aligned": true
+ },
+ "702": {
+  "title": "THE LILY OF THE VALLEY",
+  "source": "Complete/The_Lily_of_the_Valley/The_Lily_of_the_Valley-Salvation-The_Lily_of_the_Valley.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 57.3,
+  "aligned": true
+ },
+ "712": {
+  "title": "ABIDE WITH ME!",
+  "source": "Complete/Abide_With_Me/Abide_With_Me-Eventide.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 38.4,
+  "aligned": true
+ },
+ "722": {
+  "title": "NO, NOT ONE!",
+  "source": "Complete/No_Not_One/No_Not_One-No_Not_One.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 95.0,
+  "seconds": 40.4,
+  "aligned": true
+ },
+ "736": {
+  "title": "GUIDE ME, O THOU GREAT REDEEMER",
+  "source": "Complete/Guide_Me_O_Thou_Great_Jehovah/Guide_Me_O_Thou_Great_Jehovah-Cwm_Rhondda.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 120.0,
+  "seconds": 28.0,
+  "aligned": true
+ },
+ "740": {
+  "title": "BE NOT DISMAYED",
+  "source": "Complete/God_Will_Take_Care_Of_You/God_Will_Take_Care_Of_You-Martin.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 90.0,
+  "seconds": 32.0,
+  "aligned": true
+ },
+ "759": {
+  "title": "GOD WILL TAKE CARE OF YOU",
+  "source": "Complete/God_Will_Take_Care_Of_You/God_Will_Take_Care_Of_You-Martin.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 90.0,
+  "seconds": 32.0,
+  "aligned": true
+ },
+ "768": {
+  "title": "HE LEADETH ME",
+  "source": "Complete/He_Leadeth_Me/He_Leadeth_Me-He_Leadeth_Me.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 38.4,
+  "aligned": true
+ },
+ "781": {
+  "title": "SAVIOUR, LIKE A SHEPHERD LEAD US",
+  "source": "Complete/Savior_Like_A_Shepherd_Lead_Us/Savior_Like_A_Shepherd_Lead_Us-Bradbury.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 37.8,
+  "aligned": true
+ },
+ "793": {
+  "title": "CHRIST RETURNETH!",
+  "source": "Complete/Christ_Returneth/Christ_Returneth-Christ_Returneth.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 120.0,
+  "seconds": 41.5,
+  "aligned": true
+ },
+ "798": {
+  "title": "HARK, THE GLAD SOUND!",
+  "source": "Complete/Hark_The_Glad_Sound/Hark_The_Glad_Sound-Chesterfield-Richmond_Haweis-Spa_Fields_Chapel.abc",
+  "voices": [
+   "S1V1",
+   "S1V2",
+   "S2V1",
+   "S2V2",
+   "S2V3"
+  ],
+  "bpm": 130.0,
+  "seconds": 19.4,
+  "aligned": true
+ },
+ "800": {
+  "title": "ANGELS, FROM THE REALMS OF GLORY!",
+  "source": "Complete/Angels_From_The_Realms_Of_Glory/Angels_From_The_Realms_Of_Glory-Regent_Square.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 28.8,
+  "aligned": true
+ },
+ "801": {
+  "title": "HARK! THE HERALD ANGELS SING",
+  "source": "Complete/Hark_The_Herald_Angels_Sing/Hark_The_Herald_Angels_Sing-Mendelssohn.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 48.0,
+  "aligned": true
+ },
+ "805": {
+  "title": "LO! HE COMES",
+  "source": "Complete/Lo_He_Comes_On_Clouds_Descending/Lo_He_Comes_On_Clouds_Descending-Helmsley.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 150.0,
+  "seconds": 41.6,
+  "aligned": true
+ },
+ "811": {
+  "title": "JOY TO THE WORLD",
+  "source": "Complete/Joy_To_The_World/Joy_To_The_World-Antioch.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 80.0,
+  "seconds": 28.5,
+  "aligned": true
+ },
+ "856": {
+  "title": "THE CHURCH'S ONE FOUNDATION",
+  "source": "Complete/The_Churchs_One_Foundation/The_Churchs_One_Foundation-Aurelia.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 130.0,
+  "seconds": 29.5,
+  "aligned": true
+ },
+ "876": {
+  "title": "THE CHILD OF A KING!",
+  "source": "Complete/A_Child_of_The_King/A_Child_of_The_King-Binghamton.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 120.0,
+  "seconds": 36.0,
+  "aligned": true
+ },
+ "884": {
+  "title": "WHEN THE ROLL IS CALLED UP YONDER",
+  "source": "Complete/When_the_Roll_is_Called_Up_Yonder/When_the_Roll_is_Called_Up_Yonder-When_the_Roll_is_Called_Up_Yonder.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 38.4,
+  "aligned": true
+ },
+ "903": {
+  "title": "O FATHER ALL CREATING",
+  "source": "Complete/O_Father_All_Creating/O_Father_All_Creating-Aurelia.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 130.0,
+  "seconds": 29.5,
+  "aligned": true
+ },
+ "947": {
+  "title": "JESUS LOVES ME!",
+  "source": "Complete/Jesus_Loves_Me/Jesus_Loves_Me-untitled.abc",
+  "voices": [
+   "S1",
+   "S2"
+  ],
+  "bpm": 120.0,
+  "seconds": 32.0,
+  "aligned": true
+ },
+ "993": {
+  "title": "LORD, DISMISS US",
+  "source": "Complete/Lord_Dismiss_Us_With_Thy_Blessing/Lord_Dismiss_Us_With_Thy_Blessing-Regent_Square.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 100.0,
+  "seconds": 28.8,
+  "aligned": true
+ },
+ "998": {
+  "title": "BLEST BE THE TIE THAT BINDS",
+  "source": "Complete/Blest_Be_The_Tie_That_Binds/Blest_Be_The_Tie_That_Binds-Boylston.abc",
+  "voices": [
+   "Soprano",
+   "Alto",
+   "Tenor",
+   "Bass"
+  ],
+  "bpm": 90.0,
+  "seconds": 16.0,
+  "aligned": true
+ }
+}
