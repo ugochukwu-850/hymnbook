@@ -53,7 +53,12 @@ fn every_embedded_tune_parses_with_expected_voices() {
                 t.hymn
             );
         }
-        let last_end = notes.iter().map(|n| n.end).fold(0.0, f64::max);
+        // Only notes that start inside the (possibly trimmed) length are ever played.
+        let last_end = notes
+            .iter()
+            .filter(|n| n.start < t.length - 1e-6)
+            .map(|n| n.end)
+            .fold(0.0, f64::max);
         assert!(
             last_end <= t.length + 1.0,
             "hymn {} notes run past its length",

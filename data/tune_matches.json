@@ -3,402 +3,2641 @@
   "no": 4,
   "title": "THE STRIFE IS O'ER THE BATTLE DONE",
   "file": "Complete/The_Strife_Is_Oer_The_Battle_Done/The_Strife_Is_Oer_The_Battle_Done-Victory-Palestrina.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
  },
  {
   "no": 8,
   "title": "IMMORTAL, INVISIBLE, GOD ONLY WISE",
   "file": "Complete/Immortal_Invisible_God_Only_Wise/Immortal_Invisible_God_Only_Wise-St_Denio.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
  },
  {
   "no": 10,
   "title": "FOR THE BEAUTY OF THE EARTH",
   "file": "Complete/For_The_Beauty_Of_The_Earth/For_The_Beauty_Of_The_Earth-Dix.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
  },
  {
   "no": 14,
   "title": "PRAISE MY SOUL THE KING",
   "file": "Complete/Praise_My_Soul_The_King_Of_Heaven/Praise_My_Soul_The_King_Of_Heaven-Praise_My_Soul-Lauda_Anima.abc",
-  "how": "lyrics tr=0.82"
+  "how": "lyrics tr=0.82",
+  "src": "oh"
+ },
+ {
+  "no": 25,
+  "title": "COME LET US ALL UNITE",
+  "file": "music/t/ThereIsABetterWorld.abc",
+  "how": "freehymns lyrics 0.72",
+  "score": 0.717,
+  "matched_title": "Come, Let Us All Unite and Sing",
+  "verse_lines": 8,
+  "refrain_lines": 0,
+  "verse_syllables": 58,
+  "src": "fh"
+ },
+ {
+  "no": 37,
+  "title": "GREAT IS THY FAITHFULNESS",
+  "file": "music/f/Faithfulness.abc",
+  "how": "freehymns lyrics 0.94",
+  "score": 0.939,
+  "matched_title": "Great Is Thy Faithfulness",
+  "verse_lines": 4,
+  "refrain_lines": 5,
+  "verse_syllables": 42,
+  "src": "fh"
  },
  {
   "no": 46,
   "title": "O LORD WE PRAISE THEE",
   "file": "Complete/O_Lord_We_Praise_Thee/O_Lord_We_Praise_Thee-Gott_Sei_Gelobet_Und_Gebenedeiet.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
  },
  {
   "no": 51,
   "title": "O FOR A THOUSAND TONGUES TO SING",
   "file": "Complete/O_For_A_Thousand_Tongues/O_For_A_Thousand_Tongues-Azmon.abc",
-  "how": "lyrics tr=0.86"
+  "how": "lyrics tr=0.86",
+  "src": "oh"
  },
  {
   "no": 54,
   "title": "COME, THOU FOUNT",
   "file": "Complete/Come_Thou_Fount/Come_Thou_Fount-Nettleton.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 55,
+  "title": "MAJESTIC SWEETNESS SITS ENTHRONED",
+  "file": "music/o/Ortonville.abc",
+  "how": "freehymns lyrics 0.86",
+  "score": 0.857,
+  "matched_title": "Majestic Sweetness Sits Enthroned",
+  "verse_lines": 5,
+  "refrain_lines": 0,
+  "verse_syllables": 34,
+  "src": "fh"
+ },
+ {
+  "no": 57,
+  "title": "LOVE DIVINE, ALL LOVES EXCELLING",
+  "file": "music/b/Beecher.abc",
+  "how": "freehymns lyrics 0.78",
+  "score": 0.779,
+  "matched_title": "Love Divine, All Loves Excelling",
+  "verse_lines": 8,
+  "refrain_lines": 0,
+  "verse_syllables": 60,
+  "src": "fh"
  },
  {
   "no": 60,
   "title": "O LORD OF HEAVEN!",
   "file": "Complete/O_Lord_Of_Heaven_and_Earth_and_Sea/O_Lord_Of_Heaven_and_Earth_and_Sea-Es_Ist_Kein_Tag.abc",
-  "how": "lyrics tr=0.65"
+  "how": "lyrics tr=0.65",
+  "src": "oh"
+ },
+ {
+  "no": 61,
+  "title": "STAND UP, STAND UP FOR JESUS",
+  "file": "music/w/Webb.abc",
+  "how": "freehymns lyrics 0.84",
+  "score": 0.844,
+  "matched_title": "Stand Up, Stand Up For Jesus",
+  "verse_lines": 8,
+  "refrain_lines": 0,
+  "verse_syllables": 52,
+  "src": "fh"
+ },
+ {
+  "no": 63,
+  "title": "WHEN WE ALL GET TO HEAVEN",
+  "file": "music/w/WhenWeAllGetToHeaven.abc",
+  "how": "freehymns lyrics 0.91",
+  "score": 0.908,
+  "matched_title": "When We All Get to Heaven",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 30,
+  "src": "fh"
+ },
+ {
+  "no": 65,
+  "title": "THE NAME I LOVE",
+  "file": "music/b/Belmont.abc",
+  "how": "freehymns lyrics 0.87",
+  "score": 0.868,
+  "matched_title": "There Is A Name I Love To Hear",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 28,
+  "src": "fh"
  },
  {
   "no": 67,
   "title": "A THOUSAND TONGUES!",
   "file": "Complete/O_For_A_Thousand_Tongues/O_For_A_Thousand_Tongues-Azmon.abc",
-  "how": "lyrics tr=0.86"
+  "how": "lyrics tr=0.86",
+  "src": "oh"
+ },
+ {
+  "no": 68,
+  "title": "HOLY, HOLY, HOLY! LORD GOD ALMIGHTY",
+  "file": "music/n/Nicaea.abc",
+  "how": "freehymns lyrics 0.85",
+  "score": 0.853,
+  "matched_title": "Holy, Holy, Holy!",
+  "verse_lines": 4,
+  "refrain_lines": 0,
+  "verse_syllables": 43,
+  "src": "fh"
  },
  {
   "no": 69,
   "title": "TO GOD BE THE GLORY",
   "file": "Complete/To_God_Be_the_Glory/To_God_Be_the_Glory-To_God_Be_the_Glory.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 71,
+  "title": "WHO IS HE?",
+  "file": "music/w/WhoIsHeInYonderStall.abc",
+  "how": "freehymns lyrics 0.75",
+  "score": 0.753,
+  "matched_title": "Who Is He In Yonder Stall?",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 28,
+  "src": "fh"
  },
  {
   "no": 77,
   "title": "ALL HAIL THE POWER!",
   "file": "Complete/All_Hail_The_Power_Of_Jesus_Name/All_Hail_The_Power_Of_Jesus_Name-Coronation.abc",
-  "how": "lyrics tr=0.72"
+  "how": "lyrics tr=0.72",
+  "src": "oh"
+ },
+ {
+  "no": 78,
+  "title": "PRAISE HIM! PRAISE HIM!",
+  "file": "music/p/PraiseHimPraiseHim.abc",
+  "how": "freehymns lyrics 0.94",
+  "score": 0.94,
+  "matched_title": "Praise Him! Praise Him!",
+  "verse_lines": 6,
+  "refrain_lines": 2,
+  "verse_syllables": 65,
+  "src": "fh"
  },
  {
   "no": 87,
   "title": "JESUS SHALL REIGN WHERE'ER THE SUN",
   "file": "Complete/Jesus_Shall_Reign/Jesus_Shall_Reign-Duke_Street.abc",
-  "how": "lyrics tr=0.68"
+  "how": "lyrics tr=0.68",
+  "src": "oh"
+ },
+ {
+  "no": 91,
+  "title": "I'LL GO WHERE THOU WOULDST",
+  "file": "music/i/IllGoWhereYouWantMeToGo.abc",
+  "how": "freehymns lyrics 0.67",
+  "score": 0.672,
+  "matched_title": "I\u2019ll Go Where You Want Me To Go",
+  "verse_lines": 8,
+  "refrain_lines": 4,
+  "verse_syllables": 65,
+  "src": "fh"
+ },
+ {
+  "no": 92,
+  "title": "REVIVE US AGAIN",
+  "file": "music/r/ReviveUsAgain.abc",
+  "how": "freehymns lyrics 0.79",
+  "score": 0.786,
+  "matched_title": "Revive Us Again",
+  "verse_lines": 3,
+  "refrain_lines": 4,
+  "verse_syllables": 22,
+  "src": "fh"
+ },
+ {
+  "no": 97,
+  "title": "HAVE THINE OWN WAY, LORD",
+  "file": "music/a/Adelaide.abc",
+  "how": "freehymns lyrics 0.94",
+  "score": 0.938,
+  "matched_title": "Have Thine Own Way, Lord",
+  "verse_lines": 4,
+  "refrain_lines": 0,
+  "verse_syllables": 36,
+  "src": "fh"
  },
  {
   "no": 99,
   "title": "DID YOU THINK TO PRAY?",
   "file": "Complete/Did_You_Think_To_Pray/Did_You_Think_To_Pray-Stockbridge.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 111,
+  "title": "NEAR TO THE HEART OF GOD",
+  "file": "music/n/NearToTheHeartOfGod.abc",
+  "how": "freehymns lyrics 0.88",
+  "score": 0.879,
+  "matched_title": "Near To the Heart of God",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 28,
+  "src": "fh"
+ },
+ {
+  "no": 131,
+  "title": "PEACE! BE STILL!",
+  "file": "music/p/PeaceBeStill.abc",
+  "how": "freehymns lyrics 0.93",
+  "score": 0.927,
+  "matched_title": "Peace, Be Still",
+  "verse_lines": 8,
+  "refrain_lines": 11,
+  "verse_syllables": 62,
+  "src": "fh"
  },
  {
   "no": 133,
   "title": "MY FAITH LOOKS UP TO THEE",
   "file": "Complete/My_Faith_Looks_Up_To_Thee/My_Faith_Looks_Up_To_Thee-Olivet.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
  },
  {
   "no": 134,
   "title": "ROCK OF AGES!",
   "file": "Complete/Rock_of_Ages/Rock_of_Ages-Toplady.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 135,
+  "title": "TIS THE BLESSED HOUR OF PRAYER",
+  "file": "music/t/TisTheBlessedHourOfPrayer.abc",
+  "how": "freehymns lyrics 0.53",
+  "score": 0.529,
+  "matched_title": "\u2019Tis The Bless\u00e8d Hour Of Prayer",
+  "verse_lines": 8,
+  "refrain_lines": 4,
+  "verse_syllables": 51,
+  "src": "fh"
+ },
+ {
+  "no": 137,
+  "title": "SWEET HOUR OF PRAYER!",
+  "file": "music/s/SweetHour.abc",
+  "how": "freehymns lyrics 0.88",
+  "score": 0.875,
+  "matched_title": "Sweet Hour Of Prayer",
+  "verse_lines": 8,
+  "refrain_lines": 0,
+  "verse_syllables": 64,
+  "src": "fh"
  },
  {
   "no": 138,
   "title": "WHAT A FRIEND WE HAVE IN JESUS!",
   "file": "Complete/What_A_Friend_We_Have_In_Jesus/What_A_Friend_We_Have_In_Jesus-untitled.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
  },
  {
   "no": 141,
   "title": "PASS ME NOT!",
   "file": "Complete/Pass_Me_Not_O_Gentle_Savior/Pass_Me_Not_O_Gentle_Savior-Pass_Me_Not_O_Gentle_Savior.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 144,
+  "title": "CLOSE TO THEE",
+  "file": "music/c/CloseToThee.abc",
+  "how": "freehymns lyrics 0.84",
+  "score": 0.844,
+  "matched_title": "Close To Thee",
+  "verse_lines": 8,
+  "refrain_lines": 0,
+  "verse_syllables": 57,
+  "src": "fh"
  },
  {
   "no": 145,
   "title": "I NEED THEE EVERY HOUR",
   "file": "Complete/I_Need_Thee_Every_Hour/I_Need_Thee_Every_Hour-I_Need_Thee_Every_Hour.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
  },
  {
   "no": 146,
   "title": "NEARER, MY GOD, TO THEE",
   "file": "Complete/Nearer_My_God_To_Thee/Nearer_My_God_To_Thee-Bethany.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 150,
+  "title": "ALL TO CHRIST I OWE",
+  "file": "music/j/JesusPaidItAll.abc",
+  "how": "freehymns lyrics 0.81",
+  "score": 0.813,
+  "matched_title": "Jesus Paid It All",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 26,
+  "src": "fh"
+ },
+ {
+  "no": 172,
+  "title": "BLESSED QUIETNESS",
+  "file": "music/b/BlessedQuietness.abc",
+  "how": "freehymns lyrics 0.89",
+  "score": 0.893,
+  "matched_title": "Blessed Quietness",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 30,
+  "src": "fh"
  },
  {
   "no": 181,
   "title": "HOLY GHOST, WITH LIGHT DIVINE",
   "file": "Complete/Holy_Ghost_With_Light_Divine/Holy_Ghost_With_Light_Divine-Canterbury-Song_13.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 193,
+  "title": "COME UNTO ME",
+  "file": "music/c/ComeUntoMe.abc",
+  "how": "freehymns lyrics 0.87",
+  "score": 0.87,
+  "matched_title": "Come Unto Me",
+  "verse_lines": 4,
+  "refrain_lines": 8,
+  "verse_syllables": 44,
+  "src": "fh"
+ },
+ {
+  "no": 198,
+  "title": "BRING THEM IN",
+  "file": "music/b/BringThemIn.abc",
+  "how": "freehymns lyrics 0.82",
+  "score": 0.823,
+  "matched_title": "Bring Them In",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 32,
+  "src": "fh"
+ },
+ {
+  "no": 206,
+  "title": "THE GOSPEL BELLS",
+  "file": "music/the/TheGospelBells.abc",
+  "how": "freehymns lyrics 0.88",
+  "score": 0.885,
+  "matched_title": "The Gospel Bells",
+  "verse_lines": 8,
+  "refrain_lines": 8,
+  "verse_syllables": 57,
+  "src": "fh"
+ },
+ {
+  "no": 208,
+  "title": "COME, YE SINNERS",
+  "file": "music/r/Restoration.abc",
+  "how": "freehymns lyrics 0.64",
+  "score": 0.637,
+  "matched_title": "Come, Ye Sinners, Poor And Needy",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 30,
+  "src": "fh"
+ },
+ {
+  "no": 210,
+  "title": "WHOSOEVER WILL",
+  "file": "music/w/WhosoeverWill.abc",
+  "how": "freehymns lyrics 0.74",
+  "score": 0.741,
+  "matched_title": "Whosoever Will May Come",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 39,
+  "src": "fh"
+ },
+ {
+  "no": 211,
+  "title": "JESUS IS CALLING",
+  "file": "music/j/JesusIsTenderlyCallingYouHome.abc",
+  "how": "freehymns lyrics 0.66",
+  "score": 0.661,
+  "matched_title": "Jesus Is Tenderly Calling You Home",
+  "verse_lines": 4,
+  "refrain_lines": 7,
+  "verse_syllables": 35,
+  "src": "fh"
+ },
+ {
+  "no": 217,
+  "title": "ONLY A STEP TO JESUS!",
+  "file": "music/o/OnlyAStep.abc",
+  "how": "freehymns lyrics 0.90",
+  "score": 0.903,
+  "matched_title": "Only A Step",
+  "verse_lines": 4,
+  "refrain_lines": 6,
+  "verse_syllables": 26,
+  "src": "fh"
+ },
+ {
+  "no": 218,
+  "title": "WE'RE MARCHING TO ZION",
+  "file": "music/m/MarchingToZion.abc",
+  "how": "freehymns lyrics 0.82",
+  "score": 0.821,
+  "matched_title": "Marching To Zion",
+  "verse_lines": 6,
+  "refrain_lines": 8,
+  "verse_syllables": 40,
+  "src": "fh"
+ },
+ {
+  "no": 220,
+  "title": "COME TO THE SAVIOUR",
+  "file": "music/i/Invitation.abc",
+  "how": "freehymns lyrics 0.87",
+  "score": 0.874,
+  "matched_title": "Come To The Savior",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 33,
+  "src": "fh"
+ },
+ {
+  "no": 226,
+  "title": "BRIGHTEN THE CORNER WHERE YOU ARE",
+  "file": "music/b/BrightenTheCorner.abc",
+  "how": "freehymns lyrics 0.43",
+  "score": 0.426,
+  "matched_title": "Brighten the Corner Where You Are",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 43,
+  "src": "fh"
+ },
+ {
+  "no": 227,
+  "title": "LORD, SPEAK TO ME",
+  "file": "music/c/Canonbury.abc",
+  "how": "freehymns lyrics 0.95",
+  "score": 0.954,
+  "matched_title": "Lord, Speak To Me, That I May Speak",
+  "verse_lines": 4,
+  "refrain_lines": 0,
+  "verse_syllables": 32,
+  "src": "fh"
  },
  {
   "no": 247,
   "title": "ALMIGHTY GOD",
   "file": "Complete/Almighty_God_Your_Word_Is_Cast/Almighty_God_Your_Word_Is_Cast-St_Anne.abc",
-  "how": "lyrics tr=0.57"
+  "how": "lyrics tr=0.57",
+  "src": "oh"
+ },
+ {
+  "no": 248,
+  "title": "THE KING'S BUSINESS",
+  "file": "music/the/TheKingsBusiness.abc",
+  "how": "freehymns lyrics 0.90",
+  "score": 0.899,
+  "matched_title": "The King's Business",
+  "verse_lines": 7,
+  "refrain_lines": 5,
+  "verse_syllables": 44,
+  "src": "fh"
+ },
+ {
+  "no": 262,
+  "title": "THERE IS LIFE FOR A LOOK",
+  "file": "music/t/ThereIsLifeForALook.abc",
+  "how": "freehymns lyrics 0.95",
+  "score": 0.945,
+  "matched_title": "There Is Life For a Look",
+  "verse_lines": 4,
+  "refrain_lines": 3,
+  "verse_syllables": 41,
+  "src": "fh"
  },
  {
   "no": 263,
   "title": "THE COMFORTER HAS COME",
   "file": "Complete/The_Comforter_Has_Come/The_Comforter_Has_Come-The_Comforter_Has_Come.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 266,
+  "title": "THERE SHALL BE SHOWERS OF BLESSING",
+  "file": "music/s/ShowersOfBlessing.abc",
+  "how": "freehymns lyrics 0.89",
+  "score": 0.895,
+  "matched_title": "Showers of Blessing",
+  "verse_lines": 4,
+  "refrain_lines": 6,
+  "verse_syllables": 30,
+  "src": "fh"
+ },
+ {
+  "no": 270,
+  "title": "WONDERFUL WORDS OF LIFE",
+  "file": "music/w/WonderfulWordsOfLife.abc",
+  "how": "freehymns lyrics 0.91",
+  "score": 0.908,
+  "matched_title": "Wonderful Words of Life",
+  "verse_lines": 6,
+  "refrain_lines": 4,
+  "verse_syllables": 40,
+  "src": "fh"
+ },
+ {
+  "no": 271,
+  "title": "VERILY! VERILY",
+  "file": "music/v/VerilyVerily.abc",
+  "how": "freehymns lyrics 0.87",
+  "score": 0.874,
+  "matched_title": "Verily Verily",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 36,
+  "src": "fh"
+ },
+ {
+  "no": 272,
+  "title": "YE MUST BE BORN AGAIN",
+  "file": "music/y/YeMustBeBornAgain.abc",
+  "how": "freehymns lyrics 0.90",
+  "score": 0.903,
+  "matched_title": "Ye Must Be Born Again",
+  "verse_lines": 4,
+  "refrain_lines": 12,
+  "verse_syllables": 38,
+  "src": "fh"
+ },
+ {
+  "no": 273,
+  "title": "CHRIST RECEIVETH SINFUL MEN",
+  "file": "music/c/ChristReceivethSinfulMen.abc",
+  "how": "freehymns lyrics 0.86",
+  "score": 0.861,
+  "matched_title": "Christ Receiveth Sinful Men",
+  "verse_lines": 4,
+  "refrain_lines": 8,
+  "verse_syllables": 28,
+  "src": "fh"
+ },
+ {
+  "no": 276,
+  "title": "MORE ABOUT JESUS",
+  "file": "music/m/MoreAboutJesus.abc",
+  "how": "freehymns lyrics 0.96",
+  "score": 0.957,
+  "matched_title": "More About Jesus",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 32,
+  "src": "fh"
+ },
+ {
+  "no": 279,
+  "title": "BRINGING IN THE SHEAVES",
+  "file": "music/b/BringingInTheSheaves.abc",
+  "how": "freehymns lyrics 0.77",
+  "score": 0.77,
+  "matched_title": "Bringing In The Sheaves",
+  "verse_lines": 11,
+  "refrain_lines": 6,
+  "verse_syllables": 58,
+  "src": "fh"
+ },
+ {
+  "no": 282,
+  "title": "SEEKING THE LOST",
+  "file": "music/s/SeekingTheLost.abc",
+  "how": "freehymns lyrics 0.91",
+  "score": 0.913,
+  "matched_title": "Seeking The Lost",
+  "verse_lines": 4,
+  "refrain_lines": 13,
+  "verse_syllables": 38,
+  "src": "fh"
+ },
+ {
+  "no": 287,
+  "title": "SEND THE LIGHT!",
+  "file": "music/s/SendTheLight.abc",
+  "how": "freehymns lyrics 0.62",
+  "score": 0.618,
+  "matched_title": "Send the Light",
+  "verse_lines": 4,
+  "refrain_lines": 11,
+  "verse_syllables": 35,
+  "src": "fh"
+ },
+ {
+  "no": 288,
+  "title": "GO YE INTO ALL THE WORLD!",
+  "file": "music/g/GoYeIntoAllTheWorld.abc",
+  "how": "freehymns lyrics 0.80",
+  "score": 0.8,
+  "matched_title": "Go Ye Into All the World",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 42,
+  "src": "fh"
+ },
+ {
+  "no": 291,
+  "title": "CHRIST LIVETH IN ME",
+  "file": "music/c/ChristLivethInMe.abc",
+  "how": "freehymns lyrics 0.98",
+  "score": 0.982,
+  "matched_title": "Christ Liveth In Me",
+  "verse_lines": 4,
+  "refrain_lines": 8,
+  "verse_syllables": 28,
+  "src": "fh"
+ },
+ {
+  "no": 296,
+  "title": "REDEEMED",
+  "file": "music/r/RedeemedHowILoveToProclaimIt.abc",
+  "how": "freehymns lyrics 0.90",
+  "score": 0.899,
+  "matched_title": "Redeemed, How I Love To Proclaim It",
+  "verse_lines": 4,
+  "refrain_lines": 8,
+  "verse_syllables": 34,
+  "src": "fh"
+ },
+ {
+  "no": 298,
+  "title": "REDEEMED",
+  "file": "music/r/RedeemedHowILoveToProclaimIt.abc",
+  "how": "freehymns lyrics 0.90",
+  "score": 0.899,
+  "matched_title": "Redeemed, How I Love To Proclaim It",
+  "verse_lines": 4,
+  "refrain_lines": 8,
+  "verse_syllables": 34,
+  "src": "fh"
+ },
+ {
+  "no": 301,
+  "title": "SEEKING FOR ME",
+  "file": "music/s/SeekingForMe.abc",
+  "how": "freehymns lyrics 0.67",
+  "score": 0.667,
+  "matched_title": "Seeking For Me",
+  "verse_lines": 8,
+  "refrain_lines": 0,
+  "verse_syllables": 64,
+  "src": "fh"
+ },
+ {
+  "no": 303,
+  "title": "WHAT DID HE DO?",
+  "file": "music/w/WhatDidHeDo.abc",
+  "how": "freehymns lyrics 0.65",
+  "score": 0.654,
+  "matched_title": "What Did He Do?",
+  "verse_lines": 4,
+  "refrain_lines": 10,
+  "verse_syllables": 32,
+  "src": "fh"
+ },
+ {
+  "no": 308,
+  "title": "REDEMPTION GROUND",
+  "file": "music/r/RedemptionGround.abc",
+  "how": "freehymns lyrics 0.96",
+  "score": 0.958,
+  "matched_title": "Redemption Ground",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 32,
+  "src": "fh"
+ },
+ {
+  "no": 311,
+  "title": "THE NINETY AND NINE",
+  "file": "music/the/TheNinetyAndNine.abc",
+  "how": "freehymns lyrics 0.83",
+  "score": 0.825,
+  "matched_title": "The Ninety And Nine",
+  "verse_lines": 7,
+  "refrain_lines": 0,
+  "verse_syllables": 53,
+  "src": "fh"
+ },
+ {
+  "no": 313,
+  "title": "WHAT A WONDERFUL SAVIOUR",
+  "file": "music/w/WhatAWonderfulSavior.abc",
+  "how": "freehymns lyrics 0.72",
+  "score": 0.716,
+  "matched_title": "What a Wonderful Savior",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 30,
+  "src": "fh"
+ },
+ {
+  "no": 314,
+  "title": "ONCE FOR ALL",
+  "file": "music/o/OnceForAll.abc",
+  "how": "freehymns lyrics 0.86",
+  "score": 0.864,
+  "matched_title": "Once For All",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 37,
+  "src": "fh"
+ },
+ {
+  "no": 317,
+  "title": "SUNLIGHT IN MY SOUL",
+  "file": "music/s/Sunlight.abc",
+  "how": "freehymns lyrics 0.80",
+  "score": 0.8,
+  "matched_title": "Sunlight",
+  "verse_lines": 4,
+  "refrain_lines": 10,
+  "verse_syllables": 28,
+  "src": "fh"
+ },
+ {
+  "no": 319,
+  "title": "ASHAMED OF JESUS!",
+  "file": "music/f/FederalStreet.abc",
+  "how": "freehymns lyrics 0.79",
+  "score": 0.792,
+  "matched_title": "Ashamed of Jesus?",
+  "verse_lines": 4,
+  "refrain_lines": 0,
+  "verse_syllables": 32,
+  "src": "fh"
+ },
+ {
+  "no": 320,
+  "title": "JESUS SAVES!",
+  "file": "music/j/JesusSaves.abc",
+  "how": "freehymns lyrics 0.82",
+  "score": 0.822,
+  "matched_title": "Jesus Saves",
+  "verse_lines": 8,
+  "refrain_lines": 0,
+  "verse_syllables": 53,
+  "src": "fh"
  },
  {
   "no": 325,
   "title": "A GREAT DAY COMING",
   "file": "Complete/Theres_A_Great_Day_Coming/Theres_A_Great_Day_Coming-Theres_A_Great_Day_Coming.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 335,
+  "title": "LIFE AT BEST IS VERY BRIEF",
+  "file": "music/l/LifeAtBestIsVeryBrief.abc",
+  "how": "freehymns lyrics 0.96",
+  "score": 0.962,
+  "matched_title": "Life At Best Is Very Brief",
+  "verse_lines": 8,
+  "refrain_lines": 12,
+  "verse_syllables": 48,
+  "src": "fh"
+ },
+ {
+  "no": 344,
+  "title": "WHO AT MY DOOR IS STANDING?",
+  "file": "music/w/WhoAtMyDoorIsStanding.abc",
+  "how": "freehymns lyrics 0.97",
+  "score": 0.969,
+  "matched_title": "Who At My Door Is Standing?",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 26,
+  "src": "fh"
  },
  {
   "no": 345,
   "title": "SOULS OF MEN! WHY WILL YE SCATTER?",
   "file": "Complete/Souls_of_Men_Why_Will_Ye_Scatter/Souls_of_Men_Why_Will_Ye_Scatter-In_Babilone.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 351,
+  "title": "INTO YOUR HEART",
+  "file": "music/l/LetJesusComeIntoYourHeart.abc",
+  "how": "freehymns lyrics 0.91",
+  "score": 0.905,
+  "matched_title": "Let Jesus Come Into Your Heart",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 36,
+  "src": "fh"
+ },
+ {
+  "no": 363,
+  "title": "FOR YOU AND FOR ME",
+  "file": "music/s/SoftlyAndTenderlyJesusIsCalling.abc",
+  "how": "freehymns lyrics 0.89",
+  "score": 0.886,
+  "matched_title": "Softly And Tenderly Jesus Is Calling",
+  "verse_lines": 4,
+  "refrain_lines": 6,
+  "verse_syllables": 36,
+  "src": "fh"
+ },
+ {
+  "no": 364,
+  "title": "HAVE YOU ANY ROOM FOR JESUS?",
+  "file": "music/r/RoomForJesus.abc",
+  "how": "freehymns lyrics 0.83",
+  "score": 0.832,
+  "matched_title": "Have You Any Room For Jesus",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 30,
+  "src": "fh"
+ },
+ {
+  "no": 367,
+  "title": "I GAVE MY LIFE FOR THEE",
+  "file": "music/k/Kenosis.abc",
+  "how": "freehymns lyrics 0.72",
+  "score": 0.715,
+  "matched_title": "I Gave My Life For Thee",
+  "verse_lines": 6,
+  "refrain_lines": 0,
+  "verse_syllables": 38,
+  "src": "fh"
+ },
+ {
+  "no": 372,
+  "title": "THOUGH YOUR SINS BE AS SCARLET",
+  "file": "music/t/ThoughYourSinsBeAsScarlet.abc",
+  "how": "freehymns lyrics 0.90",
+  "score": 0.901,
+  "matched_title": "Though Your Sins Be As Scarlet",
+  "verse_lines": 10,
+  "refrain_lines": 0,
+  "verse_syllables": 68,
+  "src": "fh"
+ },
+ {
+  "no": 375,
+  "title": "OUR GREAT SAVIOUR",
+  "file": "music/h/Hyfrydol.abc",
+  "how": "freehymns lyrics 0.89",
+  "score": 0.892,
+  "matched_title": "Jesus! What A Friend For Sinners",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 30,
+  "src": "fh"
+ },
+ {
+  "no": 376,
+  "title": "MY ANCHOR HOLDS",
+  "file": "music/m/MyAnchorHolds.abc",
+  "how": "freehymns lyrics 0.96",
+  "score": 0.963,
+  "matched_title": "My Anchor Holds",
+  "verse_lines": 6,
+  "refrain_lines": 10,
+  "verse_syllables": 42,
+  "src": "fh"
+ },
+ {
+  "no": 378,
+  "title": "HOLD THE FORT!",
+  "file": "music/h/HoldTheFort.abc",
+  "how": "freehymns lyrics 0.89",
+  "score": 0.889,
+  "matched_title": "Hold the Fort",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 26,
+  "src": "fh"
  },
  {
   "no": 387,
   "title": "I KNOW WHOM I HAVE BELIEVED",
   "file": "Complete/I_Know_Whom_I_Have_Believed/I_Know_Whom_I_Have_Believed-I_Know_Whom_I_Have_Believed.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 394,
+  "title": "ONLY BELIEVE",
+  "file": "music/o/OnlyBelieve.abc",
+  "how": "freehymns lyrics 0.96",
+  "score": 0.961,
+  "matched_title": "Only Believe",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 42,
+  "src": "fh"
  },
  {
   "no": 406,
   "title": "HOW A FIRM A FOUNDATION",
   "file": "Complete/How_Firm_A_Foundation/How_Firm_A_Foundation-Foundation-Protection.abc",
-  "how": "lyrics tr=0.95"
+  "how": "lyrics tr=0.95",
+  "src": "oh"
+ },
+ {
+  "no": 409,
+  "title": "NO OTHER PLEA",
+  "file": "music/l/Landas.abc",
+  "how": "freehymns lyrics 0.88",
+  "score": 0.883,
+  "matched_title": "No Other Plea",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 28,
+  "src": "fh"
+ },
+ {
+  "no": 412,
+  "title": "TIS SO SWEET TO TRUST",
+  "file": "music/t/TisSoSweetToTrustInJesus.abc",
+  "how": "freehymns lyrics 0.78",
+  "score": 0.783,
+  "matched_title": "\u2019Tis So Sweet To Trust In Jesus",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 30,
+  "src": "fh"
+ },
+ {
+  "no": 419,
+  "title": "MY REDEEMER LIVETH",
+  "file": "music/i_/IKnowThatMyRedeemerLiveth.abc",
+  "how": "freehymns lyrics 0.96",
+  "score": 0.955,
+  "matched_title": "I Know That My Redeemer Liveth",
+  "verse_lines": 4,
+  "refrain_lines": 12,
+  "verse_syllables": 34,
+  "src": "fh"
+ },
+ {
+  "no": 420,
+  "title": "ALL WILL BE WELL",
+  "file": "music/e/Evensong.abc",
+  "how": "freehymns lyrics 0.86",
+  "score": 0.856,
+  "matched_title": "All Will Be Well",
+  "verse_lines": 8,
+  "refrain_lines": 0,
+  "verse_syllables": 52,
+  "src": "fh"
  },
  {
   "no": 424,
   "title": "CHRIST AROSE",
   "file": "Complete/Christ_Arose/Christ_Arose-Christ_Arose.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
  },
  {
   "no": 425,
   "title": "GLORIOUS THINGS OF THEE ARE SPOKEN",
   "file": "Complete/Glorious_Things_of_Thee_Are_Spoken/Glorious_Things_of_Thee_Are_Spoken-Austria_Haydn-Austrian_Hymn.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 426,
+  "title": "ONLY TRUST HIM",
+  "file": "music/t/Trust.abc",
+  "how": "freehymns lyrics 0.94",
+  "score": 0.94,
+  "matched_title": "Only Trust Him",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 28,
+  "src": "fh"
  },
  {
   "no": 427,
   "title": "O GOD, OUR HELP IN AGES PAST",
   "file": "Complete/Our_God_Our_Help_In_Ages_Past/Our_God_Our_Help_In_Ages_Past-St_Anne.abc",
-  "how": "lyrics tr=0.96"
+  "how": "lyrics tr=0.96",
+  "src": "oh"
  },
  {
   "no": 429,
   "title": "THE LORD'S MY SHEPHERD",
   "file": "Complete/The_Lords_My_Shepherd/The_Lords_My_Shepherd-Marosa-Brother_James_Air.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 431,
+  "title": "ANYWHERE WITH JESUS",
+  "file": "music/a/AnywhereWithJesus.abc",
+  "how": "freehymns lyrics 0.85",
+  "score": 0.852,
+  "matched_title": "Anywhere With Jesus",
+  "verse_lines": 4,
+  "refrain_lines": 2,
+  "verse_syllables": 44,
+  "src": "fh"
+ },
+ {
+  "no": 432,
+  "title": "TRUST AND OBEY",
+  "file": "music/t/TrustAndObey.abc",
+  "how": "freehymns lyrics 0.91",
+  "score": 0.905,
+  "matched_title": "Trust and Obey",
+  "verse_lines": 6,
+  "refrain_lines": 4,
+  "verse_syllables": 42,
+  "src": "fh"
+ },
+ {
+  "no": 433,
+  "title": "CONQUERING NOW AND STILL TO CONQUER",
+  "file": "music/v/VictoryThroughGrace.abc",
+  "how": "freehymns lyrics 0.90",
+  "score": 0.902,
+  "matched_title": "Victory Through Grace",
+  "verse_lines": 8,
+  "refrain_lines": 4,
+  "verse_syllables": 62,
+  "src": "fh"
+ },
+ {
+  "no": 434,
+  "title": "FAITH IS THE VICTORY",
+  "file": "music/f/FaithIsTheVictory.abc",
+  "how": "freehymns lyrics 0.91",
+  "score": 0.915,
+  "matched_title": "Faith Is the Victory",
+  "verse_lines": 8,
+  "refrain_lines": 4,
+  "verse_syllables": 56,
+  "src": "fh"
+ },
+ {
+  "no": 437,
+  "title": "SOUND THE BATTLE CRY!",
+  "file": "music/s/SoundTheBattleCry.abc",
+  "how": "freehymns lyrics 0.87",
+  "score": 0.867,
+  "matched_title": "Sound The Battle Cry!",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 37,
+  "src": "fh"
+ },
+ {
+  "no": 443,
+  "title": "HE IS ABLE TO DELIVER THEE",
+  "file": "music/h/HeIsAbleToDeliverThee.abc",
+  "how": "freehymns lyrics 0.81",
+  "score": 0.812,
+  "matched_title": "He Is Able To Deliver Thee",
+  "verse_lines": 4,
+  "refrain_lines": 8,
+  "verse_syllables": 40,
+  "src": "fh"
  },
  {
   "no": 444,
   "title": "I KNOW WHOM I HAVE BELIEVED",
   "file": "Complete/I_Know_Whom_I_Have_Believed/I_Know_Whom_I_Have_Believed-I_Know_Whom_I_Have_Believed.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
  },
  {
   "no": 445,
   "title": "BLESSED ASSURANCE",
   "file": "Complete/Blessed_Assurance/Blessed_Assurance-Blessed_Assurance-Assurance.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 446,
+  "title": "STANDING ON THE PROMISES OF GOD",
+  "file": "music/s/StandingOnThePromises.abc",
+  "how": "freehymns lyrics 0.89",
+  "score": 0.894,
+  "matched_title": "Standing On The Promises",
+  "verse_lines": 4,
+  "refrain_lines": 8,
+  "verse_syllables": 42,
+  "src": "fh"
  },
  {
   "no": 447,
   "title": "I KNOW THAT MY REDEEMER LIVES",
   "file": "Complete/I_Know_That_My_Redeemer_Lives/I_Know_That_My_Redeemer_Lives-Duke_Street.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
  },
  {
   "no": 448,
   "title": "IT IS WELL",
   "file": "Complete/It_Is_Well_With_My_Soul/It_Is_Well_With_My_Soul-It_Is_Well-Ville_Du_Havre.abc",
-  "how": "lyrics tr=0.61"
+  "how": "lyrics tr=0.61",
+  "src": "oh"
  },
  {
   "no": 449,
   "title": "THE SOLID ROCK",
   "file": "Complete/My_Hope_Is_Built/My_Hope_Is_Built-Melita.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
  },
  {
   "no": 450,
   "title": "FAITH OF OUR FATHERS",
   "file": "Complete/Faith_Of_Our_Fathers/Faith_Of_Our_Fathers-St_Catherine.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 453,
+  "title": "ONLY A SINNER!",
+  "file": "music/o/OnlyASinner.abc",
+  "how": "freehymns lyrics 0.92",
+  "score": 0.924,
+  "matched_title": "Only a Sinner",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 38,
+  "src": "fh"
  },
  {
   "no": 457,
   "title": "AMAZING GRACE",
   "file": "Complete/Amazing_Grace/Amazing_Grace-New_Britain.abc",
-  "how": "lyrics tr=1.00"
+  "how": "lyrics tr=1.00",
+  "src": "oh"
+ },
+ {
+  "no": 458,
+  "title": "HE IS SO PRECIOUS TO ME",
+  "file": "music/h/HeIsSoPreciousToMe.abc",
+  "how": "freehymns lyrics 0.91",
+  "score": 0.912,
+  "matched_title": "He Is So Precious To Me",
+  "verse_lines": 4,
+  "refrain_lines": 9,
+  "verse_syllables": 41,
+  "src": "fh"
+ },
+ {
+  "no": 460,
+  "title": "A NEW NAME IN GLORY",
+  "file": "music/an/ANewNameInGlory.abc",
+  "how": "freehymns lyrics 0.97",
+  "score": 0.968,
+  "matched_title": "A New Name In Glory",
+  "verse_lines": 4,
+  "refrain_lines": 8,
+  "verse_syllables": 33,
+  "src": "fh"
  },
  {
   "no": 474,
   "title": "HE KEEPS ME SINGING",
   "file": "Complete/He_Keeps_Me_Singing/He_Keeps_Me_Singing-He_Keeps_Me_Singing-Melody_of_Love.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 485,
+  "title": "SINCE I HAVE BEEN REDEEMED",
+  "file": "music/s/SinceIHaveBeenRedeemed.abc",
+  "how": "freehymns lyrics 0.84",
+  "score": 0.843,
+  "matched_title": "Since I Have Been Redeemed",
+  "verse_lines": 4,
+  "refrain_lines": 9,
+  "verse_syllables": 28,
+  "src": "fh"
+ },
+ {
+  "no": 487,
+  "title": "HIS YOKE IS EASY",
+  "file": "music/h/HisYokeIsEasy.abc",
+  "how": "freehymns lyrics 0.87",
+  "score": 0.873,
+  "matched_title": "His Yoke Is Easy",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 31,
+  "src": "fh"
+ },
+ {
+  "no": 488,
+  "title": "I LOVE TO TELL THE STORY",
+  "file": "music/i_/ILoveToTellTheStory.abc",
+  "how": "freehymns lyrics 0.96",
+  "score": 0.96,
+  "matched_title": "I Love To Tell The Story",
+  "verse_lines": 8,
+  "refrain_lines": 4,
+  "verse_syllables": 52,
+  "src": "fh"
+ },
+ {
+  "no": 490,
+  "title": "HE'S MY FRIEND",
+  "file": "music/j/JesusIsAlltheWorldToMe.abc",
+  "how": "freehymns lyrics 0.95",
+  "score": 0.951,
+  "matched_title": "Jesus Is All The World To Me",
+  "verse_lines": 8,
+  "refrain_lines": 0,
+  "verse_syllables": 55,
+  "src": "fh"
+ },
+ {
+  "no": 499,
+  "title": "GRACE! 'TIS A CHARMING SOUND!",
+  "file": "music/s/Silchester.abc",
+  "how": "freehymns lyrics 0.81",
+  "score": 0.811,
+  "matched_title": "Grace! 'Tis A Charming Sound",
+  "verse_lines": 4,
+  "refrain_lines": 0,
+  "verse_syllables": 26,
+  "src": "fh"
+ },
+ {
+  "no": 500,
+  "title": "BEHOLD, WHAT LOVE!",
+  "file": "music/b/BoundlessLove.abc",
+  "how": "freehymns lyrics 0.94",
+  "score": 0.94,
+  "matched_title": "Boundless Love",
+  "verse_lines": 4,
+  "refrain_lines": 13,
+  "verse_syllables": 28,
+  "src": "fh"
+ },
+ {
+  "no": 501,
+  "title": "JESUS LOVES EVEN ME",
+  "file": "music/j/JesusLovesEvenMe.abc",
+  "how": "freehymns lyrics 0.94",
+  "score": 0.941,
+  "matched_title": "Jesus Loves Even Me",
+  "verse_lines": 4,
+  "refrain_lines": 2,
+  "verse_syllables": 40,
+  "src": "fh"
+ },
+ {
+  "no": 503,
+  "title": "OH, THE LOVE THAT SOUGHT ME",
+  "file": "music/i/InTendernessHeSoughtMe.abc",
+  "how": "freehymns lyrics 0.94",
+  "score": 0.942,
+  "matched_title": "In Tenderness He Sought Me",
+  "verse_lines": 6,
+  "refrain_lines": 4,
+  "verse_syllables": 42,
+  "src": "fh"
+ },
+ {
+  "no": 509,
+  "title": "IT PASSETH KNOWLEDGE",
+  "file": "music/i/ItPassethKnowledge.abc",
+  "how": "freehymns lyrics 0.88",
+  "score": 0.878,
+  "matched_title": "It Passeth Knowledge",
+  "verse_lines": 5,
+  "refrain_lines": 0,
+  "verse_syllables": 44,
+  "src": "fh"
+ },
+ {
+  "no": 510,
+  "title": "MORE THAN TONGUE CAN TELL",
+  "file": "music/m/MoreThanTongueCanTell.abc",
+  "how": "freehymns lyrics 0.88",
+  "score": 0.885,
+  "matched_title": "More Than Tongue Can Tell",
+  "verse_lines": 4,
+  "refrain_lines": 8,
+  "verse_syllables": 30,
+  "src": "fh"
+ },
+ {
+  "no": 515,
+  "title": "I'VE FOUND A FRIEND",
+  "file": "music/f/Friend.abc",
+  "how": "freehymns lyrics 0.81",
+  "score": 0.806,
+  "matched_title": "I\u2019ve Found A Friend",
+  "verse_lines": 8,
+  "refrain_lines": 0,
+  "verse_syllables": 60,
+  "src": "fh"
+ },
+ {
+  "no": 516,
+  "title": "I WILL SING THE WONDROUS STORY",
+  "file": "music/i_/IWillSingTheWondrousStory.abc",
+  "how": "freehymns lyrics 0.93",
+  "score": 0.932,
+  "matched_title": "I Will Sing The Wondrous Story",
+  "verse_lines": 4,
+  "refrain_lines": 9,
+  "verse_syllables": 30,
+  "src": "fh"
+ },
+ {
+  "no": 520,
+  "title": "MY REDEEMER",
+  "file": "music/m/MyRedeemer.abc",
+  "how": "freehymns lyrics 0.92",
+  "score": 0.922,
+  "matched_title": "I Will Sing Of My Redeemer",
+  "verse_lines": 4,
+  "refrain_lines": 9,
+  "verse_syllables": 30,
+  "src": "fh"
+ },
+ {
+  "no": 530,
+  "title": "SINCE JESUS CAME INTO MY HEART",
+  "file": "music/s/SinceJesusCameIntoMyHeart.abc",
+  "how": "freehymns lyrics 0.96",
+  "score": 0.957,
+  "matched_title": "Since Jesus Came Into My Heart",
+  "verse_lines": 4,
+  "refrain_lines": 8,
+  "verse_syllables": 40,
+  "src": "fh"
+ },
+ {
+  "no": 533,
+  "title": "LOVE LIFTED ME",
+  "file": "music/l/LoveLiftedMe.abc",
+  "how": "freehymns lyrics 0.91",
+  "score": 0.906,
+  "matched_title": "Love Lifted Me",
+  "verse_lines": 8,
+  "refrain_lines": 10,
+  "verse_syllables": 50,
+  "src": "fh"
+ },
+ {
+  "no": 535,
+  "title": "I'LL LIVE FOR HIM",
+  "file": "music/i/IllLiveForHim.abc",
+  "how": "freehymns lyrics 0.84",
+  "score": 0.839,
+  "matched_title": "I'll Live For Him",
+  "verse_lines": 9,
+  "refrain_lines": 0,
+  "verse_syllables": 61,
+  "src": "fh"
+ },
+ {
+  "no": 539,
+  "title": "AT CALVARY",
+  "file": "music/a/AtCalvary.abc",
+  "how": "freehymns lyrics 0.79",
+  "score": 0.788,
+  "matched_title": "At Calvary",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 31,
+  "src": "fh"
+ },
+ {
+  "no": 547,
+  "title": "LORD, I'M COMING HOME",
+  "file": "music/l/LordImComingHome.abc",
+  "how": "freehymns lyrics 0.84",
+  "score": 0.835,
+  "matched_title": "Lord, I\u2019m Coming Home",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 26,
+  "src": "fh"
+ },
+ {
+  "no": 548,
+  "title": "JUST AS I AM",
+  "file": "music/w/Woodworth.abc",
+  "how": "freehymns lyrics 0.93",
+  "score": 0.928,
+  "matched_title": "Just As I Am, Without One Plea",
+  "verse_lines": 4,
+  "refrain_lines": 0,
+  "verse_syllables": 32,
+  "src": "fh"
+ },
+ {
+  "no": 552,
+  "title": "JESUS, I COME!",
+  "file": "music/j/JesusICome.abc",
+  "how": "freehymns lyrics 0.95",
+  "score": 0.952,
+  "matched_title": "Jesus, I Come",
+  "verse_lines": 8,
+  "refrain_lines": 0,
+  "verse_syllables": 65,
+  "src": "fh"
+ },
+ {
+  "no": 553,
+  "title": "ALL TO JESUS I SURRENDER",
+  "file": "music/i_/ISurrenderAll.abc",
+  "how": "freehymns lyrics 0.74",
+  "score": 0.741,
+  "matched_title": "I Surrender All",
+  "verse_lines": 4,
+  "refrain_lines": 8,
+  "verse_syllables": 30,
+  "src": "fh"
+ },
+ {
+  "no": 554,
+  "title": "O JESUS, I HAVE PROMISED",
+  "file": "music/a/AngelsStory.abc",
+  "how": "freehymns lyrics 0.83",
+  "score": 0.835,
+  "matched_title": "O Jesus, I Have Promised",
+  "verse_lines": 8,
+  "refrain_lines": 0,
+  "verse_syllables": 52,
+  "src": "fh"
+ },
+ {
+  "no": 556,
+  "title": "O HAPPY DAY!",
+  "file": "music/oh/OHappyDay.abc",
+  "how": "freehymns lyrics 0.59",
+  "score": 0.591,
+  "matched_title": "O Happy Day That Fixed My Choice",
+  "verse_lines": 4,
+  "refrain_lines": 6,
+  "verse_syllables": 32,
+  "src": "fh"
+ },
+ {
+  "no": 560,
+  "title": "BAPTISMAL HYMN",
+  "file": "music/a/Aurelia.abc",
+  "how": "freehymns lyrics 0.91",
+  "score": 0.906,
+  "matched_title": "Baptismal Hymn",
+  "verse_lines": 8,
+  "refrain_lines": 0,
+  "verse_syllables": 52,
+  "src": "fh"
+ },
+ {
+  "no": 562,
+  "title": "SOLDIERS OF CHRIST! ARISE",
+  "file": "music/d/Diademata.abc",
+  "how": "freehymns lyrics 0.70",
+  "score": 0.696,
+  "matched_title": "Soldiers Of Christ, Arise",
+  "verse_lines": 8,
+  "refrain_lines": 0,
+  "verse_syllables": 52,
+  "src": "fh"
+ },
+ {
+  "no": 580,
+  "title": "WHEN I SEE THE BLOOD",
+  "file": "music/w/WhenISeeTheBlood.abc",
+  "how": "freehymns lyrics 0.46",
+  "score": 0.463,
+  "matched_title": "When I See the Blood",
+  "verse_lines": 4,
+  "refrain_lines": 10,
+  "verse_syllables": 36,
+  "src": "fh"
  },
  {
   "no": 584,
   "title": "WHITER THAN THE SNOW",
   "file": "Complete/Whiter_Than_Snow/Whiter_Than_Snow-Whiter_Than_Snow.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
  },
  {
   "no": 590,
   "title": "THE OLD RUGGED CROSS",
   "file": "Complete/The_Old_Rugged_Cross/The_Old_Rugged_Cross-Old_Rugged_Cross.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 591,
+  "title": "LEAD ME TO CALVARY",
+  "file": "music/l/LeadMeToCalvary.abc",
+  "how": "freehymns lyrics 0.89",
+  "score": 0.887,
+  "matched_title": "King Of My Life, I Crown Thee Now",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 28,
+  "src": "fh"
+ },
+ {
+  "no": 594,
+  "title": "BREAK THOU THE BREAD OF LIFE",
+  "file": "music/b/BreadOfLife.abc",
+  "how": "freehymns lyrics 0.75",
+  "score": 0.752,
+  "matched_title": "Break Thou The Bread Of Life",
+  "verse_lines": 4,
+  "refrain_lines": 0,
+  "verse_syllables": 40,
+  "src": "fh"
+ },
+ {
+  "no": 595,
+  "title": "THERE IS A FOUNTAIN",
+  "file": "music/c/CleansingFountain.abc",
+  "how": "freehymns lyrics 0.81",
+  "score": 0.813,
+  "matched_title": "There Is A Fountain Filled With Blood",
+  "verse_lines": 14,
+  "refrain_lines": 0,
+  "verse_syllables": 84,
+  "src": "fh"
+ },
+ {
+  "no": 598,
+  "title": "GLORY TO HIS NAME!",
+  "file": "music/d/DownAtTheCross.abc",
+  "how": "freehymns lyrics 0.91",
+  "score": 0.909,
+  "matched_title": "Down At The Cross",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 32,
+  "src": "fh"
+ },
+ {
+  "no": 603,
+  "title": "NAILED TO THE CROSS",
+  "file": "music/n/NailedToTheCross.abc",
+  "how": "freehymns lyrics 0.85",
+  "score": 0.855,
+  "matched_title": "Nailed To The Cross",
+  "verse_lines": 4,
+  "refrain_lines": 6,
+  "verse_syllables": 42,
+  "src": "fh"
+ },
+ {
+  "no": 605,
+  "title": "I REMEMBER CALVARY",
+  "file": "music/i_/IRememberCalvary.abc",
+  "how": "freehymns lyrics 0.88",
+  "score": 0.879,
+  "matched_title": "I Remember Calvary",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 32,
+  "src": "fh"
+ },
+ {
+  "no": 606,
+  "title": "THE WAY OF THE CROSS",
+  "file": "music/w/WayOfTheCross.abc",
+  "how": "freehymns lyrics 0.89",
+  "score": 0.891,
+  "matched_title": "The Way Of The Cross",
+  "verse_lines": 4,
+  "refrain_lines": 8,
+  "verse_syllables": 36,
+  "src": "fh"
  },
  {
   "no": 607,
   "title": "HALLELUJAH! WHAT SAVIOUR",
   "file": "Complete/Hallelujah_What_a_Savior/Hallelujah_What_a_Savior-Hallelujah_What_a_Savior.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
  },
  {
   "no": 609,
   "title": "WHEN I SURVEY THE WONDROUS CROSS",
   "file": "Complete/When_I_Survey_The_Wondrous_Cross/When_I_Survey_The_Wondrous_Cross-Duke_Street.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 610,
+  "title": "THERE IS A FOUNTAIN",
+  "file": "music/c/CleansingFountain.abc",
+  "how": "freehymns lyrics 0.78",
+  "score": 0.784,
+  "matched_title": "There Is A Fountain Filled With Blood",
+  "verse_lines": 14,
+  "refrain_lines": 0,
+  "verse_syllables": 84,
+  "src": "fh"
+ },
+ {
+  "no": 611,
+  "title": "NEAR THE CROSS",
+  "file": "music/n/NearTheCross.abc",
+  "how": "freehymns lyrics 0.94",
+  "score": 0.938,
+  "matched_title": "Jesus, Keep Me Near The Cross",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 26,
+  "src": "fh"
+ },
+ {
+  "no": 612,
+  "title": "THE HEAD THAT ONCE WAS CROWNED",
+  "file": "music/s/StMagnus.abc",
+  "how": "freehymns lyrics 0.68",
+  "score": 0.684,
+  "matched_title": "The Head That Once Was Crowned",
+  "verse_lines": 4,
+  "refrain_lines": 0,
+  "verse_syllables": 28,
+  "src": "fh"
+ },
+ {
+  "no": 613,
+  "title": "THERE IS POWER IN THE BLOOD",
+  "file": "music/t/ThereIsPowerInTheBlood.abc",
+  "how": "freehymns lyrics 0.74",
+  "score": 0.742,
+  "matched_title": "There Is Power in the Blood",
+  "verse_lines": 4,
+  "refrain_lines": 10,
+  "verse_syllables": 37,
+  "src": "fh"
+ },
+ {
+  "no": 615,
+  "title": "JESUS, THOU JOY OF LOVING HEARTS",
+  "file": "music/h/Holley.abc",
+  "how": "freehymns lyrics 0.96",
+  "score": 0.956,
+  "matched_title": "Jesus, Thou Joy Of Loving Hearts",
+  "verse_lines": 4,
+  "refrain_lines": 0,
+  "verse_syllables": 32,
+  "src": "fh"
+ },
+ {
+  "no": 616,
+  "title": "HAVE YOU BEEN TO JESUS?",
+  "file": "music/a/AreYouWashedInTheBlood.abc",
+  "how": "freehymns lyrics 0.88",
+  "score": 0.876,
+  "matched_title": "Are You Washed In the Blood",
+  "verse_lines": 4,
+  "refrain_lines": 8,
+  "verse_syllables": 40,
+  "src": "fh"
+ },
+ {
+  "no": 617,
+  "title": "I HEAR THY WELOME VOICE",
+  "file": "music/w/WelcomeVoice.abc",
+  "how": "freehymns lyrics 0.88",
+  "score": 0.885,
+  "matched_title": "I Hear Thy Welcome Voice",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 26,
+  "src": "fh"
+ },
+ {
+  "no": 618,
+  "title": "NOTHING BUT THE BLOOD OF JESUS!",
+  "file": "music/n/NothingButTheBlood.abc",
+  "how": "freehymns lyrics 0.94",
+  "score": 0.936,
+  "matched_title": "Nothing But The Blood",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 30,
+  "src": "fh"
+ },
+ {
+  "no": 621,
+  "title": "LET OTHERS SEE JESUS IN YOU",
+  "file": "music/l/LetOthersSeeJesusInYou.abc",
+  "how": "freehymns lyrics 0.90",
+  "score": 0.899,
+  "matched_title": "Let Others See Jesus In You",
+  "verse_lines": 4,
+  "refrain_lines": 9,
+  "verse_syllables": 31,
+  "src": "fh"
+ },
+ {
+  "no": 624,
+  "title": "IF I GAINED THE WORLD",
+  "file": "music/i/IfIGainedTheWorld.abc",
+  "how": "freehymns lyrics 0.89",
+  "score": 0.889,
+  "matched_title": "If I Gained The World",
+  "verse_lines": 8,
+  "refrain_lines": 0,
+  "verse_syllables": 76,
+  "src": "fh"
+ },
+ {
+  "no": 631,
+  "title": "ALL FOR JESUS",
+  "file": "music/c/Consecration.abc",
+  "how": "freehymns lyrics 0.74",
+  "score": 0.743,
+  "matched_title": "All For Jesus, All For Jesus",
+  "verse_lines": 4,
+  "refrain_lines": 3,
+  "verse_syllables": 30,
+  "src": "fh"
+ },
+ {
+  "no": 643,
+  "title": "GIVE ME JESUS",
+  "file": "music/a/Abruzzo.abc",
+  "how": "freehymns lyrics 0.94",
+  "score": 0.943,
+  "matched_title": "Take The World, But Give Me Jesus",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 30,
+  "src": "fh"
+ },
+ {
+  "no": 646,
+  "title": "HIGHER GROUND",
+  "file": "music/h/HigherGround.abc",
+  "how": "freehymns lyrics 0.81",
+  "score": 0.81,
+  "matched_title": "Higher Ground",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 32,
+  "src": "fh"
+ },
+ {
+  "no": 650,
+  "title": "THE PRECIOUS NAME",
+  "file": "music/p/PreciousName.abc",
+  "how": "freehymns lyrics 0.88",
+  "score": 0.879,
+  "matched_title": "Take The Name Of Jesus With You",
+  "verse_lines": 4,
+  "refrain_lines": 8,
+  "verse_syllables": 30,
+  "src": "fh"
+ },
+ {
+  "no": 651,
+  "title": "WEEPING WILL NOT SAVE ME!",
+  "file": "music/n/NoneButJesus.abc",
+  "how": "freehymns lyrics 0.97",
+  "score": 0.975,
+  "matched_title": "Weeping Will Not Save Me",
+  "verse_lines": 5,
+  "refrain_lines": 4,
+  "verse_syllables": 33,
+  "src": "fh"
+ },
+ {
+  "no": 655,
+  "title": "PRAISE THE SAVIOUR!",
+  "file": "music/a/Acclaim.abc",
+  "how": "freehymns lyrics 0.82",
+  "score": 0.815,
+  "matched_title": "Praise The Savior",
+  "verse_lines": 4,
+  "refrain_lines": 0,
+  "verse_syllables": 29,
+  "src": "fh"
+ },
+ {
+  "no": 661,
+  "title": "TAKE TIME TO BE HOLY",
+  "file": "music/h/Holiness.abc",
+  "how": "freehymns lyrics 0.95",
+  "score": 0.953,
+  "matched_title": "Take Time To Be Holy",
+  "verse_lines": 8,
+  "refrain_lines": 0,
+  "verse_syllables": 44,
+  "src": "fh"
  },
  {
   "no": 662,
   "title": "CONSECRATION",
   "file": "Complete/Take_My_Life_And_Let_It_Be/Take_My_Life_And_Let_It_Be-Mozart.abc",
-  "how": "lyrics tr=0.21"
+  "how": "lyrics tr=0.21",
+  "src": "oh"
+ },
+ {
+  "no": 665,
+  "title": "A SOLDIER OF THE CROSS",
+  "file": "music/a/Arlington.abc",
+  "how": "freehymns lyrics 0.71",
+  "score": 0.71,
+  "matched_title": "Am I A Soldier Of The Cross",
+  "verse_lines": 4,
+  "refrain_lines": 0,
+  "verse_syllables": 28,
+  "src": "fh"
+ },
+ {
+  "no": 666,
+  "title": "STAND UP FOR JESUS!",
+  "file": "music/w/Webb.abc",
+  "how": "freehymns lyrics 0.85",
+  "score": 0.847,
+  "matched_title": "Stand Up, Stand Up For Jesus",
+  "verse_lines": 8,
+  "refrain_lines": 0,
+  "verse_syllables": 52,
+  "src": "fh"
+ },
+ {
+  "no": 667,
+  "title": "ONWARD, CHRISTIAN SOLDIERS!",
+  "file": "music/s/StGertrude.abc",
+  "how": "freehymns lyrics 0.62",
+  "score": 0.623,
+  "matched_title": "Onward, Christian Soldiers",
+  "verse_lines": 4,
+  "refrain_lines": 2,
+  "verse_syllables": 48,
+  "src": "fh"
+ },
+ {
+  "no": 671,
+  "title": "WORK, FOR THE NIGHT IS COMING",
+  "file": "music/w/WorkSong.abc",
+  "how": "freehymns lyrics 0.87",
+  "score": 0.87,
+  "matched_title": "Work, For the Night is Coming",
+  "verse_lines": 8,
+  "refrain_lines": 0,
+  "verse_syllables": 50,
+  "src": "fh"
  },
  {
   "no": 675,
   "title": "RESCUE THE PERISHING",
   "file": "Complete/Rescue_the_Perishing/Rescue_the_Perishing-Rescue_the_Perishing.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 676,
+  "title": "GO, LABOUR ON!",
+  "file": "music/h/Hesperus.abc",
+  "how": "freehymns lyrics 0.82",
+  "score": 0.816,
+  "matched_title": "Go, Labor On",
+  "verse_lines": 4,
+  "refrain_lines": 0,
+  "verse_syllables": 32,
+  "src": "fh"
+ },
+ {
+  "no": 684,
+  "title": "WALKING IN THE LIGHT",
+  "file": "music/s/SteppingInTheLight.abc",
+  "how": "freehymns lyrics 0.66",
+  "score": 0.661,
+  "matched_title": "Stepping in the Light",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 42,
+  "src": "fh"
+ },
+ {
+  "no": 686,
+  "title": "YIELD NOT TO TEMPTATION",
+  "file": "music/y/YieldNotToTemptation.abc",
+  "how": "freehymns lyrics 0.85",
+  "score": 0.846,
+  "matched_title": "Yield Not To Temptation",
+  "verse_lines": 8,
+  "refrain_lines": 4,
+  "verse_syllables": 44,
+  "src": "fh"
  },
  {
   "no": 689,
   "title": "COME YE DISCONSOLATE",
   "file": "Complete/Come_Ye_Disconsolate/Come_Ye_Disconsolate-Consolator_Webbe.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
  },
  {
   "no": 693,
   "title": "ONE THING NEEDFUL",
   "file": "Complete/One_Things_Needful/One_Things_Needful-Eins_Ist_Not.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 694,
+  "title": "WE'LL UNDERSTAND IT BETTER BY AND BY",
+  "file": "music/w/WellUnderstandItBetterByAndBy.abc",
+  "how": "freehymns lyrics 0.83",
+  "score": 0.831,
+  "matched_title": "We'll Understand It Better By and By",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 54,
+  "src": "fh"
  },
  {
   "no": 702,
   "title": "THE LILY OF THE VALLEY",
   "file": "Complete/The_Lily_of_the_Valley/The_Lily_of_the_Valley-Salvation-The_Lily_of_the_Valley.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 703,
+  "title": "DOES JESUS CARE?",
+  "file": "music/d/DoesJesusCare.abc",
+  "how": "freehymns lyrics 0.85",
+  "score": 0.851,
+  "matched_title": "Does Jesus Care?",
+  "verse_lines": 4,
+  "refrain_lines": 6,
+  "verse_syllables": 34,
+  "src": "fh"
+ },
+ {
+  "no": 704,
+  "title": "TILL HE COME!",
+  "file": "music/w/Wells.abc",
+  "how": "freehymns lyrics 0.70",
+  "score": 0.701,
+  "matched_title": "\"Till He Come!\"",
+  "verse_lines": 6,
+  "refrain_lines": 0,
+  "verse_syllables": 42,
+  "src": "fh"
+ },
+ {
+  "no": 705,
+  "title": "TELL IT TO JESUS",
+  "file": "music/t/TellItToJesus.abc",
+  "how": "freehymns lyrics 0.82",
+  "score": 0.823,
+  "matched_title": "Tell It to Jesus",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 37,
+  "src": "fh"
+ },
+ {
+  "no": 710,
+  "title": "HOW SWEET THE NAME",
+  "file": "music/s/StPeter.abc",
+  "how": "freehymns lyrics 0.72",
+  "score": 0.718,
+  "matched_title": "How Sweet The Name Of Jesus Sounds",
+  "verse_lines": 4,
+  "refrain_lines": 0,
+  "verse_syllables": 28,
+  "src": "fh"
  },
  {
   "no": 712,
   "title": "ABIDE WITH ME!",
   "file": "Complete/Abide_With_Me/Abide_With_Me-Eventide.abc",
-  "how": "lyrics tr=1.00"
+  "how": "lyrics tr=1.00",
+  "src": "oh"
+ },
+ {
+  "no": 719,
+  "title": "PEACE! PERFECT PEACE!",
+  "file": "music/p/PaxTecum.abc",
+  "how": "freehymns lyrics 0.89",
+  "score": 0.893,
+  "matched_title": "Peace, Perfect Peace",
+  "verse_lines": 2,
+  "refrain_lines": 0,
+  "verse_syllables": 20,
+  "src": "fh"
+ },
+ {
+  "no": 720,
+  "title": "COUNT YOUR BLESSINGS",
+  "file": "music/c/CountYourBlessings.abc",
+  "how": "freehymns lyrics 0.90",
+  "score": 0.901,
+  "matched_title": "Count Your Blessings",
+  "verse_lines": 4,
+  "refrain_lines": 8,
+  "verse_syllables": 44,
+  "src": "fh"
+ },
+ {
+  "no": 721,
+  "title": "NONE BUT CHRIST CAN SATISFY!",
+  "file": "music/n/NoneButChrist.abc",
+  "how": "freehymns lyrics 0.92",
+  "score": 0.923,
+  "matched_title": "None But Christ",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 28,
+  "src": "fh"
  },
  {
   "no": 722,
   "title": "NO, NOT ONE!",
   "file": "Complete/No_Not_One/No_Not_One-No_Not_One.abc",
-  "how": "lyrics tr=1.00"
+  "how": "lyrics tr=1.00",
+  "src": "oh"
+ },
+ {
+  "no": 723,
+  "title": "ASLEEP IN JESUS",
+  "file": "music/r/Rest.abc",
+  "how": "freehymns lyrics 0.74",
+  "score": 0.741,
+  "matched_title": "Asleep In Jesus!",
+  "verse_lines": 4,
+  "refrain_lines": 0,
+  "verse_syllables": 32,
+  "src": "fh"
+ },
+ {
+  "no": 735,
+  "title": "HIS EYE IS ON THE SPARROW",
+  "file": "music/h/HisEyeIsOnTheSparrow.abc",
+  "how": "freehymns lyrics 0.85",
+  "score": 0.848,
+  "matched_title": "His Eye Is On the Sparrow",
+  "verse_lines": 10,
+  "refrain_lines": 8,
+  "verse_syllables": 67,
+  "src": "fh"
  },
  {
   "no": 736,
   "title": "GUIDE ME, O THOU GREAT REDEEMER",
   "file": "Complete/Guide_Me_O_Thou_Great_Jehovah/Guide_Me_O_Thou_Great_Jehovah-Cwm_Rhondda.abc",
-  "how": "lyrics tr=0.78"
+  "how": "lyrics tr=0.78",
+  "src": "oh"
+ },
+ {
+  "no": 739,
+  "title": "DWELLING IN BEULAH LAND",
+  "file": "music/d/DwellingInBeulahLand.abc",
+  "how": "freehymns lyrics 0.89",
+  "score": 0.895,
+  "matched_title": "Dwelling In Beulah Land",
+  "verse_lines": 4,
+  "refrain_lines": 7,
+  "verse_syllables": 51,
+  "src": "fh"
  },
  {
   "no": 740,
   "title": "BE NOT DISMAYED",
   "file": "Complete/God_Will_Take_Care_Of_You/God_Will_Take_Care_Of_You-Martin.abc",
-  "how": "lyrics tr=0.25"
+  "how": "lyrics tr=0.25",
+  "src": "oh"
+ },
+ {
+  "no": 748,
+  "title": "WILL YOUR ANCHOR HOLD?",
+  "file": "music/w/WeHaveAnAnchor.abc",
+  "how": "freehymns lyrics 0.76",
+  "score": 0.765,
+  "matched_title": "We Have an Anchor",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 38,
+  "src": "fh"
+ },
+ {
+  "no": 753,
+  "title": "THE HAVEN OF REST",
+  "file": "music/the/TheHavenOfRest.abc",
+  "how": "freehymns lyrics 0.79",
+  "score": 0.788,
+  "matched_title": "The Haven Of Rest",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 40,
+  "src": "fh"
+ },
+ {
+  "no": 754,
+  "title": "SAFE IN THE ARMS OF JESUS",
+  "file": "music/s/SafeInTheArmsOfJesus.abc",
+  "how": "freehymns lyrics 0.98",
+  "score": 0.975,
+  "matched_title": "Safe In The Arms Of Jesus",
+  "verse_lines": 8,
+  "refrain_lines": 4,
+  "verse_syllables": 52,
+  "src": "fh"
+ },
+ {
+  "no": 756,
+  "title": "JESUS, LOVER OF MY SOUL",
+  "file": "music/a/Aberystwyth.abc",
+  "how": "freehymns lyrics 0.90",
+  "score": 0.904,
+  "matched_title": "Jesus, Lover Of My Soul",
+  "verse_lines": 8,
+  "refrain_lines": 0,
+  "verse_syllables": 56,
+  "src": "fh"
+ },
+ {
+  "no": 757,
+  "title": "SUN OF MY SOUL",
+  "file": "music/h/Hursley.abc",
+  "how": "freehymns lyrics 0.86",
+  "score": 0.857,
+  "matched_title": "Sun Of My Soul",
+  "verse_lines": 4,
+  "refrain_lines": 0,
+  "verse_syllables": 32,
+  "src": "fh"
  },
  {
   "no": 759,
   "title": "GOD WILL TAKE CARE OF YOU",
   "file": "Complete/God_Will_Take_Care_Of_You/God_Will_Take_Care_Of_You-Martin.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 765,
+  "title": "LEAD ME, SAVIOUR!",
+  "file": "music/l/LeadMeSavior.abc",
+  "how": "freehymns lyrics 0.61",
+  "score": 0.614,
+  "matched_title": "Lead Me Savior",
+  "verse_lines": 9,
+  "refrain_lines": 10,
+  "verse_syllables": 58,
+  "src": "fh"
+ },
+ {
+  "no": 766,
+  "title": "A SHELTER IN THE TIME OF STORM!",
+  "file": "music/an/AShelterInTheTimeOfStorm.abc",
+  "how": "freehymns lyrics 1.00",
+  "score": 1.0,
+  "matched_title": "A Shelter In the Time Of Storm",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 32,
+  "src": "fh"
+ },
+ {
+  "no": 767,
+  "title": "HE HIDETH MY SOUL",
+  "file": "music/h/HeHidethMySoul.abc",
+  "how": "freehymns lyrics 0.86",
+  "score": 0.864,
+  "matched_title": "He Hideth My Soul",
+  "verse_lines": 4,
+  "refrain_lines": 5,
+  "verse_syllables": 38,
+  "src": "fh"
  },
  {
   "no": 768,
   "title": "HE LEADETH ME",
   "file": "Complete/He_Leadeth_Me/He_Leadeth_Me-He_Leadeth_Me.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 772,
+  "title": "THE SAVIOUR WITH ME",
+  "file": "music/the/TheSaviorWithMe.abc",
+  "how": "freehymns lyrics 0.75",
+  "score": 0.754,
+  "matched_title": "The Savior With Me",
+  "verse_lines": 4,
+  "refrain_lines": 8,
+  "verse_syllables": 30,
+  "src": "fh"
  },
  {
   "no": 781,
   "title": "SAVIOUR, LIKE A SHEPHERD LEAD US",
   "file": "Complete/Savior_Like_A_Shepherd_Lead_Us/Savior_Like_A_Shepherd_Lead_Us-Bradbury.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 791,
+  "title": "FACE TO FACE",
+  "file": "music/v/Vision.abc",
+  "how": "freehymns lyrics 0.83",
+  "score": 0.833,
+  "matched_title": "Face To Face",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 30,
+  "src": "fh"
  },
  {
   "no": 793,
   "title": "CHRIST RETURNETH!",
   "file": "Complete/Christ_Returneth/Christ_Returneth-Christ_Returneth.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
  },
  {
   "no": 798,
   "title": "HARK, THE GLAD SOUND!",
   "file": "Complete/Hark_The_Glad_Sound/Hark_The_Glad_Sound-Chesterfield-Richmond_Haweis-Spa_Fields_Chapel.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 799,
+  "title": "BETHLEHEM",
+  "file": "music/s/StLouis.abc",
+  "how": "freehymns lyrics 0.87",
+  "score": 0.871,
+  "matched_title": "O Little Town of Bethlehem",
+  "verse_lines": 4,
+  "refrain_lines": 0,
+  "verse_syllables": 55,
+  "src": "fh"
  },
  {
   "no": 800,
   "title": "ANGELS, FROM THE REALMS OF GLORY!",
   "file": "Complete/Angels_From_The_Realms_Of_Glory/Angels_From_The_Realms_Of_Glory-Regent_Square.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
  },
  {
   "no": 801,
   "title": "HARK! THE HERALD ANGELS SING",
   "file": "Complete/Hark_The_Herald_Angels_Sing/Hark_The_Herald_Angels_Sing-Mendelssohn.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 802,
+  "title": "ONCE IN ROYAL DAVID'S CITY",
+  "file": "music/i/Irby.abc",
+  "how": "freehymns lyrics 0.97",
+  "score": 0.972,
+  "matched_title": "Once in Royal David\u2019s City",
+  "verse_lines": 6,
+  "refrain_lines": 0,
+  "verse_syllables": 44,
+  "src": "fh"
+ },
+ {
+  "no": 803,
+  "title": "WHILE SHEPHERDS WATCHED",
+  "file": "music/c/Christmas.abc",
+  "how": "freehymns lyrics 0.83",
+  "score": 0.831,
+  "matched_title": "While Shepherds Watched Their Flocks",
+  "verse_lines": 5,
+  "refrain_lines": 0,
+  "verse_syllables": 34,
+  "src": "fh"
  },
  {
   "no": 805,
   "title": "LO! HE COMES",
   "file": "Complete/Lo_He_Comes_On_Clouds_Descending/Lo_He_Comes_On_Clouds_Descending-Helmsley.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 808,
+  "title": "JESUS IS COMING!",
+  "file": "music/j/JesusIsComing.abc",
+  "how": "freehymns lyrics 0.92",
+  "score": 0.923,
+  "matched_title": "Jesus Is Coming!",
+  "verse_lines": 4,
+  "refrain_lines": 6,
+  "verse_syllables": 36,
+  "src": "fh"
  },
  {
   "no": 811,
   "title": "JOY TO THE WORLD",
   "file": "Complete/Joy_To_The_World/Joy_To_The_World-Antioch.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 815,
+  "title": "THERE'LL BE NO DARK VALLEY",
+  "file": "music/t/TherellBeNoDarkValley.abc",
+  "how": "freehymns lyrics 0.86",
+  "score": 0.863,
+  "matched_title": "There\u2019ll Be No Dark Valley When Jesus Comes",
+  "verse_lines": 4,
+  "refrain_lines": 8,
+  "verse_syllables": 37,
+  "src": "fh"
+ },
+ {
+  "no": 816,
+  "title": "WHERE WE'LL NEVER GROW OLD",
+  "file": "music/n/NeverGrowOld.abc",
+  "how": "freehymns lyrics 0.94",
+  "score": 0.942,
+  "matched_title": "Never Grow Old",
+  "verse_lines": 6,
+  "refrain_lines": 4,
+  "verse_syllables": 42,
+  "src": "fh"
+ },
+ {
+  "no": 830,
+  "title": "THE UNCLOUDED DAY",
+  "file": "music/u/UncloudedDay.abc",
+  "how": "freehymns lyrics 0.71",
+  "score": 0.711,
+  "matched_title": "Unclouded Day",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 44,
+  "src": "fh"
+ },
+ {
+  "no": 855,
+  "title": "THE CROWNING DAY",
+  "file": "music/the/TheCrowningDay.abc",
+  "how": "freehymns lyrics 0.87",
+  "score": 0.871,
+  "matched_title": "The Crowning Day",
+  "verse_lines": 7,
+  "refrain_lines": 7,
+  "verse_syllables": 50,
+  "src": "fh"
  },
  {
   "no": 856,
   "title": "THE CHURCH'S ONE FOUNDATION",
   "file": "Complete/The_Churchs_One_Foundation/The_Churchs_One_Foundation-Aurelia.abc",
-  "how": "lyrics tr=1.00"
+  "how": "lyrics tr=1.00",
+  "src": "oh"
+ },
+ {
+  "no": 863,
+  "title": "WILL THERE BE ANY STARS?",
+  "file": "music/m/Morocco.abc",
+  "how": "freehymns lyrics 0.84",
+  "score": 0.843,
+  "matched_title": "Will There Be Any Stars?",
+  "verse_lines": 4,
+  "refrain_lines": 5,
+  "verse_syllables": 42,
+  "src": "fh"
+ },
+ {
+  "no": 874,
+  "title": "BEULAH LAND",
+  "file": "music/b/BeulahLand.abc",
+  "how": "freehymns lyrics 0.79",
+  "score": 0.794,
+  "matched_title": "Beulah Land",
+  "verse_lines": 4,
+  "refrain_lines": 6,
+  "verse_syllables": 32,
+  "src": "fh"
  },
  {
   "no": 876,
   "title": "THE CHILD OF A KING!",
   "file": "Complete/A_Child_of_The_King/A_Child_of_The_King-Binghamton.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 878,
+  "title": "SWEET BY AND BY",
+  "file": "music/s/SweetByAndBy.abc",
+  "how": "freehymns lyrics 0.83",
+  "score": 0.828,
+  "matched_title": "In the Sweet By and By",
+  "verse_lines": 4,
+  "refrain_lines": 14,
+  "verse_syllables": 36,
+  "src": "fh"
+ },
+ {
+  "no": 880,
+  "title": "I SHALL KNOW HIM",
+  "file": "music/m/MySaviorFirstOfAll.abc",
+  "how": "freehymns lyrics 0.85",
+  "score": 0.845,
+  "matched_title": "When My Life Work Is Ended",
+  "verse_lines": 6,
+  "refrain_lines": 8,
+  "verse_syllables": 50,
+  "src": "fh"
+ },
+ {
+  "no": 882,
+  "title": "ON JORDAN'S STORM BANKS",
+  "file": "music/p/PromisedLand.abc",
+  "how": "freehymns lyrics 0.55",
+  "score": 0.552,
+  "matched_title": "On Jordan's Stormy Banks",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 28,
+  "src": "fh"
  },
  {
   "no": 884,
   "title": "WHEN THE ROLL IS CALLED UP YONDER",
   "file": "Complete/When_the_Roll_is_Called_Up_Yonder/When_the_Roll_is_Called_Up_Yonder-When_the_Roll_is_Called_Up_Yonder.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 890,
+  "title": "SHALL WE GATHER AT THE RIVER?",
+  "file": "music/h/HansonPlace.abc",
+  "how": "freehymns lyrics 0.80",
+  "score": 0.797,
+  "matched_title": "Shall We Gather At The River",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 30,
+  "src": "fh"
+ },
+ {
+  "no": 892,
+  "title": "NO NIGHT THERE",
+  "file": "music/n/NoNightThere.abc",
+  "how": "freehymns lyrics 0.95",
+  "score": 0.948,
+  "matched_title": "No Night There",
+  "verse_lines": 4,
+  "refrain_lines": 9,
+  "verse_syllables": 26,
+  "src": "fh"
  },
  {
   "no": 903,
   "title": "O FATHER ALL CREATING",
   "file": "Complete/O_Father_All_Creating/O_Father_All_Creating-Aurelia.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 907,
+  "title": "O PERFECT LOVE",
+  "file": "music/oh/OPerfectLove.abc",
+  "how": "freehymns lyrics 0.92",
+  "score": 0.924,
+  "matched_title": "O Perfect Love",
+  "verse_lines": 4,
+  "refrain_lines": 0,
+  "verse_syllables": 42,
+  "src": "fh"
+ },
+ {
+  "no": 914,
+  "title": "BRETHREN, WE HAVE MET TO WORSHIP",
+  "file": "music/h/HolyManna.abc",
+  "how": "freehymns lyrics 0.74",
+  "score": 0.737,
+  "matched_title": "Brethren, We Have Met To Worship",
+  "verse_lines": 8,
+  "refrain_lines": 0,
+  "verse_syllables": 60,
+  "src": "fh"
+ },
+ {
+  "no": 942,
+  "title": "THE SWEET STORY OF OLD",
+  "file": "music/s/SweetStory.abc",
+  "how": "freehymns lyrics 0.79",
+  "score": 0.785,
+  "matched_title": "I Think, When I Read That Sweet Story",
+  "verse_lines": 4,
+  "refrain_lines": 0,
+  "verse_syllables": 40,
+  "src": "fh"
+ },
+ {
+  "no": 943,
+  "title": "JESUS BIDS US SHINE",
+  "file": "music/j/JesusBidsUsShine.abc",
+  "how": "freehymns lyrics 0.77",
+  "score": 0.768,
+  "matched_title": "Jesus Bids Us Shine",
+  "verse_lines": 4,
+  "refrain_lines": 0,
+  "verse_syllables": 41,
+  "src": "fh"
  },
  {
   "no": 947,
   "title": "JESUS LOVES ME!",
   "file": "Complete/Jesus_Loves_Me/Jesus_Loves_Me-untitled.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 961,
+  "title": "PRAISE GOD (Doxology)",
+  "file": "music/o/Old100th.abc",
+  "how": "freehymns lyrics 1.00",
+  "score": 1.0,
+  "matched_title": "The Doxology",
+  "verse_lines": 4,
+  "refrain_lines": 0,
+  "verse_syllables": 32,
+  "src": "fh"
  },
  {
   "no": 993,
   "title": "LORD, DISMISS US",
   "file": "Complete/Lord_Dismiss_Us_With_Thy_Blessing/Lord_Dismiss_Us_With_Thy_Blessing-Regent_Square.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 996,
+  "title": "GOD BE WITH YOU!",
+  "file": "music/g/GodBeWithYou.abc",
+  "how": "freehymns lyrics 0.80",
+  "score": 0.8,
+  "matched_title": "God Be With You Till We Meet Again",
+  "verse_lines": 6,
+  "refrain_lines": 10,
+  "verse_syllables": 44,
+  "src": "fh"
  },
  {
   "no": 998,
   "title": "BLEST BE THE TIE THAT BINDS",
   "file": "Complete/Blest_Be_The_Tie_That_Binds/Blest_Be_The_Tie_That_Binds-Boylston.abc",
-  "how": "title"
+  "how": "title",
+  "src": "oh"
+ },
+ {
+  "no": 1000,
+  "title": "A PARTING HYMN",
+  "file": "music/s/SpanishHymn.abc",
+  "how": "freehymns lyrics 0.91",
+  "score": 0.909,
+  "matched_title": "Once More, Before We Part",
+  "verse_lines": 4,
+  "refrain_lines": 4,
+  "verse_syllables": 24,
+  "src": "fh"
  }
 ]

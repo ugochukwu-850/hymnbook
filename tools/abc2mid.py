@@ -6,9 +6,9 @@ Supports the subset of ABC the Open Hymnal uses: major keys, several voices
 bar-wise accidentals. Repeats are NOT expanded (one pass through the music).
 
 Usage:
-    abc2mid.py MATCHES.json OPEN_HYMNAL_DIR OUT_DIR
-MATCHES.json: [{"no": 4, "file": "Complete/X/Y.abc", ...}, ...]
-Writes OUT_DIR/<0000>.mid for each hymn and OUT_DIR/index.json.
+    abc2mid.py MATCHES.json OUT_DIR RUST_TABLE --root oh=OPEN_HYMNAL_DIR --root fh=FREEHYMNS_DIR
+Writes OUT_DIR/<0000>.mid for each hymn, OUT_DIR/index.json, and the Rust table
+that embeds the tunes (src/tunes/generated.rs).
 """
 import json
 import re
@@ -33,11 +33,25 @@ LEN_RE = re.compile(r"(\d*)(/*)(\d*)")
 DECOR = set("HIJKLMNOPQRSTUVWhijklmnopqrstuvwy~.")
 
 
+MINOR_FIFTHS = {
+    "A": 0, "E": 1, "B": 2, "F#": 3, "C#": 4, "G#": 5, "D#": 6,
+    "D": -1, "G": -2, "C": -3, "F": -4, "Bb": -5, "Eb": -6,
+}
+
+
 def key_offsets(k: str) -> dict:
-    k = (k.split("%")[0].strip().split() or ["C"])[0]
-    if k not in MAJOR_FIFTHS:
+    parts = k.split("%")[0].strip().split()
+    k = parts[0] if parts else "C"
+    minor = False
+    m = re.fullmatch(r"([A-G][#b]?)(m|min|minor)?", k)
+    if m:
+        k, minor = m.group(1), bool(m.group(2))
+    if len(parts) > 1 and parts[1].lower().startswith("min"):
+        minor = True
+    table = MINOR_FIFTHS if minor else MAJOR_FIFTHS
+    if k not in table:
         raise ValueError(f"unsupported key {k!r}")
-    n = MAJOR_FIFTHS[k]
+    n = table[k]
     off = {c: 0 for c in "ABCDEFG"}
     for c in (SHARPS[:n] if n > 0 else FLATS[:-n]):
         off[c] = 1 if n > 0 else -1
@@ -275,6 +289,8 @@ def parse_abc(text: str) -> Score:
         line = raw.rstrip("\r")
         if not line.strip() or line.startswith("%"):
             continue
+        if line[:2] == "+:":      # continuation of the previous lyric line
+            continue
         if line[:2] == "w:":
             if sc.last_line is not None:
                 sc.last_line["w"].append(line[2:])
@@ -357,6 +373,14 @@ def find_chorus(sc: Score):
     return None
 
 
+ORDER_SATB = ["Soprano", "Alto", "Tenor", "Bass"]
+
+
+def voice_label(names, i: int) -> str:
+    """Four voices are Soprano/Alto/Tenor/Bass in order; otherwise keep the file's names."""
+    return ORDER_SATB[i] if len(names) == 4 else SATB.get(names[i], names[i])
+
+
 def to_midi(sc: Score, path: Path, program: int = 19):
     mid = mido.MidiFile(type=1, ticks_per_beat=TPQ)
     bpm = float(sc.bpm or 90)
@@ -367,7 +391,7 @@ def to_midi(sc: Score, path: Path, program: int = 19):
     names = [n for n in sc.order if sc.voices[n].events]
     for ch, name in enumerate(names):
         v = sc.voices[name]
-        label = SATB.get(name, name) if len(names) == 4 else name
+        label = voice_label(names, ch)
         tr = mido.MidiTrack()
         tr.append(mido.MetaMessage("track_name", name=label, time=0))
         tr.append(mido.Message("program_change", channel=ch, program=program, time=0))
@@ -393,42 +417,81 @@ def to_midi(sc: Score, path: Path, program: int = 19):
 
 
 def main():
-    matches = json.load(open(sys.argv[1]))
+    import argparse
+
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("matches", help="JSON list of {no, title, file, src?, verse_lines?, refrain_lines?}")
+    ap.add_argument("out_dir")
+    ap.add_argument("rust_table")
+    ap.add_argument("--root", action="append", default=[], metavar="NAME=DIR",
+                    help="folder holding the ABC files of a source; `src` in a match picks one (default 'oh')")
+    args = ap.parse_args()
+
+    roots = {}
+    for r in args.root:
+        name, _, d = r.partition("=")
+        roots[name] = Path(d)
+    matches = json.load(open(args.matches))
+    out = Path(args.out_dir)
+    out.mkdir(parents=True, exist_ok=True)
     lyrics = {}
     hp = Path(__file__).resolve().parent.parent / "data" / "hymns.ndjson"
     for ln in hp.read_text(encoding="utf-8").splitlines():
         if ln.strip():
             r = json.loads(ln)
             lyrics[int(r["hymn_no"])] = r["body"]
-    oh, out = Path(sys.argv[2]), Path(sys.argv[3])
-    out.mkdir(parents=True, exist_ok=True)
+
     index, cache = {}, {}
     for m in matches:
-        f = m["file"]
-        if f not in cache:
-            txt = (oh / f).read_text(encoding="latin-1")
+        src = m.get("src", "oh")
+        key = (src, m["file"])
+        if key not in cache:
             try:
-                sc = parse_abc(txt)
+                sc = parse_abc((roots[src] / m["file"]).read_text(encoding="latin-1"))
                 names = [n for n in sc.order if sc.voices[n].events]
-                ends = {round(float(sc.voices[n].t), 3) for n in names}
-                cache[f] = (sc, names, ends)
+                ends = {round(float(sc.voices[n].t), 2) for n in names}
+                cache[key] = (sc, names, ends)
             except Exception as e:  # noqa: BLE001 - report and continue
-                cache[f] = None
-                print(f"FAIL {f}: {type(e).__name__}: {e}")
-        if cache[f] is None:
+                cache[key] = None
+                print(f"FAIL {key}: {type(e).__name__}: {e}")
+        if cache[key] is None:
             continue
-        sc, names, ends = cache[f]
+        sc, names, ends = cache[key]
+        # Quality gate: the player's S/A/T/B buttons need four voices that line up.
+        if len(names) != 4 or len(ends) != 1:
+            print(f"SKIP hymn {m['no']} ({m['file']}): {len(names)} voices, ends {sorted(ends)}")
+            continue
         dest = out / f"{int(m['no']):04d}.mid"
         to_midi(sc, dest)
         quarters = max(float(sc.voices[n].t) for n in names)
         bpm = float(sc.bpm or 90)
         body = lyrics.get(int(m["no"]), "")
         has_chorus = bool(re.search(r"(?im)^\s*(chorus|refrain|cho\.?)\s*:", body))
-        cq = find_chorus(sc) if has_chorus else None
+
+        if "verse_lines" in m:
+            # One score phrase per lyric line: the chorus starts after the verse's lines.
+            vl, rl = m["verse_lines"], m.get("refrain_lines", 0)
+            phrase_start = None
+            # Best signal: the running syllable count of the score's phrases reaches
+            # the number of syllables in verse 1 exactly where the chorus begins.
+            vs, run = m.get("verse_syllables", 0), 0
+            for k, ln in enumerate(sc.lines[:-1]):
+                run += len(lyric_tokens(ln["w"][0])) if ln["w"] else 0
+                if vs and run == vs and rl:
+                    phrase_start = sc.lines[k + 1]["slots"][0]
+                    break
+            if phrase_start is None and rl and len(sc.lines) == vl + rl:
+                phrase_start = sc.lines[vl]["slots"][0]
+            cq = phrase_start if has_chorus else None
+            if phrase_start is not None and not has_chorus:
+                quarters = float(phrase_start)     # this hymn has no chorus: verse part only
+        else:
+            cq = find_chorus(sc) if has_chorus else None
+
         index[str(int(m["no"]))] = {
             "title": m["title"],
-            "source": f,
-            "voices": [SATB.get(n, n) if len(names) == 4 else n for n in names],
+            "source": f"{src}:{m['file']}",
+            "voices": [voice_label(names, i) for i in range(len(names))],
             "bpm": bpm,
             "seconds": round(quarters * 60 / bpm, 1),
             "length": round(quarters * 60 / bpm, 3),
@@ -436,26 +499,26 @@ def main():
             "chorus_at": round(float(cq) * 60 / bpm, 3) if cq is not None else None,
             "aligned": len(ends) == 1,
         }
+
     json.dump(index, open(out / "index.json", "w"), indent=1)
-    if len(sys.argv) > 4:   # optional: emit the Rust table that embeds the tunes
-        rel = Path(sys.argv[4])
-        lines = [
-            "// @generated by tools/abc2mid.py - do not edit.",
-            "// Tunes: Open Hymnal Project scores (public domain), converted to MIDI.",
-            "use crate::audio::TuneAsset;",
-            "",
-            "pub static TUNES: &[TuneAsset] = &[",
-        ]
-        for k in sorted(index, key=int):
-            v = index[k]
-            voices = ", ".join(json.dumps(x) for x in v["voices"])
-            lines.append(
-                f"    TuneAsset {{ hymn: {int(k)}, midi: include_bytes!(\"../../assets/tunes/{int(k):04d}.mid\"), "
-                f"voices: &[{voices}], source: {json.dumps(v['source'])}, length: {v['length']}, "
-                f"chorus_at: {('Some(%s)' % v['chorus_at']) if v['chorus_at'] is not None else 'None'} }},"
-            )
-        lines.append("];")
-        rel.write_text("\n".join(lines) + "\n")
+    rel = Path(args.rust_table)
+    lines = [
+        "// @generated by tools/abc2mid.py - do not edit.",
+        "// Tunes: public-domain scores (Open Hymnal Project, freehymns) converted to MIDI.",
+        "use crate::audio::TuneAsset;",
+        "",
+        "pub static TUNES: &[TuneAsset] = &[",
+    ]
+    for k in sorted(index, key=int):
+        v = index[k]
+        voices = ", ".join(json.dumps(x) for x in v["voices"])
+        chorus = f"Some({v['chorus_at']})" if v["chorus_at"] is not None else "None"
+        lines.append(
+            f"    TuneAsset {{ hymn: {int(k)}, midi: include_bytes!(\"../../assets/tunes/{int(k):04d}.mid\"), "
+            f"voices: &[{voices}], source: {json.dumps(v['source'])}, length: {v['length']}, chorus_at: {chorus} }},"
+        )
+    lines.append("];")
+    rel.write_text("\n".join(lines) + "\n")
     bad = [k for k, v in index.items() if not v["aligned"]]
     print(f"wrote {len(index)} midi files; voices misaligned in: {bad or 'none'}")
 

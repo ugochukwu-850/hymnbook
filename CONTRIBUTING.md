@@ -34,13 +34,23 @@ tools/             icon + tune conversion scripts
 
 ## Adding tunes
 
-1. Put the ABC scores in a folder and list your matches as
-   `data/tune_matches.json` (`[{"no": 12, "title": "...", "file": "path.abc"}]`).
-2. Run `python3 tools/abc2mid.py data/tune_matches.json <abc-dir> assets/tunes src/tunes/generated.rs`
-   (needs `pip install mido`).
-3. `cargo test` checks that every tune parses and has balanced notes.
+1. Get ABC scores you may share (public domain, or your own). The bundled ones come
+   from the [Open Hymnal Project](https://github.com/mzealey/openhymnal) and
+   [freehymns/hymns](https://github.com/freehymns/hymns).
+2. Match them to hymns. `python3 tools/match_freehymns.py <freehymns-dir> matches.json`
+   matches by **lyrics** (not titles) and is a good model for other sources. List the
+   result in `data/tune_matches.json`:
+   `{"no": 12, "title": "...", "file": "music/a/X.abc", "src": "fh"}`.
+3. Convert and embed (needs `pip install mido`):
+   ```bash
+   python3 tools/abc2mid.py data/tune_matches.json assets/tunes src/tunes/generated.rs \
+       --root oh=<open-hymnal-dir> --root fh=<freehymns-dir>
+   ```
+   Tunes need four aligned voices (S/A/T/B); others are skipped.
+4. `cargo test` checks that every tune parses and has balanced notes.
 
-Please check by ear that the tune matches the hymn before opening a PR.
+**Please listen** before opening a PR: confirm the tune matches the hymn. Matching by
+lyrics is reliable but not perfect.
 
 ## Style
 

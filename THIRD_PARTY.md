@@ -5,7 +5,7 @@ bundled with it and keep their own licenses.
 
 | What | Where | License |
 |------|-------|---------|
-| **Tunes** (MIDI converted from ABC scores) | `assets/tunes/`, `data/tune_matches.json` | Public domain. Source: [The Open Hymnal Project](https://github.com/mzealey/openhymnal) scores, which mark each file "public domain". Converted by `tools/abc2mid.py`. |
+| **Tunes** (MIDI converted from ABC scores) | `assets/tunes/`, `data/tune_matches.json` | Public domain. Sources: [The Open Hymnal Project](https://github.com/mzealey/openhymnal) (each score marked "public domain") and [freehymns/hymns](https://github.com/freehymns/hymns) (scores converted from the Cyber Hymnal, each marked `Terms: Public Domain`; Cyber Hymnal asks for attribution: *The Cyber Hymnal*, hymntime.com). Converted by `tools/abc2mid.py`. |
 | **SoundFont** `TimGM6mb.sf2` | `assets/soundfont/` | GPL-2.0 (Tim Brechbill, David Bolton; some samples public domain). It is separate data that the program loads; if you redistribute the app, ship the SoundFont under its own terms. Replace it with any General MIDI SoundFont. |
 | **Fonts** Noto Sans, Noto Serif, Noto Sans Mono | `assets/fonts/` | SIL Open Font License 1.1 (`assets/fonts/LICENSE-Noto.txt`). |
 | **Icons** (Lucide) | via the `gpui-kit-assets` crate | ISC. |
