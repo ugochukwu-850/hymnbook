@@ -1,7 +1,11 @@
 name: Release
 
-# Push a tag like v0.1.0 to build Windows, macOS and Linux downloads and attach
-# them to a GitHub Release. You can also run it by hand from the Actions tab.
+# Push a tag like v0.1.1 to build installers for Windows, macOS and Linux and
+# attach them to a GitHub Release. You can also run it by hand from the Actions tab.
+#
+# Produces:  Windows  HymnBook-Setup-windows-x86_64.exe (installer) + HymnBook-windows-x86_64.exe (portable)
+#            macOS    HymnBook-macos-arm64.dmg, HymnBook-macos-x86_64.dmg
+#            Linux    HymnBook-linux-x86_64.AppImage, HymnBook-linux-amd64.deb
 on:
   push:
     tags: ["v*"]
@@ -15,16 +19,16 @@ env:
 
 jobs:
   build:
-    name: ${{ matrix.asset }}
+    name: ${{ matrix.name }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         include:
-          - { os: ubuntu-22.04,   target: x86_64-unknown-linux-gnu,  asset: HymnBook-linux-x86_64.tar.gz }
-          - { os: windows-latest, target: x86_64-pc-windows-msvc,    asset: HymnBook-windows-x86_64.zip }
-          - { os: macos-latest,   target: aarch64-apple-darwin,      asset: HymnBook-macos-arm64.zip }
-          - { os: macos-latest,   target: x86_64-apple-darwin,       asset: HymnBook-macos-x86_64.zip }
+          - { name: Linux,          os: ubuntu-22.04,   target: x86_64-unknown-linux-gnu }
+          - { name: Windows,        os: windows-latest, target: x86_64-pc-windows-msvc }
+          - { name: macOS (Apple),  os: macos-latest,   target: aarch64-apple-darwin }
+          - { name: macOS (Intel),  os: macos-latest,   target: x86_64-apple-darwin }
     steps:
       - uses: actions/checkout@v4
 
@@ -58,58 +62,90 @@ jobs:
           v="${GITHUB_REF_NAME}"
           case "$v" in v*) ;; *) v="v0.0.0-dev";; esac
           echo "version=${v#v}" >> "$GITHUB_OUTPUT"
+          mkdir dist
 
-      - name: Package (Linux)
+      # ------------------------------------------------------------ Linux
+      - name: Package (Linux AppImage + .deb)
         if: runner.os == 'Linux'
         run: |
-          d=HymnBook-linux-x86_64
-          mkdir "$d"
-          cp "target/${{ matrix.target }}/release/$BIN" "$d/$BIN"
-          cp packaging/linux/hymnbook.desktop packaging/linux/install.sh "$d/"
-          cp assets/icon/icon-512.png "$d/hymnbook.png"
-          cp README.md LICENSE THIRD_PARTY.md "$d/"
-          tar czf "${{ matrix.asset }}" "$d"
+          set -e
+          B="target/${{ matrix.target }}/release/$BIN"
+          V="${{ steps.ver.outputs.version }}"
 
-      - name: Package (macOS)
+          # AppImage: one file you download, make executable and run.
+          mkdir -p AppDir/usr/bin AppDir/usr/share/icons/hicolor/512x512/apps
+          cp "$B" AppDir/usr/bin/hymnbook
+          cp packaging/linux/hymnbook.desktop AppDir/hymnbook.desktop
+          cp assets/icon/icon-512.png AppDir/hymnbook.png
+          cp assets/icon/icon-512.png AppDir/usr/share/icons/hicolor/512x512/apps/hymnbook.png
+          cp packaging/linux/AppRun AppDir/AppRun
+          curl -fsSL -o appimagetool https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
+          chmod +x appimagetool
+          ARCH=x86_64 ./appimagetool --appimage-extract-and-run AppDir dist/HymnBook-linux-x86_64.AppImage
+
+          # .deb: double-click to install on Ubuntu, Debian, Mint...
+          mkdir -p deb/DEBIAN deb/usr/bin deb/usr/share/applications deb/usr/share/icons/hicolor/512x512/apps
+          cp "$B" deb/usr/bin/hymnbook
+          cp packaging/linux/hymnbook.desktop deb/usr/share/applications/hymnbook.desktop
+          cp assets/icon/icon-512.png deb/usr/share/icons/hicolor/512x512/apps/hymnbook.png
+          cat > deb/DEBIAN/control <<EOF
+          Package: hymnbook
+          Version: $V
+          Section: sound
+          Priority: optional
+          Architecture: amd64
+          Maintainer: Hymn Book contributors <hymnbook@users.noreply.github.com>
+          Depends: libasound2 | libasound2t64, libxkbcommon0, libvulkan1, libfontconfig1
+          Homepage: https://github.com/ugochukwu-850/hymnbook
+          Description: Faith Tabernacle Hymn Book
+           Read every hymn and hear its tune: verse and chorus, with voice parts.
+          EOF
+          sed -i 's/^          //' deb/DEBIAN/control
+          dpkg-deb --build --root-owner-group deb dist/HymnBook-linux-amd64.deb
+
+      # ---------------------------------------------------------- Windows
+      - name: Package (Windows installer + portable exe)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          Copy-Item "target/${{ matrix.target }}/release/$env:BIN.exe" "dist/HymnBook-windows-x86_64.exe"
+          choco install innosetup -y --no-progress
+          & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" /DMyAppVersion=${{ steps.ver.outputs.version }} packaging\windows\hymnbook.iss
+          Get-ChildItem dist
+
+      # ------------------------------------------------------------ macOS
+      - name: Package (macOS .dmg)
         if: runner.os == 'macOS'
         run: |
-          app="Hymn Book.app"
+          set -e
+          case "${{ matrix.target }}" in aarch64*) arch=arm64;; *) arch=x86_64;; esac
+          app="stage/Hymn Book.app"
           mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources"
           cp "target/${{ matrix.target }}/release/$BIN" "$app/Contents/MacOS/$BIN"
           cp assets/icon/icon.icns "$app/Contents/Resources/icon.icns"
           sed "s/__VERSION__/${{ steps.ver.outputs.version }}/g" packaging/macos/Info.plist > "$app/Contents/Info.plist"
           # ad-hoc sign so Apple Silicon will run it (not notarised)
           codesign --force --deep -s - "$app"
-          ditto -c -k --keepParent "$app" "${{ matrix.asset }}"
+          ln -s /Applications stage/Applications
+          hdiutil create -volname "Hymn Book" -srcfolder stage -ov -format UDZO "dist/HymnBook-macos-$arch.dmg"
 
-      - name: Package (Windows)
-        if: runner.os == 'Windows'
-        shell: pwsh
-        run: |
-          $d = "HymnBook-windows-x86_64"
-          New-Item -ItemType Directory $d | Out-Null
-          Copy-Item "target/${{ matrix.target }}/release/$env:BIN.exe" "$d/HymnBook.exe"
-          Copy-Item README.md, LICENSE, THIRD_PARTY.md $d
-          Compress-Archive -Path $d -DestinationPath "${{ matrix.asset }}"
-
-      - name: Checksum
+      - name: Checksums
         shell: bash
         run: |
-          if command -v sha256sum >/dev/null; then sha256sum "${{ matrix.asset }}" > "${{ matrix.asset }}.sha256";
-          else shasum -a 256 "${{ matrix.asset }}" > "${{ matrix.asset }}.sha256"; fi
+          cd dist
+          for f in *; do
+            if command -v sha256sum >/dev/null; then sha256sum "$f" > "$f.sha256"; else shasum -a 256 "$f" > "$f.sha256"; fi
+          done
+          ls -la
 
       - uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.asset }}
-          path: |
-            ${{ matrix.asset }}
-            ${{ matrix.asset }}.sha256
+          name: HymnBook-${{ matrix.target }}
+          path: dist/*
 
       - name: Attach to the GitHub Release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
           generate_release_notes: true
-          files: |
-            ${{ matrix.asset }}
-            ${{ matrix.asset }}.sha256
+          files: dist/*

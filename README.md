@@ -34,12 +34,15 @@ hymns it has music for, the way it is sung: **verse, chorus, verse, chorus…**
 
 ## Download
 
-Get the latest build from the [**Releases**](../../releases/latest) page
-(Windows `.zip`, macOS `.zip`, Linux `.tar.gz`) or from the project website.
+Get the installer for your system from the [**latest release**](../../releases/latest)
+or from the [website](https://hymnbook-two.vercel.app):
 
-- **Windows:** unzip and run `HymnBook.exe`. If SmartScreen warns, choose *More info → Run anyway*.
-- **macOS:** unzip, then right-click **Hymn Book** → *Open* the first time (the app is not notarised).
-- **Linux:** extract, then run `./install.sh` (installs for your user) or just `./hymnbook`.
+| System | File | How |
+|--------|------|-----|
+| **Windows** | `HymnBook-Setup-windows-x86_64.exe` | Run the installer. (`HymnBook-windows-x86_64.exe` is a portable single file.) If SmartScreen warns, choose *More info → Run anyway*. |
+| **macOS** (Apple Silicon / Intel) | `HymnBook-macos-arm64.dmg` / `HymnBook-macos-x86_64.dmg` | Open the disk image and drag **Hymn Book** to Applications. The first time, right-click → *Open* (the app is not notarised). |
+| **Linux** | `HymnBook-linux-x86_64.AppImage` | `chmod +x` it and run it – nothing to install. |
+| **Debian / Ubuntu** | `HymnBook-linux-amd64.deb` | Double-click it, or `sudo apt install ./HymnBook-linux-amd64.deb`. |
 
 ## Build from source
 

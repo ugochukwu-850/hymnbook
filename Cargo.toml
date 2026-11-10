@@ -1,6 +1,6 @@
 [package]
 name = "hymnbook"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 description = "Faith Tabernacle Hymn Book: browse every hymn and hear its tune"
 license = "MIT"
