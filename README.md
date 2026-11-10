@@ -8,7 +8,7 @@
 
 Windows · macOS · Linux — free and open source
 
-**[Website and downloads](https://hymnbook-two.vercel.app)** · [Latest release](../../releases/latest) · [Suggest or report something](../../issues/new/choose)
+**[Website and downloads](https://hymnbook-two.vercel.app)** · [Watch the film](https://hymnbook-two.vercel.app/#film) · [Latest release](../../releases/latest) · [Suggest or report something](../../issues/new/choose)
 
 <img src="docs/screenshot.png" width="860" alt="Hymn Book screenshot">
 

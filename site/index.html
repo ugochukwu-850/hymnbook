@@ -118,6 +118,11 @@ h1 em{font-style:italic;padding-right:.06em;background:linear-gradient(100deg,#F
 .row span b{font:700 12px "JetBrains Mono",monospace;color:var(--gold)}
 @keyframes slide{to{transform:translateX(-50%)}}
 
+/* film */
+.film{max-width:1060px;margin:64px auto 0;border-radius:32px;padding:10px;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.03));box-shadow:0 70px 150px -40px #000,0 0 0 1px rgba(255,255,255,.08),0 0 140px -30px var(--glow)}
+.film video{display:block;width:100%;aspect-ratio:16/9;border-radius:24px;background:#000}
+.film-note{text-align:center;color:var(--dim);font-size:14px;margin-top:18px}
+
 /* sections */
 section{padding:120px 0;position:relative}
 .kicker{display:inline-block;font:700 13px "JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
@@ -309,7 +314,7 @@ footer a:hover{color:var(--gold)}
 <nav><div class="wrap">
   <a class="brand" href="#top"><img src="icon-512.png" alt=""><span>Hymn Book<small>Faith Tabernacle</small></span></a>
   <div class="links">
-    <a href="#sound">How it works</a><a href="#features">Features</a><a href="#faq">FAQ</a>
+    <a href="#film">Film</a><a href="#sound">How it works</a><a href="#features">Features</a><a href="#faq">FAQ</a>
     <a class="pill" href="#download">Download</a>
   </div>
 </div></nav>
@@ -354,6 +359,16 @@ footer a:hover{color:var(--gold)}
     <div class="stat"><b data-count="4">4</b><span>voices: S A T B</span></div>
     <div class="stat"><b data-count="3">3</b><span>platforms, one app</span></div>
   </div>
+</div></section>
+
+<section id="film"><div class="wrap center">
+  <span class="kicker reveal">The film</span>
+  <h2 class="reveal" style="--d:.05s">See it. <em>Hear</em> it.</h2>
+  <p class="sec-lead reveal" style="--d:.1s">Forty-four seconds. The music is the app itself, playing The Old Rugged Cross.</p>
+  <div class="film reveal" style="--d:.12s">
+    <video controls playsinline preload="none" poster="video/poster.jpg" aria-label="Hymn Book promo film"><source src="video/hymnbook-promo.mp4" type="video/mp4"></video>
+  </div>
+  <p class="film-note reveal">Turn your sound on.</p>
 </div></section>
 
 <section id="sound"><div class="wrap">
