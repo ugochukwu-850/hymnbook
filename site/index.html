@@ -1,285 +1,684 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hymn Book – Faith Tabernacle</title>
-<meta name="description" content="Browse all 1,000 Faith Tabernacle hymns, read the lyrics and hear the tune – verses, chorus and every voice. Free and open source for Windows, macOS and Linux.">
-<meta name="theme-color" content="#08090C">
-<meta property="og:title" content="Hymn Book – Faith Tabernacle">
-<meta property="og:description" content="Every hymn. Now you can hear it. Free, open source desktop app.">
-<meta property="og:image" content="icon-512.png">
+<meta name="description" content="Browse all 1,000 Faith Tabernacle hymns, read the words and hear the tune – verses, chorus and every voice. Free and open source for Windows, macOS and Linux.">
+<meta name="theme-color" content="#07080B">
+<meta property="og:title" content="Hymn Book – Every hymn. Now you can hear it.">
+<meta property="og:description" content="1,000 hymns, 239 playable tunes, verse-and-chorus song map and SATB voice control. Free, open source desktop app.">
+<meta property="og:image" content="img/hero.png">
+<meta name="color-scheme" content="dark">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;800&family=Noto+Serif:wght@400;700&family=Noto+Sans+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.className="js"</script>
 <style>
+@property --a{syntax:"<angle>";initial-value:0deg;inherits:false}
 :root{
-  --bg:#08090C; --panel:#121419; --raised:#1B1E26; --hover:#181B22;
-  --line:rgba(255,255,255,.07); --text:#EEEFF2; --text2:#A6AAB6; --text3:#6C7180;
-  --accent:#F0B35A; --accent-soft:rgba(240,179,90,.13); --on-accent:#1A1204;
-  --radius:24px;
-}
-@media (prefers-color-scheme: light){
-  :root{
-    --bg:#E9EAEE; --panel:#FFFFFF; --raised:#F1F2F6; --hover:#F6F7FA;
-    --line:rgba(0,0,0,.08); --text:#14161C; --text2:#545968; --text3:#8A8F9E;
-    --accent:#B86A0B; --accent-soft:rgba(184,106,11,.10); --on-accent:#fff;
-  }
+  --bg:#07080B; --surface:#0D0F14; --raised:#141720; --raised2:#1A1E29;
+  --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.14);
+  --text:#F3F4F6; --muted:#9AA0AE; --dim:#6B7180;
+  --gold:#F0B35A; --gold2:#FFE0AE; --glow:rgba(240,179,90,.20); --on-gold:#1A1204;
+  --r:28px; --ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font:400 16px/1.6 "Noto Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{background:var(--bg);color:var(--text);font:400 17px/1.6 "Inter",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+img{display:block;max-width:100%}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:10px}
+
+/* progress hairline */
+.bar{position:fixed;top:0;left:0;height:2px;width:100%;transform-origin:left;transform:scaleX(var(--p,0));background:linear-gradient(90deg,var(--gold),var(--gold2));z-index:60}
 
 /* nav */
-nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand{display:flex;align-items:center;gap:12px;font-weight:700}
-.brand img{width:32px;height:32px;border-radius:9px}
-.brand small{display:block;font-weight:400;font-size:11px;color:var(--text3);line-height:1.1}
-.links{display:flex;gap:6px;align-items:center}
-.links a{padding:8px 14px;border-radius:999px;color:var(--text2);font-weight:600;font-size:14px;transition:background .2s,color .2s}
-.links a:hover{background:var(--raised);color:var(--text)}
-.links a.pill{background:var(--accent);color:var(--on-accent)}
-.links a.pill:hover{filter:brightness(1.08);background:var(--accent);color:var(--on-accent)}
+nav{position:sticky;top:0;z-index:50;background:rgba(7,8,11,.72);backdrop-filter:blur(14px) saturate(1.4);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:-.01em}
+.brand img{width:34px;height:34px;border-radius:10px;box-shadow:0 6px 20px -6px var(--glow)}
+.brand small{display:block;font-weight:500;font-size:11px;color:var(--dim);line-height:1.1;letter-spacing:.02em}
+.links{display:flex;align-items:center;gap:4px}
+.links a{padding:9px 15px;border-radius:999px;color:var(--muted);font-weight:500;font-size:14.5px;transition:color .2s,background .2s}
+.links a:hover{color:var(--text);background:var(--raised)}
+.links a.pill{background:var(--gold);color:var(--on-gold);font-weight:700;margin-left:8px}
+.links a.pill:hover{filter:brightness(1.1)}
+
+/* buttons */
+.btn{--mx:0px;--my:0px;display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;border-radius:999px;font-weight:700;font-size:16px;cursor:pointer;border:0;font-family:inherit;
+  transform:translate(var(--mx),var(--my));transition:transform .25s var(--ease),filter .2s,background .2s,box-shadow .3s}
+.btn.primary{background:linear-gradient(180deg,#F7C377,#EDA94A);color:var(--on-gold);box-shadow:0 14px 40px -12px rgba(240,179,90,.55),inset 0 1px 0 rgba(255,255,255,.4)}
+.btn.primary:hover{box-shadow:0 18px 50px -10px rgba(240,179,90,.75),inset 0 1px 0 rgba(255,255,255,.5)}
+.btn.ghost{background:var(--raised);color:var(--text);box-shadow:inset 0 0 0 1px var(--line2)}
+.btn.ghost:hover{background:var(--raised2)}
+.btn svg{width:18px;height:18px;flex:none}
 
 /* hero */
-.hero{padding:88px 0 40px;text-align:center}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:13px}
-.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--accent)}
-h1{font-size:clamp(40px,7vw,76px);line-height:1.03;font-weight:800;letter-spacing:-.02em;margin:22px auto 18px;max-width:14ch}
-h1 em{font-style:normal;color:var(--accent)}
-.lead{max-width:56ch;margin:0 auto;color:var(--text2);font-size:clamp(17px,2.2vw,20px)}
-.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
-.btn{display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 26px;border-radius:999px;font-weight:700;font-size:16px;transition:transform .2s,filter .2s,background .2s}
-.btn:hover{transform:translateY(-2px)}
-.btn.primary{background:var(--accent);color:var(--on-accent)}
-.btn.primary:hover{filter:brightness(1.08)}
-.btn.ghost{background:var(--raised);color:var(--text)}
-.btn.ghost:hover{background:var(--hover)}
-.sub{margin-top:14px;color:var(--text3);font-size:14px}
+.hero{position:relative;padding:84px 0 0;text-align:center;isolation:isolate}
+.hero .orb{position:absolute;left:50%;top:-80px;width:min(1100px,130vw);aspect-ratio:1/.62;transform:translateX(-50%);z-index:-2;
+  background:radial-gradient(closest-side,rgba(240,179,90,.28),rgba(240,179,90,.08) 55%,transparent 75%);filter:blur(10px);animation:breathe 9s ease-in-out infinite}
+.hero .grid{position:absolute;inset:0;z-index:-3;opacity:.55;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:72px 72px;
+  mask-image:radial-gradient(ellipse 70% 60% at 50% 20%,#000 20%,transparent 75%)}
+@keyframes breathe{50%{opacity:.7;transform:translateX(-50%) scale(1.06)}}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 12px;border-radius:999px;background:var(--raised);box-shadow:inset 0 0 0 1px var(--line2);font-size:13.5px;font-weight:600;color:var(--muted)}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 var(--glow);animation:ping 2.4s infinite}
+.eyebrow b{color:var(--text);font-weight:600}
+@keyframes ping{70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(46px,8.3vw,120px);line-height:.94;letter-spacing:-.03em;margin:30px auto 26px;max-width:none;text-wrap:balance}
+h1 em{font-style:italic;padding-right:.06em;background:linear-gradient(100deg,#F0B35A 25%,#FFF0D0 48%,#F0B35A 72%);background-size:240% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite}
+@keyframes shine{to{background-position:-240% 0}}
+.lead{max-width:56ch;margin:0 auto;color:var(--muted);font-size:clamp(17px,2vw,20px)}
+.cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:40px}
+.plat{margin-top:22px;color:var(--dim);font-size:14px;display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap}
+.plat span{display:inline-flex;align-items:center;gap:6px}
+.plat span+span::before{content:"";width:3px;height:3px;border-radius:50%;background:var(--dim);margin-right:4px}
 
-/* demo */
-.demo{margin:56px auto 0;max-width:1040px;background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:10px;box-shadow:0 40px 90px -30px rgba(0,0,0,.55)}
-.demo img,.shot img{display:block;width:100%;height:auto;border-radius:20px}
-.shot{background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:8px;box-shadow:0 30px 70px -30px rgba(0,0,0,.5)}
-.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:20px;align-items:start}
-.shots figure{margin:0}
-.shots figcaption{padding:14px 6px 0;color:var(--text2);font-size:15px}
-.shots figcaption b{color:var(--text)}
-.shot.wide{grid-column:1/-1}
+/* equalizer on the listen button */
+.eq{display:inline-flex;gap:3px;align-items:flex-end;height:16px;width:18px}
+.eq i{flex:1;background:currentColor;border-radius:2px;height:35%;transition:height .2s}
+.playing .eq i{animation:eq 1s ease-in-out infinite}
+.playing .eq i:nth-child(2){animation-delay:-.4s}.playing .eq i:nth-child(3){animation-delay:-.75s}.playing .eq i:nth-child(4){animation-delay:-.2s}
+@keyframes eq{0%,100%{height:25%}50%{height:100%}}
+
+/* hero screen */
+.stage{position:relative;max-width:1180px;margin:84px auto 0;transform:translateY(var(--py,0px));will-change:transform}
+.frame{position:relative;border-radius:26px;padding:10px;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.03));
+  box-shadow:0 80px 160px -40px rgba(0,0,0,.95),0 0 0 1px rgba(255,255,255,.07),0 0 120px -20px var(--glow)}
+.frame::before{content:"";position:absolute;inset:-1px;border-radius:27px;padding:1.5px;pointer-events:none;
+  background:conic-gradient(from var(--a),transparent 0 62%,rgba(240,179,90,.95) 82%,transparent 100%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:spin 8s linear infinite}
+@keyframes spin{to{--a:360deg}}
+.frame img{width:100%;height:auto;border-radius:18px}
+.stage::after{content:"";position:absolute;left:8%;right:8%;bottom:-60px;height:90px;background:radial-gradient(closest-side,rgba(240,179,90,.22),transparent);filter:blur(20px);z-index:-1}
+.call{position:absolute;display:flex;align-items:center;gap:10px;padding:11px 16px;border-radius:16px;background:rgba(20,23,32,.94);box-shadow:inset 0 0 0 1px var(--line2),0 24px 50px -20px #000;
+  font-size:14px;font-weight:600;color:var(--text);white-space:nowrap;animation:float 7s ease-in-out infinite}
+.call i{width:8px;height:8px;border-radius:50%;background:var(--gold);flex:none}
+.call.c1{left:-112px;top:58%}
+.call.c2{right:-118px;top:22%;animation-delay:-2s}
+.call.c3{left:7%;bottom:-26px;animation-delay:-4s}
+.call.c4{right:6%;bottom:-26px;animation-delay:-1s}
+@keyframes float{50%{transform:translateY(-9px)}}
+@media(max-width:1439px){.call.c1,.call.c2{display:none}}
+@media(max-width:820px){.call{display:none}}
+
+/* marquee */
+.marq{margin:110px 0 0;display:grid;gap:14px;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.row{display:flex;gap:14px;width:max-content;animation:slide 60s linear infinite}
+.row.rev{animation-direction:reverse;animation-duration:75s}
+.marq:hover .row{animation-play-state:paused}
+.row span{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);color:var(--muted);font-size:15px;white-space:nowrap}
+.row span b{font:700 12px "JetBrains Mono",monospace;color:var(--gold)}
+@keyframes slide{to{transform:translateX(-50%)}}
 
 /* sections */
-section{padding:84px 0}
-h2{font-size:clamp(28px,4vw,42px);line-height:1.1;font-weight:800;letter-spacing:-.015em;margin-bottom:12px}
-.sec-lead{color:var(--text2);max-width:60ch;margin-bottom:40px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:transform .25s,border-color .25s}
-.card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 40%,var(--line))}
-.card .ic{width:46px;height:46px;border-radius:14px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font:700 16px "Noto Sans Mono",monospace;margin-bottom:18px}
-.card h3{font-size:18px;margin-bottom:6px}
-.card p{color:var(--text2);font-size:15px}
+section{padding:120px 0;position:relative}
+.kicker{display:inline-block;font:700 13px "JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(40px,6vw,76px);line-height:.98;letter-spacing:-.025em;max-width:16ch;text-wrap:balance}
+h2 em{font-style:italic;color:var(--gold)}
+.sec-lead{color:var(--muted);max-width:58ch;margin-top:20px;font-size:clamp(17px,1.8vw,19px)}
+.center{text-align:center}.center h2,.center .sec-lead{margin-left:auto;margin-right:auto}
 
-/* map demo */
-.map{display:flex;gap:4px;margin:22px 0 0;max-width:420px}
-.map b{flex:1;height:26px;border-radius:8px;background:var(--raised);display:grid;place-items:center;font:700 11px "Noto Sans Mono",monospace;color:var(--text2)}
-.map b.on{background:var(--accent);color:var(--on-accent)}
-.map b.done{background:var(--accent-soft)}
+/* stats */
+.stats{padding:0}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);border-radius:var(--r);background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);overflow:hidden}
+.stat{padding:38px 28px;text-align:center;position:relative}
+.stat+.stat::before{content:"";position:absolute;left:0;top:24%;bottom:24%;width:1px;background:var(--line)}
+.stat b{display:block;font:400 clamp(44px,5.4vw,72px)/1 "Instrument Serif",serif;letter-spacing:-.02em;background:linear-gradient(180deg,#fff,#c9ccd4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{display:block;margin-top:8px;color:var(--dim);font-size:14px;font-weight:500}
+@media(max-width:760px){.stat-grid{grid-template-columns:1fr 1fr}.stat:nth-child(3)::before{display:none}.stat:nth-child(n+3){border-top:1px solid var(--line)}}
+
+/* signature demo */
+.demo{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center;margin-top:64px}
+@media(max-width:960px){.demo{grid-template-columns:1fr;gap:36px}}
+.steps{list-style:none;padding:0;display:grid;gap:22px}
+.steps li{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start}
+.steps .n{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:var(--raised);box-shadow:inset 0 0 0 1px var(--line2);font:700 14px "JetBrains Mono",monospace;color:var(--gold)}
+.steps h3{font-size:19px;letter-spacing:-.01em;margin-bottom:2px}
+.steps p{color:var(--muted);font-size:15.5px}
+.app{border-radius:26px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line2),0 50px 100px -40px #000,0 0 90px -30px var(--glow);overflow:hidden}
+.app .top{display:flex;align-items:center;gap:8px;padding:14px 18px;border-bottom:1px solid var(--line);color:var(--dim);font-size:13px}
+.app .top i{width:10px;height:10px;border-radius:50%;background:var(--raised2)}
+.app .top span{margin-left:8px;font-weight:600;color:var(--muted)}
+.lyr{padding:34px 34px 26px;min-height:300px;position:relative}
+.lyr .tag{display:inline-flex;align-items:center;gap:8px;font:700 12px "JetBrains Mono",monospace;letter-spacing:.1em;color:var(--gold);padding:6px 12px;border-radius:999px;background:rgba(240,179,90,.12)}
+.lyr h4{font:400 34px/1.1 "Instrument Serif",serif;margin:14px 0 16px;letter-spacing:-.01em}
+.lyr p{font:400 21px/1.62 "Instrument Serif",serif;color:#E7E8EC;transition:opacity .35s,transform .45s var(--ease)}
+.lyr p span{display:block}
+.lyr.swap p,.lyr.swap h4{opacity:0;transform:translateY(8px)}
+.lyr.chorus{background:linear-gradient(180deg,rgba(240,179,90,.10),transparent 70%)}
+.ctrl{padding:18px 22px 22px;border-top:1px solid var(--line);display:grid;gap:14px}
+.map{display:flex;gap:6px}
+.map button{flex:1;height:34px;border-radius:10px;border:0;cursor:pointer;background:var(--raised);color:var(--muted);font:700 12px "JetBrains Mono",monospace;position:relative;overflow:hidden;transition:background .2s,color .2s,transform .2s}
+.map button:hover{background:var(--raised2);color:var(--text)}
+.map button.c{flex:.7}
+.map button.on{background:var(--gold);color:var(--on-gold)}
+.map button.done{background:rgba(240,179,90,.22);color:var(--gold2)}
+.map button i{position:absolute;left:0;top:0;bottom:0;width:0;background:rgba(255,255,255,.28)}
+.map button.on i{animation:fill var(--dur,4s) linear forwards}
+@keyframes fill{to{width:100%}}
+.row2{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.voices{display:flex;gap:8px}
+.voices button{width:40px;height:40px;border-radius:50%;border:0;cursor:pointer;background:var(--raised);color:var(--dim);font:700 13px "JetBrains Mono",monospace;transition:background .2s,color .2s,transform .2s}
+.voices button.on{background:rgba(240,179,90,.18);color:var(--gold)}
+.voices button:hover{transform:translateY(-2px)}
+.play{width:52px;height:52px;border-radius:50%;border:0;cursor:pointer;background:var(--gold);color:var(--on-gold);display:grid;place-items:center;box-shadow:0 10px 30px -10px rgba(240,179,90,.7)}
+.play svg{width:20px;height:20px}
+.toggle{display:inline-flex;align-items:center;gap:9px;padding:8px 14px;border-radius:999px;border:0;cursor:pointer;background:var(--raised);color:var(--muted);font:600 13px "Inter",sans-serif;transition:background .2s,color .2s}
+.toggle i{width:9px;height:9px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--dim);transition:all .2s}
+.toggle.on{background:rgba(240,179,90,.16);color:var(--gold)}
+.toggle.on i{background:var(--gold);box-shadow:none}
+.hint{color:var(--dim);font-size:13px;text-align:center}
+
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:64px}
+.tile{--mx:50%;--my:0%;display:flex;flex-direction:column;position:relative;border-radius:var(--r);background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);padding:30px;overflow:hidden;transition:box-shadow .3s}
+.tile::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(520px circle at var(--mx) var(--my),rgba(240,179,90,.11),transparent 42%);opacity:0;transition:opacity .3s}
+.tile:hover{box-shadow:inset 0 0 0 1px rgba(240,179,90,.35)}
+.tile:hover::before{opacity:1}
+.tile h3{font-size:21px;letter-spacing:-.015em;margin-bottom:6px}
+.tile p{color:var(--muted);font-size:15.5px;max-width:42ch}
+.tile>p{margin-bottom:26px}
+.tile>:last-child{margin-top:auto}
+.t1,.t2{grid-column:span 3}.t3,.t4,.t5{grid-column:span 2}
+@media(max-width:980px){.t1,.t2{grid-column:span 6}.t3,.t4,.t5{grid-column:span 3}}
+@media(max-width:640px){.t3,.t4,.t5{grid-column:span 6}}
+.zoom{height:290px;border-radius:18px;box-shadow:inset 0 0 0 1px var(--line2);background:url(img/follow.png) 95% 41%/170% no-repeat;position:relative}
+.mini{border-radius:22px;background:var(--bg);box-shadow:inset 0 0 0 1px var(--line2),0 30px 60px -30px #000;padding:20px;display:grid;gap:18px}
+.mi-top{display:flex;align-items:center;gap:14px}
+.mi-num{flex:none;width:48px;height:48px;border-radius:13px;background:rgba(240,179,90,.14);color:var(--gold);display:grid;place-items:center;font:700 13px "JetBrains Mono",monospace}
+.mi-t b{display:block;font-size:15px;letter-spacing:-.01em}.mi-t span{font-size:12.5px;color:var(--dim)}
+.mi-ctl{display:flex;align-items:center;justify-content:center;gap:10px}
+.mi-v{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:rgba(240,179,90,.16);color:var(--gold);font:700 11.5px "JetBrains Mono",monospace}
+.mi-v.off{background:var(--raised);color:var(--dim)}
+.mi-p{width:44px;height:44px;border-radius:50%;background:var(--gold);color:var(--on-gold);display:grid;place-items:center;margin:0 6px;box-shadow:0 8px 24px -8px rgba(240,179,90,.7)}
+.mi-p svg{width:18px;height:18px}
+.mi-map{display:flex;gap:4px}
+.mi-map b{flex:1;height:28px;border-radius:9px;background:var(--raised);display:grid;place-items:center;position:relative;overflow:hidden;font:700 11px "JetBrains Mono",monospace;color:var(--muted)}
+.mi-map b.c{flex:.62}.mi-map b.d{background:rgba(240,179,90,.25);color:var(--gold2)}
+.mi-map b.on{color:var(--on-gold);background:rgba(240,179,90,.38)}
+.mi-map b.on::before{content:"";position:absolute;inset:0;width:0;background:var(--gold);animation:fill 5s linear infinite}
+.mi-map b span{position:relative}
+.mi-time{display:flex;justify-content:space-between;font:500 11px "JetBrains Mono",monospace;color:var(--dim);margin-top:-6px}
+.zoom::after{content:"";position:absolute;inset:0;border-radius:18px;box-shadow:inset 0 -60px 50px -30px var(--surface)}
+.bigvoices{display:flex;gap:10px}
+.bigvoices button{flex:1;height:120px;border-radius:18px;border:0;cursor:pointer;background:var(--raised);color:var(--dim);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:14px 0 12px;font:700 15px "JetBrains Mono",monospace;transition:background .25s,color .25s,transform .25s}
+.bigvoices button:hover{transform:translateY(-3px)}
+.bigvoices button.on{background:rgba(240,179,90,.14);color:var(--gold)}
+.bars{display:flex;gap:3px;align-items:flex-end;height:56px}
+.bars i{width:4px;background:currentColor;border-radius:3px;height:20%;opacity:.5}
+.on .bars i{opacity:1;animation:eq 1.1s ease-in-out infinite}
+.on .bars i:nth-child(2){animation-delay:-.3s}.on .bars i:nth-child(3){animation-delay:-.6s}.on .bars i:nth-child(4){animation-delay:-.15s}.on .bars i:nth-child(5){animation-delay:-.8s}
+.srch{display:grid;gap:10px}
+.srch .in{display:flex;align-items:center;gap:10px;height:48px;padding:0 18px;border-radius:999px;background:var(--raised);box-shadow:inset 0 0 0 1px var(--line2);color:var(--text);font-size:15px}
+.srch .in svg{width:16px;height:16px;color:var(--dim);flex:none}
+.srch .caret{display:inline-block;width:2px;height:1.1em;background:var(--gold);margin-left:1px;animation:blink 1s steps(1) infinite;vertical-align:-3px}
+@keyframes blink{50%{opacity:0}}
+.hits{display:grid;gap:8px;min-height:164px;align-content:start}
+.hit{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:14px;background:var(--raised);animation:pop .4s var(--ease) both}
+.hit b{width:40px;height:34px;border-radius:10px;background:var(--raised2);display:grid;place-items:center;font:700 12px "JetBrains Mono",monospace;color:var(--muted)}
+.hit span{font-weight:600;font-size:14.5px}
+.hit em{margin-left:auto;font:700 9.5px "JetBrains Mono",monospace;font-style:normal;padding:4px 8px;border-radius:999px;background:rgba(240,179,90,.14);color:var(--gold)}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}}
+.themes{position:relative;margin-top:18px;border-radius:16px;overflow:hidden;box-shadow:0 0 0 1px var(--line2);aspect-ratio:1280/820}
+.themes img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .7s}
+.themes img.l{opacity:0}.themes.light img.l{opacity:1}
+.seg{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:var(--raised);margin-top:18px}
+.seg button{border:0;cursor:pointer;height:34px;padding:0 16px;border-radius:999px;background:transparent;color:var(--muted);font:600 13px "Inter",sans-serif}
+.seg button.on{background:var(--raised2);color:var(--text);box-shadow:inset 0 0 0 1px var(--line2)}
+.icons{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.icons div{padding:16px;border-radius:16px;background:var(--raised);font-size:14px;color:var(--muted)}
+.icons b{display:block;color:var(--text);font-size:15px;margin-bottom:2px}
 
 /* download */
-#download .card{display:flex;flex-direction:column;gap:6px}
-#download .card.hl{border-color:var(--accent);background:linear-gradient(0deg,var(--accent-soft),var(--accent-soft)),var(--panel)}
-#download .os{font-weight:800;font-size:20px}
-#download .meta{color:var(--text3);font-size:13px;margin-bottom:14px}
-#download .btn{height:46px;font-size:15px;justify-content:center;margin-top:auto}
-.note{margin-top:26px;color:var(--text3);font-size:14px;max-width:80ch}
-.note b{color:var(--text2)}
+.dl{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:60px}
+@media(max-width:900px){.dl{grid-template-columns:1fr}}
+.os{position:relative;border-radius:var(--r);background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);padding:32px;display:flex;flex-direction:column;gap:6px;transition:transform .3s var(--ease),box-shadow .3s}
+.os:hover{transform:translateY(-4px)}
+.os.hl{box-shadow:inset 0 0 0 1.5px var(--gold),0 30px 80px -30px var(--glow);background:linear-gradient(180deg,rgba(240,179,90,.08),transparent 60%),var(--surface)}
+.os .badge{position:absolute;top:18px;right:18px;font:700 10.5px "JetBrains Mono",monospace;letter-spacing:.08em;color:var(--on-gold);background:var(--gold);padding:5px 10px;border-radius:999px;display:none}
+.os.hl .badge{display:block}
+.os .logo{width:54px;height:54px;border-radius:16px;background:var(--raised);display:grid;place-items:center;margin-bottom:14px;color:var(--text);font:700 22px "JetBrains Mono",monospace}
+.os .logo svg{width:26px;height:26px}
+.os h3{font-size:24px;letter-spacing:-.02em}
+.os .sub{color:var(--dim);font-size:14px;margin-bottom:18px}
+.os .btn{height:50px;font-size:15px;margin-top:auto}
+.os .more{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13.5px;color:var(--dim)}
+.os .more a{color:var(--muted);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line2)}
+.os .more a:hover{color:var(--gold)}
+.note{margin-top:30px;padding:18px 22px;border-radius:18px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);color:var(--muted);font-size:14.5px}
+.note b{color:var(--text)}
 
-/* github */
-.gh{display:grid;grid-template-columns:1.2fr 1fr;gap:16px}
-@media(max-width:820px){.gh{grid-template-columns:1fr}}
-.gh .card.big{padding:40px}
-.list{list-style:none;padding:0;display:grid;gap:12px;margin-top:6px}
-.list li{display:flex;gap:12px;color:var(--text2)}
-.list li::before{content:"";flex:none;margin-top:9px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+/* faq */
+.faq{max-width:820px;margin:60px auto 0;display:grid;gap:12px}
+.faq details{border-radius:20px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);transition:box-shadow .25s}
+.faq details[open]{box-shadow:inset 0 0 0 1px rgba(240,179,90,.35)}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 26px;font-weight:600;font-size:17.5px;letter-spacing:-.01em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;background:var(--raised);display:grid;place-items:center;color:var(--gold);font:500 20px/1 "Inter";transition:transform .3s var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 26px 24px;color:var(--muted);font-size:16px;max-width:68ch}
+.faq a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
 
-footer{border-top:1px solid var(--line);padding:36px 0 56px;color:var(--text3);font-size:14px}
-footer .wrap{display:flex;gap:20px 40px;justify-content:space-between;flex-wrap:wrap}
-footer a{color:var(--text2);text-decoration:underline;text-underline-offset:3px}
-footer p{max-width:60ch}
+/* cta band */
+.band{margin:0 24px;max-width:1112px;margin-inline:auto;border-radius:40px;padding:90px 30px;text-align:center;position:relative;overflow:hidden;isolation:isolate;
+  background:radial-gradient(120% 140% at 50% 0%,rgba(240,179,90,.28),rgba(240,179,90,.06) 55%,var(--surface) 80%);box-shadow:inset 0 0 0 1px rgba(240,179,90,.28)}
+.band::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(closest-side,#000,transparent)}
+.band h2{margin:0 auto;max-width:14ch}
+.band p{color:#cdb98f;max-width:48ch;margin:20px auto 0}
+.band .cta{margin-top:34px}
+.band img{width:76px;height:76px;margin:0 auto 24px;border-radius:22px;box-shadow:0 20px 50px -10px rgba(240,179,90,.6)}
 
-/* entrance */
-.up{opacity:0;transform:translateY(18px);animation:up .7s cubic-bezier(.2,.7,.2,1) forwards}
-.d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}.d4{animation-delay:.34s}
-@keyframes up{to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){.up{animation:none;opacity:1;transform:none}html{scroll-behavior:auto}}
+footer{padding:70px 0 60px;color:var(--dim);font-size:14.5px}
+footer .wrap{display:flex;gap:30px 60px;justify-content:space-between;flex-wrap:wrap}
+footer p{max-width:58ch}
+footer .cols{display:flex;gap:50px}
+footer h5{color:var(--text);font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px;font-weight:600}
+footer ul{list-style:none;padding:0;display:grid;gap:8px}
+footer a:hover{color:var(--gold)}
 
-/* hero, v2: product above the fold */
-.hero{position:relative;overflow:hidden;padding:64px 0 72px;text-align:left}
-.hero::before{content:"";position:absolute;inset:-20% -10% auto 38%;height:90%;background:radial-gradient(closest-side,var(--accent-soft),transparent 72%);pointer-events:none}
-.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:center}
-.hero h1{margin:20px 0 18px;max-width:none;font-size:clamp(40px,5vw,64px);text-wrap:balance}
-.hero .lead{margin:0;max-width:46ch}
-.hero .cta{justify-content:flex-start}
-.hero .sub{margin-top:14px}
-.hero-shot{margin-right:-72px}
-.hero-shot .demo{margin:0;max-width:none;box-shadow:0 50px 100px -40px rgba(0,0,0,.6),0 0 0 1px var(--line)}
-.stats{list-style:none;padding:0;margin:34px 0 0;display:flex;gap:30px;flex-wrap:wrap}
-.stats li{display:flex;flex-direction:column;line-height:1.25}
-.stats b{font:800 22px "Noto Sans",sans-serif;letter-spacing:-.01em}
-.stats span{color:var(--text3);font-size:13px}
-@media (max-width:980px){
-  .hero{padding:44px 0 56px;text-align:center}
-  .hero::before{inset:-10% -20% auto -20%;height:60%}
-  .hero-grid{grid-template-columns:1fr;gap:40px}
-  .hero h1{font-size:clamp(38px,9vw,56px);margin-left:auto;margin-right:auto}
-  .hero .lead{margin:0 auto}
-  .hero .cta,.stats{justify-content:center}
-  .hero-shot{margin-right:0}
-  .hero-shot .demo{margin:0 auto;max-width:760px}
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal.in{opacity:1;transform:none}
+.up{animation:up .9s var(--ease) both;animation-delay:var(--d,0s)}
+@keyframes up{from{opacity:0;transform:translateY(22px)}}
+
+@media(max-width:720px){
+  nav .wrap{height:60px}.links a:not(.pill){display:none}.brand small{display:none}
+  .hero{padding-top:56px}.stage{margin-top:56px}.marq{margin-top:70px}
+  section{padding:84px 0}.btn{height:52px;padding:0 24px}
+  .lyr{padding:26px 22px}.lyr p{font-size:19px}
+  .band{padding:64px 22px;border-radius:30px;margin-inline:16px}
 }
-@media (max-width:720px){
-  nav .wrap{height:58px}
-  .brand{white-space:nowrap}.brand small{display:none}
-  .links a:not(.pill){display:none}
-  .hero .btn{height:50px;padding:0 22px}
-  .stats{gap:22px}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}html{scroll-behavior:auto}
 }
 </style>
 </head>
 <body>
+<div class="bar" id="bar"></div>
+
 <nav><div class="wrap">
   <a class="brand" href="#top"><img src="icon-512.png" alt=""><span>Hymn Book<small>Faith Tabernacle</small></span></a>
   <div class="links">
-    <a href="#features">Features</a><a href="#see">Screens</a><a href="#download">Download</a>
-    <a href="#" data-gh>GitHub</a><a class="pill" href="#download">Get the app</a>
+    <a href="#sound">How it works</a><a href="#features">Features</a><a href="#faq">FAQ</a>
+    <a class="pill" href="#download">Download</a>
   </div>
 </div></nav>
 
-<header class="hero" id="top"><div class="wrap hero-grid">
-  <div class="hero-copy">
-    <span class="eyebrow up"><i></i>Free &amp; open source</span>
-    <h1 class="up d1">Every hymn.<br>Now you can <span style="white-space:nowrap"><em>hear</em> it.</span></h1>
-    <p class="lead up d2">Browse all 1,000 Faith Tabernacle hymns, read the words, and play the tune &ndash; verse, chorus, and every voice &ndash; so nobody forgets how to sing.</p>
-    <div class="cta up d3">
-      <a class="btn primary" id="main-dl" href="#download">Download</a>
-      <a class="btn ghost" href="#" data-gh>View on GitHub</a>
+<header class="hero" id="top">
+  <div class="grid"></div><div class="orb"></div>
+  <div class="wrap">
+    <span class="eyebrow up"><i></i><span id="ver"><b>Free &amp; open source</b> &middot; Windows, macOS, Linux</span></span>
+    <h1 class="up" style="--d:.08s">Every hymn.<br>Now you can <em>hear</em> it.</h1>
+    <p class="lead up" style="--d:.16s">Browse all 1,000 Faith Tabernacle hymns, read the words, and play the tune &ndash; verse, chorus, and every voice &ndash; so nobody forgets how to sing.</p>
+    <div class="cta up" style="--d:.24s">
+      <a class="btn primary" id="main-dl" href="#download" data-magnet>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 20h16"/></svg>
+        <span id="main-dl-t">Download</span>
+      </a>
+      <button class="btn ghost" id="listen" type="button" data-magnet aria-pressed="false">
+        <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span id="listen-t">Hear a hymn</span>
+      </button>
     </div>
-    <p class="sub up d3" id="ver">Windows &middot; macOS &middot; Linux</p>
-    <ul class="stats up d4">
-      <li><b>1,000</b><span>hymns</span></li>
-      <li><b>239</b><span>with tunes</span></li>
-      <li><b>S A T B</b><span>voice parts</span></li>
-    </ul>
-  </div>
-  <div class="hero-shot up d4">
-    <div class="demo">
-      <img src="img/hero.png" width="1280" height="820" alt="Hymn Book playing a hymn: library on the left, lyrics with the current verse highlighted, and the verse-and-chorus song map at the bottom">
+    <p class="plat up" style="--d:.3s"><span>Free forever</span><span>No account</span><span>Works offline</span></p>
+
+    <div class="stage up" id="stage" style="--d:.4s">
+      <div class="frame"><img src="img/hero.png" width="1280" height="820" alt="Hymn Book playing a hymn: the library on the left, lyrics with the verse being sung highlighted, and the verse-and-chorus song map at the bottom"></div>
+      <div class="call c1"><i></i>239 hymns have a tune</div>
+      <div class="call c2"><i></i>The verse being sung lights up</div>
+      <div class="call c3"><i></i>Tap any verse to jump there</div>
+      <div class="call c4"><i></i>Pause after each verse</div>
+    </div>
+
+    <div class="marq" aria-label="Some of the hymns in the book">
+      <div class="row" id="row1"></div>
+      <div class="row rev" id="row2"></div>
     </div>
   </div>
-</div></header>
+</header>
 
-<section id="features"><div class="wrap">
-  <h2>Made for singers</h2>
-  <p class="sec-lead">Most of us know the words but have forgotten the music. Hymn Book plays each hymn the way it is sung, so you can learn it again.</p>
-  <div class="grid">
-    <div class="card"><div class="ic">1k</div><h3>All 1,000 hymns</h3><p>Search by number, title, or any line you remember. Words are set clearly with verses, choruses and voice parts marked.</p></div>
-    <div class="card"><div class="ic">&#9835;</div><h3>Hear the tune</h3><p>Plays like a church organ or a flute. Tunes are marked <b>experimental</b> while we grow the library.</p></div>
-    <div class="card"><div class="ic">S A</div><h3>Your own voice part</h3><p>Switch Soprano, Alto, Tenor and Bass on or off. Mute everything but yours and learn your line.</p></div>
-    <div class="card"><div class="ic">1 C</div><h3>Verse &amp; chorus map</h3><p>The song plays verse, chorus, verse, chorus&hellip; Tap any part to jump to it, or pause after each verse to sing at your own pace.
-      <span class="map"><b class="done">1</b><b class="done">C</b><b class="on">2</b><b>C</b><b>3</b><b>C</b><b>4</b><b>C</b></span></p></div>
-    <div class="card"><div class="ic">&darr;</div><h3>Lyrics that follow along</h3><p>The words scroll with the song and the verse being sung is highlighted, so you never lose your place.</p></div>
-    <div class="card"><div class="ic">&#9681;</div><h3>Light, dark, offline</h3><p>Works without internet. Dark or light, with lyrics as large as you need.</p></div>
+<section class="stats"><div class="wrap">
+  <div class="stat-grid reveal">
+    <div class="stat"><b data-count="1000">1,000</b><span>hymns to read</span></div>
+    <div class="stat"><b data-count="239">239</b><span>hymns with a tune</span></div>
+    <div class="stat"><b data-count="4">4</b><span>voices: S A T B</span></div>
+    <div class="stat"><b data-count="3">3</b><span>platforms, one app</span></div>
   </div>
 </div></section>
 
-<section id="see"><div class="wrap">
-  <h2>See it in action</h2>
-  <p class="sec-lead">The words follow the song, the verse being sung is highlighted, and every part of the song is one tap away.</p>
-  <div class="shots">
-    <figure><div class="shot"><img loading="lazy" src="img/follow.png" width="1280" height="820" alt="Verse 3 of The Old Rugged Cross highlighted while it plays"></div>
-      <figcaption><b>Lyrics that follow along.</b> The verse being sung is highlighted and scrolled into view; the others fade back.</figcaption></figure>
-    <figure><div class="shot"><img loading="lazy" src="img/light.png" width="1280" height="820" alt="Hymn Book in light mode, paused after verse 2"></div>
-      <figcaption><b>Pause after each verse.</b> Sing at your own pace, then press play for the next verse. Light and dark themes.</figcaption></figure>
-    <figure class="wide"><div class="shot"><img loading="lazy" src="img/player.png" width="1262" height="112" alt="The player: voice buttons S A T B, organ or flute, and the verse and chorus song map"></div>
-      <figcaption><b>Voices and the song map.</b> Soprano, Alto, Tenor, Bass on or off &ndash; and tap any verse or chorus to jump straight to it.</figcaption></figure>
-  </div>
-</div></section>
+<section id="sound"><div class="wrap">
+  <span class="kicker reveal">How it works</span>
+  <h2 class="reveal" style="--d:.05s">The way it is <em>actually</em> sung.</h2>
+  <p class="sec-lead reveal" style="--d:.1s">A hymn is not one tune played once. It is verse, chorus, verse, chorus. Hymn Book plays it like that &ndash; and lets you jump to any part.</p>
 
-<section id="download"><div class="wrap">
-  <h2>Download</h2>
-  <p class="sec-lead" id="dl-lead">Free, no account, no ads.</p>
-  <div class="grid" id="dl-grid">
-    <div class="card" data-os="windows"><div class="os">Windows</div><div class="meta">Windows 10 / 11 &middot; 64-bit &middot; .zip</div><a class="btn ghost" data-asset="HymnBook-windows-x86_64.zip" href="#">Download for Windows</a></div>
-    <div class="card" data-os="mac-arm"><div class="os">macOS &middot; Apple Silicon</div><div class="meta">M1, M2, M3, M4 &middot; .zip</div><a class="btn ghost" data-asset="HymnBook-macos-arm64.zip" href="#">Download for Mac (M-series)</a></div>
-    <div class="card" data-os="mac-intel"><div class="os">macOS &middot; Intel</div><div class="meta">Intel Macs &middot; .zip</div><a class="btn ghost" data-asset="HymnBook-macos-x86_64.zip" href="#">Download for Mac (Intel)</a></div>
-    <div class="card" data-os="linux"><div class="os">Linux</div><div class="meta">64-bit &middot; .tar.gz &middot; run <code>install.sh</code></div><a class="btn ghost" data-asset="HymnBook-linux-x86_64.tar.gz" href="#">Download for Linux</a></div>
-  </div>
-  <p class="note"><b>First time opening it?</b> The app is not code-signed yet, so your computer may warn you. On Windows choose <b>More info &rarr; Run anyway</b>. On a Mac, right-click the app and choose <b>Open</b>.</p>
-</div></section>
+  <div class="demo">
+    <ol class="steps reveal">
+      <li><span class="n">01</span><div><h3>See the whole song</h3><p>A bar of verse and chorus segments, sized by length, shows where you are in the hymn.</p></div></li>
+      <li><span class="n">02</span><div><h3>Tap to jump</h3><p>Want verse 3? Tap it. The music and the words go straight there.</p></div></li>
+      <li><span class="n">03</span><div><h3>Sing at your pace</h3><p>Turn on <em class="serif" style="font-size:1.15em">pause after each verse</em> and the player waits for you after every verse and chorus.</p></div></li>
+      <li><span class="n">04</span><div><h3>Learn your part</h3><p>Mute everything except Soprano, Alto, Tenor or Bass and practise your own line.</p></div></li>
+    </ol>
 
-<section id="help"><div class="wrap">
-  <div class="gh">
-    <div class="card big">
-      <h2>Help us bring back every tune</h2>
-      <p class="sec-lead" style="margin-bottom:22px">Hymn Book is open source and built with the church community. Spot a wrong note, know a hymn&rsquo;s tune, or want a feature? Tell us on GitHub &ndash; it takes a minute.</p>
-      <div class="cta" style="justify-content:flex-start;margin-top:0">
-        <a class="btn primary" href="#" data-issues>Suggest something</a>
-        <a class="btn ghost" href="#" data-gh>Star on GitHub</a>
+    <div class="reveal" style="--d:.12s">
+      <div class="app" id="demo">
+        <div class="top"><i></i><i></i><i></i><span>Hymn 675 &middot; Rescue the Perishing</span></div>
+        <div class="lyr" id="lyr"><span class="tag" id="lyr-tag">VERSE 1</span><h4 id="lyr-h">Rescue the Perishing</h4><p id="lyr-p"></p></div>
+        <div class="ctrl">
+          <div class="map" id="map"></div>
+          <div class="row2">
+            <div class="voices" id="voices"><button class="on" data-v="S">S</button><button class="on" data-v="A">A</button><button class="on" data-v="T">T</button><button class="on" data-v="B">B</button></div>
+            <button class="play" id="dplay" type="button" aria-label="Play preview"><svg viewBox="0 0 24 24" fill="currentColor" id="dplay-i"><path d="M8 5v14l11-7z"/></svg></button>
+            <button class="toggle" id="dstop" type="button"><i></i>Pause after each verse</button>
+          </div>
+          <p class="hint">Interactive preview &ndash; the real app plays the sound.</p>
+        </div>
       </div>
     </div>
-    <div class="card"><h3 style="margin-bottom:12px">You can help by&hellip;</h3>
-      <ul class="list">
-        <li>Reporting a tune that sounds wrong</li>
-        <li>Sharing a public-domain score or MIDI for a hymn</li>
-        <li>Typing in the sol-fa of a tune you know</li>
-        <li>Suggesting features, or fixing bugs</li>
-      </ul>
-    </div>
   </div>
 </div></section>
 
+<section id="features"><div class="wrap">
+  <span class="kicker reveal">Features</span>
+  <h2 class="reveal" style="--d:.05s">Small details, <em>beautifully</em> done.</h2>
+  <p class="sec-lead reveal" style="--d:.1s">Everything is built to help you sing, not to get in the way.</p>
+
+  <div class="bento">
+    <article class="tile t1 reveal">
+      <h3>Lyrics that follow the song</h3>
+      <p>The verse being sung is highlighted and eased into view while the others fade back &ndash; you never lose your place.</p>
+      <div class="zoom" role="img" aria-label="A highlighted verse in Hymn Book"></div>
+    </article>
+
+    <article class="tile t2 reveal" style="--d:.08s">
+      <h3>Song map</h3>
+      <p>Every verse and chorus, sized by length, one tap away. Plus the voice buttons and pause-after-each-verse switch.</p>
+      <div class="mini" aria-label="The player with the song map and voice buttons">
+        <div class="mi-top"><span class="mi-num">590</span><div class="mi-t"><b>The Old Rugged Cross</b><span>Playing &middot; Verse 3</span></div></div>
+        <div class="mi-ctl"><span class="mi-v">S</span><span class="mi-v">A</span><span class="mi-v off">T</span><span class="mi-v">B</span>
+          <span class="mi-p"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></span>
+          <span class="toggle on" style="pointer-events:none"><i></i>Pause after each verse</span></div>
+        <div class="mi-map"><b class="d"><span>1</span></b><b class="c d"><span>C</span></b><b class="d"><span>2</span></b><b class="c d"><span>C</span></b><b class="on"><span>3</span></b><b class="c"><span>C</span></b><b><span>4</span></b><b class="c"><span>C</span></b><b><span>5</span></b><b class="c"><span>C</span></b></div>
+        <div class="mi-time"><span>1:24</span><span>3:25</span></div>
+      </div>
+    </article>
+
+    <article class="tile t3 reveal">
+      <h3>Four voices</h3>
+      <p>Soprano, Alto, Tenor, Bass &ndash; on or off. Try it.</p>
+      <div class="bigvoices" id="bigv">
+        <button class="on" data-v="S"><span class="bars"><i></i><i></i><i></i><i></i><i></i></span>S</button>
+        <button class="on" data-v="A"><span class="bars"><i></i><i></i><i></i><i></i><i></i></span>A</button>
+        <button class="on" data-v="T"><span class="bars"><i></i><i></i><i></i><i></i><i></i></span>T</button>
+        <button class="on" data-v="B"><span class="bars"><i></i><i></i><i></i><i></i><i></i></span>B</button>
+      </div>
+    </article>
+
+    <article class="tile t4 reveal" style="--d:.08s">
+      <h3>Find any hymn</h3>
+      <p>By number, title, or a line you remember.</p>
+      <div class="srch">
+        <div class="in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span id="typed"></span><i class="caret"></i></div>
+        <div class="hits" id="hits"></div>
+      </div>
+    </article>
+
+    <article class="tile t5 reveal" style="--d:.16s">
+      <h3>Dark and light</h3>
+      <p>Easy on the eyes, day or night.</p>
+      <div class="seg" id="seg"><button class="on" data-t="dark">Dark</button><button data-t="light">Light</button></div>
+      <div class="themes" id="themes"><img src="img/follow.png" width="1280" height="820" alt="Dark theme" loading="lazy"><img class="l" src="img/light.png" width="1280" height="820" alt="Light theme" loading="lazy"></div>
+    </article>
+  </div>
+</div></section>
+
+<section id="download"><div class="wrap center">
+  <span class="kicker reveal">Download</span>
+  <h2 class="reveal" style="--d:.05s">Free. For <em>everyone</em>.</h2>
+  <p class="sec-lead reveal" style="--d:.1s" id="dl-lead">Pick your computer. One file, no account, no ads.</p>
+
+  <div class="dl" style="text-align:left">
+    <article class="os reveal" data-os="windows">
+      <span class="badge">FOR YOUR PC</span>
+      <div class="logo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.5 4.5v6.8H3zM11.5 4.4 21 3v8.3h-9.5zM3 12.3h7.5v6.8L3 18.1zM11.5 12.3H21V21l-9.5-1.3z"/></svg></div>
+      <h3>Windows</h3><div class="sub">Windows 10 and 11 &middot; 64-bit</div>
+      <a class="btn primary" data-file="HymnBook-Setup-windows-x86_64.exe" href="#">Download installer (.exe)</a>
+      <div class="more"><a data-file="HymnBook-windows-x86_64.exe" href="#">Portable .exe</a><span data-size="HymnBook-Setup-windows-x86_64.exe"></span></div>
+    </article>
+    <article class="os reveal" data-os="mac" style="--d:.08s">
+      <span class="badge">FOR YOUR MAC</span>
+      <div class="logo">&#8984;</div>
+      <h3>macOS</h3><div class="sub">macOS 12 or newer</div>
+      <a class="btn primary" data-file="HymnBook-macos-arm64.dmg" href="#">Apple Silicon (.dmg)</a>
+      <div class="more"><a data-file="HymnBook-macos-x86_64.dmg" href="#">Intel Mac (.dmg)</a><span data-size="HymnBook-macos-arm64.dmg"></span></div>
+    </article>
+    <article class="os reveal" data-os="linux" style="--d:.16s">
+      <span class="badge">FOR YOUR PC</span>
+      <div class="logo">&gt;_</div>
+      <h3>Linux</h3><div class="sub">64-bit &middot; any recent distribution</div>
+      <a class="btn primary" data-file="HymnBook-linux-x86_64.AppImage" href="#">Download AppImage</a>
+      <div class="more"><a data-file="HymnBook-linux-amd64.deb" href="#">Debian / Ubuntu (.deb)</a><span data-size="HymnBook-linux-x86_64.AppImage"></span></div>
+    </article>
+  </div>
+  <p class="note reveal" style="text-align:left"><b>First time opening it?</b> The app is not code-signed yet, so your computer may warn you. On <b>Windows</b> choose <i>More info &rarr; Run anyway</i>. On a <b>Mac</b> open the disk image, drag Hymn Book to Applications, then right-click it and choose <i>Open</i>. On <b>Linux</b> make the AppImage executable (right-click &rarr; Properties, or <code>chmod +x</code>).</p>
+</div></section>
+
+<section id="faq"><div class="wrap center">
+  <span class="kicker reveal">Questions</span>
+  <h2 class="reveal" style="--d:.05s">Good <em>questions</em>.</h2>
+  <div class="faq" style="text-align:left">
+    <details class="reveal"><summary>Is it really free?</summary><p>Yes. Hymn Book is free and open source under the MIT license. There are no accounts, no ads and no tracking, and it works without an internet connection.</p></details>
+    <details class="reveal"><summary>Why do only some hymns have a tune?</summary><p>The tunes come from public-domain scores that we match to each hymn by its words. 239 of the 1,000 hymns are matched so far. Hymns without a tune still open and read perfectly. We are adding more all the time.</p></details>
+    <details class="reveal"><summary>Will it sound exactly like my church?</summary><p>Not necessarily. These are standard public-domain arrangements, played on a church organ or flute, so your church may sing a different tune or harmony. That is why tunes are marked <i>experimental</i> &ndash; please <a data-issues href="#">tell us</a> if one sounds wrong.</p></details>
+    <details class="reveal"><summary>Can I help add a tune?</summary><p>Please do. Report a wrong tune, share a public-domain score or MIDI, or suggest a feature on <a data-gh href="#">GitHub</a>. If you know a tune by heart, you can write it down and we can turn it into sound.</p></details>
+    <details class="reveal"><summary>Where do the hymn words come from?</summary><p>From the Faith Tabernacle Hymn Book. Most hymns are old and in the public domain. If you are a rights holder and want an item removed, open an issue and it will be taken out promptly.</p></details>
+  </div>
+</div></section>
+
+<div class="band reveal">
+  <img src="icon-512.png" alt="">
+  <h2>Bring the tunes <em>back</em>.</h2>
+  <p>Download Hymn Book, sing along, and help us find every missing tune.</p>
+  <div class="cta">
+    <a class="btn primary" href="#download" data-magnet>Download</a>
+    <a class="btn ghost" data-gh href="#" data-magnet>Star on GitHub</a>
+  </div>
+</div>
+
 <footer><div class="wrap">
-  <p>Hymn Book is free software under the <a href="#" data-license>MIT License</a>. Tunes come from the public-domain <a href="https://github.com/mzealey/openhymnal">Open Hymnal Project</a> and play experimentally; they may differ from your church&rsquo;s arrangement. Fonts: Noto (SIL OFL). Not affiliated with any church body.</p>
-  <p><a href="#" data-gh>GitHub</a> &middot; <a href="#" data-issues>Report an issue</a> &middot; <a href="#" data-third>Credits &amp; licenses</a></p>
+  <div><div class="brand" style="margin-bottom:14px"><img src="icon-512.png" alt=""><span style="color:var(--text)">Hymn Book</span></div>
+    <p>Free software under the <a data-license href="#" style="text-decoration:underline">MIT License</a>. Tunes are public-domain arrangements from the Open Hymnal Project and The Cyber Hymnal and play experimentally. Not affiliated with any church body.</p></div>
+  <div class="cols">
+    <div><h5>Project</h5><ul><li><a data-gh href="#">GitHub</a></li><li><a data-issues href="#">Report an issue</a></li><li><a data-rel href="#">Releases</a></li></ul></div>
+    <div><h5>Legal</h5><ul><li><a data-license href="#">License</a></li><li><a data-third href="#">Credits &amp; licenses</a></li></ul></div>
+  </div>
 </div></footer>
+
+<audio id="aud" preload="none"><source src="audio/amazing-grace.mp3" type="audio/mpeg"><source src="audio/amazing-grace.ogg" type="audio/ogg"></audio>
 
 <script>
 // Change this to your repository ("owner/name"). Everything below follows it.
 const REPO = "ugochukwu-850/hymnbook";
 const GH = `https://github.com/${REPO}`;
-document.querySelectorAll("[data-gh]").forEach(a => a.href = GH);
-document.querySelectorAll("[data-issues]").forEach(a => a.href = `${GH}/issues/new/choose`);
-document.querySelectorAll("[data-license]").forEach(a => a.href = `${GH}/blob/main/LICENSE`);
-document.querySelectorAll("[data-third]").forEach(a => a.href = `${GH}/blob/main/THIRD_PARTY.md`);
+const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// Which OS is the visitor on?
-const ua = navigator.userAgent, plat = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || "";
+/* links that follow the repo */
+$$("[data-gh]").forEach(a => a.href = GH);
+$$("[data-issues]").forEach(a => a.href = `${GH}/issues/new/choose`);
+$$("[data-license]").forEach(a => a.href = `${GH}/blob/main/LICENSE`);
+$$("[data-third]").forEach(a => a.href = `${GH}/blob/main/THIRD_PARTY.md`);
+$$("[data-rel]").forEach(a => a.href = `${GH}/releases/latest`);
+
+/* which OS? */
+const plat = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || "";
+const ua = navigator.userAgent;
 let os = "linux";
 if (/Win/i.test(plat) || /Windows/i.test(ua)) os = "windows";
-else if (/Mac/i.test(plat) || /Mac OS X/i.test(ua)) os = "mac-arm"; // most current Macs are Apple Silicon
-const names = {windows: "Windows", "mac-arm": "Mac", linux: "Linux"};
-const assetFor = {windows: "HymnBook-windows-x86_64.zip", "mac-arm": "HymnBook-macos-arm64.zip", linux: "HymnBook-linux-x86_64.tar.gz"};
-const dl = a => `${GH}/releases/latest/download/${a}`;
+else if (/Mac/i.test(plat) || /Mac OS X/i.test(ua)) os = "mac";
+const cardOf = $(`.os[data-os="${os}"]`);
+if (cardOf) { cardOf.classList.add("hl"); cardOf.parentElement.prepend(cardOf); }
+const primaryFile = {windows: "HymnBook-Setup-windows-x86_64.exe", mac: "HymnBook-macos-arm64.dmg", linux: "HymnBook-linux-x86_64.AppImage"}[os];
+const label = {windows: "Download for Windows", mac: "Download for Mac", linux: "Download for Linux"}[os];
+$("#main-dl-t").textContent = label;
 
-const grid = document.getElementById("dl-grid");
-document.querySelectorAll("#dl-grid [data-asset]").forEach(a => a.href = dl(a.dataset.asset));
-const mine = grid.querySelector(`[data-os="${os}"]`);
-if (mine) { mine.classList.add("hl"); grid.prepend(mine); mine.querySelector(".btn").classList.replace("ghost", "primary"); }
-const main = document.getElementById("main-dl");
-main.textContent = `Download for ${names[os]}`;
-main.href = dl(assetFor[os]);
-
-// Show the latest version, or say a release is coming.
+/* release info: real file links and sizes */
+const fallback = n => `${GH}/releases/latest/download/${n}`;
+let assets = {};
+function wireLinks() {
+  $$("[data-file]").forEach(a => a.href = assets[a.dataset.file] || fallback(a.dataset.file));
+  $("#main-dl").href = assets[primaryFile] || fallback(primaryFile);
+  $$("[data-size]").forEach(s => {
+    const a = (assets._size || {})[s.dataset.size];
+    s.textContent = a ? `${(a / 1048576).toFixed(0)} MB` : "";
+  });
+}
+wireLinks();
 fetch(`https://api.github.com/repos/${REPO}/releases/latest`).then(r => r.ok ? r.json() : Promise.reject()).then(rel => {
-  document.getElementById("ver").textContent = `Version ${rel.tag_name} · Windows · macOS · Linux`;
+  assets._size = {};
+  rel.assets.forEach(a => { assets[a.name] = a.browser_download_url; assets._size[a.name] = a.size; });
+  wireLinks();
+  $("#ver").innerHTML = `<b>${rel.tag_name}</b> &middot; Free &amp; open source`;
 }).catch(() => {
-  document.getElementById("ver").textContent = "First release coming soon · Windows · macOS · Linux";
-  main.href = "#download";
-  document.getElementById("dl-lead").textContent = "The first release is on its way. Star the project on GitHub to be told when it lands.";
+  $("#dl-lead").textContent = "The first release is on its way. Star the project on GitHub to hear when it lands.";
 });
+
+/* nav progress + hero parallax */
+const bar = $("#bar"), stage = $("#stage");
+let tick = false;
+function onScroll() {
+  const h = document.documentElement;
+  bar.style.setProperty("--p", (h.scrollTop / (h.scrollHeight - h.clientHeight || 1)).toFixed(4));
+  if (!reduce && innerWidth > 820) stage.style.setProperty("--py", `${Math.min(h.scrollTop, 700) * -0.06}px`);
+  tick = false;
+}
+addEventListener("scroll", () => { if (!tick) { tick = true; requestAnimationFrame(onScroll); } }, {passive: true});
+onScroll();
+
+/* reveal on scroll */
+const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+}), {threshold: .12, rootMargin: "0px 0px -6% 0px"}) : null;
+$$(".reveal").forEach(el => io ? io.observe(el) : el.classList.add("in"));
+
+/* count-up numbers */
+const fmt = n => n.toLocaleString("en-US");
+const cio = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return; cio.unobserve(e.target);
+  const el = e.target, to = +el.dataset.count, t0 = performance.now(), d = reduce ? 1 : 1400;
+  (function step(t) {
+    const k = Math.min(1, (t - t0) / d), v = Math.round(to * (1 - Math.pow(1 - k, 4)));
+    el.textContent = fmt(v); if (k < 1) requestAnimationFrame(step);
+  })(t0);
+}), {threshold: .6}) : null;
+$$("[data-count]").forEach(el => { if (cio) { el.textContent = "0"; cio.observe(el); } });
+
+/* spotlight on tiles + magnetic buttons */
+$$(".tile").forEach(t => t.addEventListener("pointermove", e => {
+  const r = t.getBoundingClientRect(); t.style.setProperty("--mx", `${e.clientX - r.left}px`); t.style.setProperty("--my", `${e.clientY - r.top}px`);
+}));
+if (!reduce) $$("[data-magnet]").forEach(b => {
+  b.addEventListener("pointermove", e => { const r = b.getBoundingClientRect();
+    b.style.setProperty("--mx", `${(e.clientX - r.left - r.width / 2) * .12}px`); b.style.setProperty("--my", `${(e.clientY - r.top - r.height / 2) * .22}px`); });
+  b.addEventListener("pointerleave", () => { b.style.setProperty("--mx", "0px"); b.style.setProperty("--my", "0px"); });
+});
+
+/* hymn ticker (real hymns from the book) */
+const hymns = [[457,"Amazing Grace"],[134,"Rock of Ages"],[445,"Blessed Assurance"],[448,"It Is Well"],[590,"The Old Rugged Cross"],[712,"Abide With Me"],[138,"What a Friend We Have in Jesus"],[68,"Holy, Holy, Holy"],[69,"To God Be the Glory"],[37,"Great Is Thy Faithfulness"],[54,"Come, Thou Fount"],[146,"Nearer, My God, to Thee"],[145,"I Need Thee Every Hour"],[141,"Pass Me Not"],[675,"Rescue the Perishing"],[768,"He Leadeth Me"],[811,"Joy to the World"],[51,"O for a Thousand Tongues"],[10,"For the Beauty of the Earth"],[609,"When I Survey the Wondrous Cross"],[884,"When the Roll Is Called Up Yonder"],[702,"The Lily of the Valley"]];
+const rowHtml = list => list.concat(list).map(([n, t]) => `<span><b>${n}</b>${t}</span>`).join("");
+$("#row1").innerHTML = rowHtml(hymns.slice(0, 11)); $("#row2").innerHTML = rowHtml(hymns.slice(11));
+
+/* hear a hymn: a real sample rendered by the app's own sound engine */
+const aud = $("#aud"), listen = $("#listen");
+function setPlaying(on) { listen.classList.toggle("playing", on); listen.setAttribute("aria-pressed", on); $("#listen-t").textContent = on ? "Playing Amazing Grace…" : "Hear a hymn"; }
+listen.addEventListener("click", () => { if (aud.paused) { aud.currentTime = aud.ended ? 0 : aud.currentTime; aud.play().catch(() => {}); } else aud.pause(); });
+aud.addEventListener("play", () => setPlaying(true)); ["pause", "ended"].forEach(n => aud.addEventListener(n, () => setPlaying(false)));
+
+/* interactive song map: Rescue the Perishing (hymn 675, public domain) */
+const V = {
+  1: ["Rescue the perishing, care for the dying,", "Snatch them in pity from sin and the grave;", "Weep o’er the erring one, lift up the fallen,", "Tell them of Jesus, the Mighty to save."],
+  C: ["Rescue the perishing, care for the dying;", "Jesus is merciful, Jesus will save."],
+  2: ["Though they are slighting Him, still He is waiting,", "Waiting the penitent child to receive,", "Plead with them earnestly, plead with them gently;", "He will forgive if they only believe."],
+  3: ["Down in the human heart, crushed by the tempter,", "Feelings lie buried that grace can restore;", "Touched by a loving hand, wakened by kindness,", "Chords that were broken will vibrate once more."],
+  4: ["Rescue the perishing, duty demands it;", "Strength for thy labour the Lord will provide;", "Back to the narrow way patiently win them;", "Tell the poor wand’rer a Saviour has died."]
+};
+const seq = ["1", "C", "2", "C", "3", "C", "4", "C"], mapEl = $("#map"), lyr = $("#lyr");
+seq.forEach((k, i) => { const b = document.createElement("button"); b.className = k === "C" ? "c" : ""; b.dataset.i = i; b.innerHTML = `<i></i>${k === "C" ? "C" : k}`; mapEl.append(b); });
+let cur = 0, timer = null, playing = false, vcount = 4;
+function show(i, auto) {
+  cur = i;
+  $$("button", mapEl).forEach((b, j) => { b.classList.toggle("on", j === i && (playing || !auto)); b.classList.toggle("done", j < i); if (j !== i) b.classList.remove("on"); });
+  const k = seq[i], chorus = k === "C";
+  lyr.classList.add("swap");
+  setTimeout(() => {
+    $("#lyr-tag").textContent = chorus ? "CHORUS" : `VERSE ${k}`;
+    $("#lyr-p").innerHTML = V[k].map(l => `<span>${l}</span>`).join("");
+    lyr.classList.toggle("chorus", chorus); lyr.classList.remove("swap");
+  }, reduce ? 0 : 220);
+  const on = $$("button", mapEl)[i]; on.classList.add("on"); on.style.setProperty("--dur", `${chorus ? 3 : 4.2}s`);
+  const f = on.querySelector("i"); f.style.animation = "none"; f.offsetWidth; f.style.animation = "";
+}
+function stopPlay() { playing = false; clearTimeout(timer); $("#dplay-i").innerHTML = '<path d="M8 5v14l11-7z"/>'; }
+function startPlay() { playing = true; $("#dplay-i").innerHTML = '<path d="M7 5h4v14H7zM13 5h4v14h-4z"/>'; advanceLater(); show(cur, false); }
+function advanceLater() {
+  clearTimeout(timer);
+  timer = setTimeout(() => {
+    if (!playing) return;
+    const pauseEach = $("#dstop").classList.contains("on");
+    const endOfGroup = seq[cur] === "C";
+    if (pauseEach && endOfGroup) { stopPlay(); if (cur < seq.length - 1) show(cur + 1, true); return; }
+    if (cur >= seq.length - 1) { stopPlay(); return; }
+    show(cur + 1, false); advanceLater();
+  }, (seq[cur] === "C" ? 3000 : 4200));
+}
+mapEl.addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; show(+b.dataset.i, false); if (playing) advanceLater(); else { playing = true; $("#dplay-i").innerHTML = '<path d="M7 5h4v14H7zM13 5h4v14h-4z"/>'; advanceLater(); } });
+$("#dplay").addEventListener("click", () => playing ? stopPlay() : startPlay());
+$("#dstop").addEventListener("click", e => e.currentTarget.classList.toggle("on"));
+$("#voices").addEventListener("click", e => { const b = e.target.closest("button"); if (b) b.classList.toggle("on"); });
+show(0, true); $$("button", mapEl)[0].classList.remove("on");
+$("#lyr-p").innerHTML = V["1"].map(l => `<span>${l}</span>`).join("");
+/* demo auto-starts once when it scrolls into view */
+let demoStarted = false;
+if ("IntersectionObserver" in window) new IntersectionObserver((es, o) => { if (es[0].isIntersecting && !demoStarted && !reduce) { demoStarted = true; startPlay(); o.disconnect(); } }, {threshold: .6}).observe($("#demo"));
+
+/* four voices tile */
+$("#bigv").addEventListener("click", e => { const b = e.target.closest("button"); if (b) b.classList.toggle("on"); });
+
+/* search tile: typing demo with real hymns */
+const searches = [
+  ["grace", [[499, "Grace! ’Tis a Charming Sound!", 1], [307, "By Grace Are Ye Saved", 0], [457, "Amazing Grace", 1]]],
+  ["590", [[590, "The Old Rugged Cross", 1]]],
+  ["rock", [[134, "Rock of Ages!", 1], [449, "The Solid Rock", 1], [400, "Building on the Rock", 0]]],
+  ["friend", [[138, "What a Friend We Have in Jesus!", 1], [490, "He’s My Friend", 1], [731, "Jesus, Friend of Sinners", 0]]]
+];
+const typed = $("#typed"), hits = $("#hits");
+function runSearch(n) {
+  const [q, res] = searches[n % searches.length]; let i = 0; typed.textContent = ""; hits.innerHTML = "";
+  const t = setInterval(() => {
+    typed.textContent = q.slice(0, ++i);
+    if (i >= q.length) {
+      clearInterval(t);
+      hits.innerHTML = res.map(([no, title, tune], k) => `<div class="hit" style="animation-delay:${k * 90}ms"><b>${no}</b><span>${title}</span>${tune ? "<em>TUNE</em>" : ""}</div>`).join("");
+      setTimeout(() => runSearch(n + 1), 3200);
+    }
+  }, reduce ? 0 : 160);
+}
+runSearch(0);
+
+/* theme tile */
+const themes = $("#themes"), seg = $("#seg");
+function setTheme(t) { themes.classList.toggle("light", t === "light"); $$("button", seg).forEach(b => b.classList.toggle("on", b.dataset.t === t)); }
+seg.addEventListener("click", e => { const b = e.target.closest("button"); if (b) { setTheme(b.dataset.t); clearInterval(auto); } });
+let auto = reduce ? null : setInterval(() => setTheme(themes.classList.contains("light") ? "dark" : "light"), 3600);
 </script>
 </body>
 </html>

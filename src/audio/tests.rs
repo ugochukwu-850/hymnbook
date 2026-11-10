@@ -219,3 +219,37 @@ fn flute_sounds_different_from_organ() {
     let diff: f32 = a.iter().zip(&b).map(|(x, y)| (x - y).abs()).sum::<f32>() / a.len() as f32;
     assert!(diff > 0.005, "instrument change had no effect");
 }
+
+/// Not a real test: renders a hymn through the real engine to a 16-bit WAV, used for
+/// the website's audio sample. Run with:
+///   HYMN_SAMPLE_OUT=out.wav HYMN_SAMPLE_HYMN=457 HYMN_SAMPLE_VERSES=1 \
+///   cargo test render_website_sample -- --ignored
+#[test]
+#[ignore]
+fn render_website_sample() {
+    let Ok(out) = std::env::var("HYMN_SAMPLE_OUT") else { return };
+    let get = |k: &str, d: u32| std::env::var(k).ok().and_then(|v| v.parse().ok()).unwrap_or(d);
+    let mut sh = shared_with(get("HYMN_SAMPLE_HYMN", 457), get("HYMN_SAMPLE_VERSES", 1));
+    let secs = sh.total + 2.5;
+    let samples = render(&mut sh, secs);
+
+    let rate = 44_100u32;
+    let data_len = (samples.len() * 2) as u32;
+    let mut wav = Vec::with_capacity(44 + data_len as usize);
+    wav.extend_from_slice(b"RIFF");
+    wav.extend_from_slice(&(36 + data_len).to_le_bytes());
+    wav.extend_from_slice(b"WAVEfmt ");
+    wav.extend_from_slice(&16u32.to_le_bytes());
+    wav.extend_from_slice(&1u16.to_le_bytes()); // PCM
+    wav.extend_from_slice(&2u16.to_le_bytes()); // stereo
+    wav.extend_from_slice(&rate.to_le_bytes());
+    wav.extend_from_slice(&(rate * 4).to_le_bytes());
+    wav.extend_from_slice(&4u16.to_le_bytes());
+    wav.extend_from_slice(&16u16.to_le_bytes());
+    wav.extend_from_slice(b"data");
+    wav.extend_from_slice(&data_len.to_le_bytes());
+    for s in samples {
+        wav.extend_from_slice(&((s.clamp(-1.0, 1.0) * 32767.0) as i16).to_le_bytes());
+    }
+    std::fs::write(out, wav).unwrap();
+}
