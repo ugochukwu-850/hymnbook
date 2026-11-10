@@ -115,6 +115,38 @@ footer p{max-width:60ch}
 .d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}.d4{animation-delay:.34s}
 @keyframes up{to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.up{animation:none;opacity:1;transform:none}html{scroll-behavior:auto}}
+
+/* hero, v2: product above the fold */
+.hero{position:relative;overflow:hidden;padding:64px 0 72px;text-align:left}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto 38%;height:90%;background:radial-gradient(closest-side,var(--accent-soft),transparent 72%);pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:center}
+.hero h1{margin:20px 0 18px;max-width:none;font-size:clamp(40px,5vw,64px);text-wrap:balance}
+.hero .lead{margin:0;max-width:46ch}
+.hero .cta{justify-content:flex-start}
+.hero .sub{margin-top:14px}
+.hero-shot{margin-right:-72px}
+.hero-shot .demo{margin:0;max-width:none;box-shadow:0 50px 100px -40px rgba(0,0,0,.6),0 0 0 1px var(--line)}
+.stats{list-style:none;padding:0;margin:34px 0 0;display:flex;gap:30px;flex-wrap:wrap}
+.stats li{display:flex;flex-direction:column;line-height:1.25}
+.stats b{font:800 22px "Noto Sans",sans-serif;letter-spacing:-.01em}
+.stats span{color:var(--text3);font-size:13px}
+@media (max-width:980px){
+  .hero{padding:44px 0 56px;text-align:center}
+  .hero::before{inset:-10% -20% auto -20%;height:60%}
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero h1{font-size:clamp(38px,9vw,56px);margin-left:auto;margin-right:auto}
+  .hero .lead{margin:0 auto}
+  .hero .cta,.stats{justify-content:center}
+  .hero-shot{margin-right:0}
+  .hero-shot .demo{margin:0 auto;max-width:760px}
+}
+@media (max-width:720px){
+  nav .wrap{height:58px}
+  .brand{white-space:nowrap}.brand small{display:none}
+  .links a:not(.pill){display:none}
+  .hero .btn{height:50px;padding:0 22px}
+  .stats{gap:22px}
+}
 </style>
 </head>
 <body>
@@ -126,17 +158,26 @@ footer p{max-width:60ch}
   </div>
 </div></nav>
 
-<header class="hero" id="top"><div class="wrap">
-  <span class="eyebrow up"><i></i>Free &amp; open source</span>
-  <h1 class="up d1">Every hymn. Now you can <em>hear</em> it.</h1>
-  <p class="lead up d2">Browse all 1,000 Faith Tabernacle hymns, read the words, and play the tune &ndash; verse, chorus, and every voice &ndash; so nobody forgets how to sing.</p>
-  <div class="cta up d3">
-    <a class="btn primary" id="main-dl" href="#download">Download</a>
-    <a class="btn ghost" href="#" data-gh>View on GitHub</a>
+<header class="hero" id="top"><div class="wrap hero-grid">
+  <div class="hero-copy">
+    <span class="eyebrow up"><i></i>Free &amp; open source</span>
+    <h1 class="up d1">Every hymn.<br>Now you can <span style="white-space:nowrap"><em>hear</em> it.</span></h1>
+    <p class="lead up d2">Browse all 1,000 Faith Tabernacle hymns, read the words, and play the tune &ndash; verse, chorus, and every voice &ndash; so nobody forgets how to sing.</p>
+    <div class="cta up d3">
+      <a class="btn primary" id="main-dl" href="#download">Download</a>
+      <a class="btn ghost" href="#" data-gh>View on GitHub</a>
+    </div>
+    <p class="sub up d3" id="ver">Windows &middot; macOS &middot; Linux</p>
+    <ul class="stats up d4">
+      <li><b>1,000</b><span>hymns</span></li>
+      <li><b>239</b><span>with tunes</span></li>
+      <li><b>S A T B</b><span>voice parts</span></li>
+    </ul>
   </div>
-  <p class="sub up d3" id="ver">Windows &middot; macOS &middot; Linux</p>
-  <div class="demo up d4">
-    <img src="img/hero.png" width="1280" height="820" alt="Hymn Book playing a hymn: library on the left, lyrics with the current verse highlighted, and the verse-and-chorus song map at the bottom">
+  <div class="hero-shot up d4">
+    <div class="demo">
+      <img src="img/hero.png" width="1280" height="820" alt="Hymn Book playing a hymn: library on the left, lyrics with the current verse highlighted, and the verse-and-chorus song map at the bottom">
+    </div>
   </div>
 </div></header>
 
