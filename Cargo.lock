@@ -3,20 +3,6 @@
 version = 4
 
 [[package]]
-name = "Audible"
-version = "0.1.0"
-dependencies = [
- "cpal",
- "gpui-kit",
- "gpui-pre",
- "gpui-pre-platform",
- "midly",
- "rustysynth",
- "serde",
- "serde_json",
-]
-
-[[package]]
 name = "accesskit"
 version = "0.24.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3213,6 +3199,21 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "27f864f10dfb56725ce5ce5472bc52252c8f93a4ab86327122cebf62c5f59a17"
 dependencies = [
  "typenum",
+]
+
+[[package]]
+name = "hymnbook"
+version = "0.1.0"
+dependencies = [
+ "cpal",
+ "gpui-kit",
+ "gpui-pre",
+ "gpui-pre-platform",
+ "midly",
+ "rustysynth",
+ "serde",
+ "serde_json",
+ "winresource",
 ]
 
 [[package]]
@@ -8438,6 +8439,16 @@ checksum = "7d6f32a0ff4a9f6f01231eb2059cc85479330739333e0e58cadf03b6af2cca10"
 dependencies = [
  "cfg-if",
  "windows-sys 0.61.2",
+]
+
+[[package]]
+name = "winresource"
+version = "0.1.34"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a2bc6d36480b829272a5bdabf08e6dca8004761c1da7e35efef800540c66221b"
+dependencies = [
+ "toml 1.2.1+spec-1.1.0",
+ "version_check",
 ]
 
 [[package]]

@@ -10,6 +10,9 @@
   ],
   "bpm": 140.0,
   "seconds": 37.3,
+  "length": 37.286,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "8": {
@@ -23,6 +26,9 @@
   ],
   "bpm": 120.0,
   "seconds": 24.0,
+  "length": 24.0,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "10": {
@@ -36,6 +42,9 @@
   ],
   "bpm": 100.0,
   "seconds": 28.8,
+  "length": 28.8,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "14": {
@@ -49,6 +58,9 @@
   ],
   "bpm": 120.0,
   "seconds": 25.0,
+  "length": 25.0,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "46": {
@@ -62,6 +74,9 @@
   ],
   "bpm": 160.0,
   "seconds": 61.5,
+  "length": 61.5,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "51": {
@@ -75,6 +90,9 @@
   ],
   "bpm": 200.0,
   "seconds": 14.4,
+  "length": 14.4,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "54": {
@@ -88,6 +106,9 @@
   ],
   "bpm": 90.0,
   "seconds": 32.0,
+  "length": 32.0,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "60": {
@@ -101,6 +122,9 @@
   ],
   "bpm": 100.0,
   "seconds": 19.2,
+  "length": 19.2,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "67": {
@@ -114,6 +138,9 @@
   ],
   "bpm": 200.0,
   "seconds": 14.4,
+  "length": 14.4,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "69": {
@@ -127,6 +154,9 @@
   ],
   "bpm": 120.0,
   "seconds": 48.0,
+  "length": 48.0,
+  "has_chorus": true,
+  "chorus_at": 24.0,
   "aligned": true
  },
  "77": {
@@ -140,6 +170,9 @@
   ],
   "bpm": 120.0,
   "seconds": 28.0,
+  "length": 28.0,
+  "has_chorus": true,
+  "chorus_at": null,
   "aligned": true
  },
  "87": {
@@ -153,6 +186,9 @@
   ],
   "bpm": 120.0,
   "seconds": 32.0,
+  "length": 32.0,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "99": {
@@ -164,6 +200,9 @@
   ],
   "bpm": 120.0,
   "seconds": 36.0,
+  "length": 36.0,
+  "has_chorus": true,
+  "chorus_at": 25.0,
   "aligned": true
  },
  "133": {
@@ -177,6 +216,9 @@
   ],
   "bpm": 100.0,
   "seconds": 33.6,
+  "length": 33.6,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "134": {
@@ -190,6 +232,9 @@
   ],
   "bpm": 170.0,
   "seconds": 25.4,
+  "length": 25.412,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "138": {
@@ -203,6 +248,9 @@
   ],
   "bpm": 100.0,
   "seconds": 38.4,
+  "length": 38.4,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "141": {
@@ -216,6 +264,9 @@
   ],
   "bpm": 100.0,
   "seconds": 38.4,
+  "length": 38.4,
+  "has_chorus": true,
+  "chorus_at": 19.2,
   "aligned": true
  },
  "145": {
@@ -229,6 +280,9 @@
   ],
   "bpm": 80.0,
   "seconds": 36.0,
+  "length": 36.0,
+  "has_chorus": true,
+  "chorus_at": 16.125,
   "aligned": true
  },
  "146": {
@@ -242,6 +296,9 @@
   ],
   "bpm": 160.0,
   "seconds": 36.0,
+  "length": 36.0,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "181": {
@@ -255,6 +312,9 @@
   ],
   "bpm": 100.0,
   "seconds": 19.2,
+  "length": 19.2,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "247": {
@@ -268,6 +328,9 @@
   ],
   "bpm": 100.0,
   "seconds": 19.2,
+  "length": 19.2,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "263": {
@@ -281,6 +344,9 @@
   ],
   "bpm": 95.0,
   "seconds": 56.8,
+  "length": 56.842,
+  "has_chorus": true,
+  "chorus_at": 28.421,
   "aligned": true
  },
  "325": {
@@ -294,6 +360,9 @@
   ],
   "bpm": 80.0,
   "seconds": 48.0,
+  "length": 48.0,
+  "has_chorus": true,
+  "chorus_at": 18.0,
   "aligned": true
  },
  "345": {
@@ -307,6 +376,9 @@
   ],
   "bpm": 100.0,
   "seconds": 38.4,
+  "length": 38.4,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "387": {
@@ -320,6 +392,9 @@
   ],
   "bpm": 100.0,
   "seconds": 38.4,
+  "length": 38.4,
+  "has_chorus": true,
+  "chorus_at": 19.2,
   "aligned": true
  },
  "406": {
@@ -333,6 +408,9 @@
   ],
   "bpm": 125.0,
   "seconds": 30.7,
+  "length": 30.72,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "424": {
@@ -346,6 +424,9 @@
   ],
   "bpm": 100.0,
   "seconds": 48.0,
+  "length": 48.0,
+  "has_chorus": true,
+  "chorus_at": 26.4,
   "aligned": true
  },
  "425": {
@@ -359,6 +440,9 @@
   ],
   "bpm": 100.0,
   "seconds": 38.4,
+  "length": 38.4,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "427": {
@@ -372,6 +456,9 @@
   ],
   "bpm": 100.0,
   "seconds": 19.2,
+  "length": 19.2,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "429": {
@@ -385,6 +472,9 @@
   ],
   "bpm": 140.0,
   "seconds": 42.0,
+  "length": 42.0,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "444": {
@@ -398,6 +488,9 @@
   ],
   "bpm": 100.0,
   "seconds": 38.4,
+  "length": 38.4,
+  "has_chorus": true,
+  "chorus_at": 19.2,
   "aligned": true
  },
  "445": {
@@ -411,6 +504,9 @@
   ],
   "bpm": 100.0,
   "seconds": 43.2,
+  "length": 43.2,
+  "has_chorus": true,
+  "chorus_at": 21.6,
   "aligned": true
  },
  "447": {
@@ -424,6 +520,9 @@
   ],
   "bpm": 140.0,
   "seconds": 27.4,
+  "length": 27.429,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "448": {
@@ -437,6 +536,9 @@
   ],
   "bpm": 100.0,
   "seconds": 50.4,
+  "length": 50.4,
+  "has_chorus": true,
+  "chorus_at": 33.0,
   "aligned": true
  },
  "449": {
@@ -450,6 +552,9 @@
   ],
   "bpm": 100.0,
   "seconds": 28.8,
+  "length": 28.8,
+  "has_chorus": true,
+  "chorus_at": 22.2,
   "aligned": true
  },
  "450": {
@@ -463,6 +568,9 @@
   ],
   "bpm": 120.0,
   "seconds": 36.0,
+  "length": 36.0,
+  "has_chorus": true,
+  "chorus_at": 24.0,
   "aligned": true
  },
  "457": {
@@ -476,6 +584,9 @@
   ],
   "bpm": 100.0,
   "seconds": 28.8,
+  "length": 28.8,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "474": {
@@ -489,6 +600,9 @@
   ],
   "bpm": 100.0,
   "seconds": 38.4,
+  "length": 38.4,
+  "has_chorus": true,
+  "chorus_at": 19.2,
   "aligned": true
  },
  "584": {
@@ -502,6 +616,9 @@
   ],
   "bpm": 80.0,
   "seconds": 54.0,
+  "length": 54.0,
+  "has_chorus": true,
+  "chorus_at": 36.75,
   "aligned": true
  },
  "590": {
@@ -515,6 +632,9 @@
   ],
   "bpm": 140.0,
   "seconds": 41.1,
+  "length": 41.143,
+  "has_chorus": true,
+  "chorus_at": 20.571,
   "aligned": true
  },
  "607": {
@@ -528,6 +648,9 @@
   ],
   "bpm": 110.0,
   "seconds": 17.5,
+  "length": 17.455,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "609": {
@@ -541,6 +664,9 @@
   ],
   "bpm": 130.0,
   "seconds": 29.5,
+  "length": 29.538,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "662": {
@@ -554,6 +680,9 @@
   ],
   "bpm": 140.0,
   "seconds": 20.6,
+  "length": 20.571,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "675": {
@@ -567,6 +696,9 @@
   ],
   "bpm": 100.0,
   "seconds": 28.8,
+  "length": 28.8,
+  "has_chorus": true,
+  "chorus_at": 21.6,
   "aligned": true
  },
  "689": {
@@ -580,6 +712,9 @@
   ],
   "bpm": 120.0,
   "seconds": 32.0,
+  "length": 32.0,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "693": {
@@ -593,6 +728,9 @@
   ],
   "bpm": 120.0,
   "seconds": 40.5,
+  "length": 40.5,
+  "has_chorus": true,
+  "chorus_at": null,
   "aligned": true
  },
  "702": {
@@ -606,6 +744,9 @@
   ],
   "bpm": 100.0,
   "seconds": 57.3,
+  "length": 57.3,
+  "has_chorus": true,
+  "chorus_at": 44.4,
   "aligned": true
  },
  "712": {
@@ -619,6 +760,9 @@
   ],
   "bpm": 100.0,
   "seconds": 38.4,
+  "length": 38.4,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "722": {
@@ -632,6 +776,9 @@
   ],
   "bpm": 95.0,
   "seconds": 40.4,
+  "length": 40.421,
+  "has_chorus": true,
+  "chorus_at": 20.211,
   "aligned": true
  },
  "736": {
@@ -645,6 +792,9 @@
   ],
   "bpm": 120.0,
   "seconds": 28.0,
+  "length": 28.0,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "740": {
@@ -658,6 +808,9 @@
   ],
   "bpm": 90.0,
   "seconds": 32.0,
+  "length": 32.0,
+  "has_chorus": true,
+  "chorus_at": 16.0,
   "aligned": true
  },
  "759": {
@@ -671,6 +824,9 @@
   ],
   "bpm": 90.0,
   "seconds": 32.0,
+  "length": 32.0,
+  "has_chorus": true,
+  "chorus_at": 16.0,
   "aligned": true
  },
  "768": {
@@ -684,6 +840,9 @@
   ],
   "bpm": 100.0,
   "seconds": 38.4,
+  "length": 38.4,
+  "has_chorus": true,
+  "chorus_at": 19.2,
   "aligned": true
  },
  "781": {
@@ -697,6 +856,9 @@
   ],
   "bpm": 100.0,
   "seconds": 37.8,
+  "length": 37.8,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "793": {
@@ -710,6 +872,9 @@
   ],
   "bpm": 120.0,
   "seconds": 41.5,
+  "length": 41.5,
+  "has_chorus": true,
+  "chorus_at": 24.0,
   "aligned": true
  },
  "798": {
@@ -724,6 +889,9 @@
   ],
   "bpm": 130.0,
   "seconds": 19.4,
+  "length": 19.385,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "800": {
@@ -737,6 +905,9 @@
   ],
   "bpm": 100.0,
   "seconds": 28.8,
+  "length": 28.8,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "801": {
@@ -750,6 +921,9 @@
   ],
   "bpm": 100.0,
   "seconds": 48.0,
+  "length": 48.0,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "805": {
@@ -763,6 +937,9 @@
   ],
   "bpm": 150.0,
   "seconds": 41.6,
+  "length": 41.6,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "811": {
@@ -776,6 +953,9 @@
   ],
   "bpm": 80.0,
   "seconds": 28.5,
+  "length": 28.5,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "856": {
@@ -789,6 +969,9 @@
   ],
   "bpm": 130.0,
   "seconds": 29.5,
+  "length": 29.538,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "876": {
@@ -802,6 +985,9 @@
   ],
   "bpm": 120.0,
   "seconds": 36.0,
+  "length": 36.0,
+  "has_chorus": true,
+  "chorus_at": 24.0,
   "aligned": true
  },
  "884": {
@@ -815,6 +1001,9 @@
   ],
   "bpm": 100.0,
   "seconds": 38.4,
+  "length": 38.4,
+  "has_chorus": true,
+  "chorus_at": 19.2,
   "aligned": true
  },
  "903": {
@@ -828,6 +1017,9 @@
   ],
   "bpm": 130.0,
   "seconds": 29.5,
+  "length": 29.538,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "947": {
@@ -839,6 +1031,9 @@
   ],
   "bpm": 120.0,
   "seconds": 32.0,
+  "length": 32.0,
+  "has_chorus": true,
+  "chorus_at": 16.0,
   "aligned": true
  },
  "993": {
@@ -852,6 +1047,9 @@
   ],
   "bpm": 100.0,
   "seconds": 28.8,
+  "length": 28.8,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  },
  "998": {
@@ -865,6 +1063,9 @@
   ],
   "bpm": 90.0,
   "seconds": 16.0,
+  "length": 16.0,
+  "has_chorus": false,
+  "chorus_at": null,
   "aligned": true
  }
 }

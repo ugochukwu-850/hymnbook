@@ -1,0 +1,19 @@
+name: Wrong or missing tune
+description: A tune sounds wrong, or you know where to find one
+labels: [tune]
+body:
+  - type: input
+    id: hymn
+    attributes: {label: Hymn number and title, placeholder: "457 Amazing Grace"}
+    validations: {required: true}
+  - type: textarea
+    id: what
+    attributes:
+      label: What is wrong?
+      description: Wrong notes, too fast, wrong verse/chorus split, or a source for a missing tune.
+    validations: {required: true}
+  - type: textarea
+    id: source
+    attributes:
+      label: Source (if you have one)
+      description: Link to a public-domain score or MIDI, or say it is your own.

@@ -78,6 +78,13 @@ class Score:
         self.tuplet_left = 0
         self.tuplet_ratio = Fraction(1)
         self.next_mult = Fraction(1)
+        # lyric alignment (melody voice only), used to find where the chorus starts
+        self.melody = None
+        self.rec = None            # slot times of the melody line being parsed
+        self.last_line = None      # melody line the next w: lines belong to
+        self.lines = []            # [{'slots': [quarter-lengths], 'w': [str]}]
+        self.slur_open = False
+        self.slur_in = False
 
     def voice(self, name):
         if name not in self.voices:
@@ -126,9 +133,11 @@ class Score:
 
     def emit(self, v, pitches, dur):
         evs = []
+        cont = False
         for p in pitches:
             ev = v.ties.pop(p, None)
             if ev is not None:
+                cont = True
                 ev[1] += dur
             else:
                 ev = [v.t, dur, p]
@@ -137,7 +146,15 @@ class Score:
         # any tie target not continued is dropped
         v.ties = {}
         v.last = evs
-        return evs
+        return evs, cont
+
+    def slot(self, v, start, cont):
+        """Record a note of the melody voice.
+
+        In the Open Hymnal every note (tied or slurred ones too) consumes one
+        lyric token ('*' marks the ones without a syllable), so each note is a slot."""
+        if self.rec is not None and v.name == self.melody:
+            self.rec.append(start)
 
     def scale(self):
         r = self.next_mult
@@ -178,7 +195,9 @@ class Score:
                 m, i = parse_len(s, j + 1)
                 dur = self.unit * first * m * self.scale()
                 tie = i < n and s[i] == "-"
-                evs = self.emit(v, pitches, dur)
+                start = v.t
+                evs, cont = self.emit(v, pitches, dur)
+                self.slot(v, start, cont)
                 if tie:
                     i += 1
                     v.ties = {e[2]: e for e in evs}
@@ -197,8 +216,12 @@ class Score:
                     self.tuplet_left, self.tuplet_ratio = p, TUPLET.get(p, Fraction(2, 3))
                     i += 2
                 else:
+                    self.slur_open = True
                     i += 1
-            elif c in ")-":
+            elif c == ")":
+                self.slur_open = self.slur_in = False
+                i += 1
+            elif c == "-":
                 i += 1
             elif c in "<>":
                 run = 0
@@ -228,7 +251,9 @@ class Score:
                 m, i = parse_len(s, i)
                 dur = self.unit * m * self.scale()
                 tie = i < n and s[i] == "-"
-                evs = self.emit(v, [p], dur)
+                start = v.t
+                evs, cont = self.emit(v, [p], dur)
+                self.slot(v, start, cont)
                 if tie:
                     i += 1
                     v.ties = {e[2]: e for e in evs}
@@ -250,7 +275,11 @@ def parse_abc(text: str) -> Score:
         line = raw.rstrip("\r")
         if not line.strip() or line.startswith("%"):
             continue
-        if line[:2] in ("w:", "W:"):
+        if line[:2] == "w:":
+            if sc.last_line is not None:
+                sc.last_line["w"].append(line[2:])
+            continue
+        if line[:2] == "W:":
             continue
         m = re.match(r"^([A-Za-z]):(.*)$", line)
         if m and not line.startswith("[") and m.group(1) in "XTCSMLKQVPZNOGHRBDFIUWwr":
@@ -263,8 +292,69 @@ def parse_abc(text: str) -> Score:
                 in_body = True
             continue
         if in_body:
+            if sc.melody is None and sc.order:
+                sc.melody = sc.order[0]
+            sc.rec = []
             sc.music(line)
+            sc.last_line = {"slots": sc.rec, "w": []} if sc.rec else None
+            if sc.last_line:
+                sc.lines.append(sc.last_line)
+            sc.rec = None
     return sc
+
+
+def lyric_tokens(w: str):
+    """Syllable tokens of one `w:` line: '*' skips a note, '_' holds, '|' is a bar hint."""
+    toks = []
+    for t in re.split(r"[\s\-]+", w.strip()):
+        if t and t != "|":
+            toks.append(t)
+    return toks
+
+
+def is_real(t: str) -> bool:
+    return t not in ("*", "_")
+
+
+def find_chorus(sc: Score):
+    """Quarter-length where the chorus starts, or None.
+
+    Verse lines carry lyrics in every `w:` set; chorus lines only in the first.
+    The chorus begins at the first lyric of set 1 that comes after the last
+    real syllable of set 2 on the same line, provided no later line has any
+    real syllable in set 2."""
+    # Layout B: chorus starts on a fresh music line that has a single lyric set,
+    # after verse lines that have several, and every later line has one too.
+    sets = [len(l["w"]) for l in sc.lines]
+    for j in range(1, len(sets)):
+        if sets[j] == 1 and max(sets[:j]) >= 2 and all(n == 1 for n in sets[j:]) \
+                and all(n >= 2 for n in sets[:j] if n):
+            # The chorus may start with a short pickup at the end of the last
+            # verse line (its words appear only in lyric set 1 there).
+            prev = sc.lines[j - 1]
+            t1, t2 = lyric_tokens(prev["w"][0]), lyric_tokens(prev["w"][1])
+            real2 = [k for k, t in enumerate(t2) if is_real(t)]
+            last2 = real2[-1] if real2 else -1
+            cand = [k for k, t in enumerate(t1) if is_real(t) and k > last2]
+            slots = prev["slots"]
+            if cand and cand[0] < len(slots) and len(slots) - cand[0] <= 4:
+                return slots[cand[0]]
+            return sc.lines[j]["slots"][0]
+    # Layout A: chorus starts mid-line (see below).
+    lines = [l for l in sc.lines if len(l["w"]) >= 2]
+    if not lines:
+        return None
+    toks = [(lyric_tokens(l["w"][0]), lyric_tokens(l["w"][1]), l["slots"]) for l in lines]
+    for i, (t1, t2, slots) in enumerate(toks):
+        real2 = [k for k, t in enumerate(t2) if is_real(t)]
+        last2 = real2[-1] if real2 else -1
+        cand = [k for k, t in enumerate(t1) if is_real(t) and k > last2]
+        if not cand or cand[0] >= len(slots):
+            continue
+        later_ok = all(not any(is_real(t) for t in t2b) for _, t2b, _ in toks[i + 1:])
+        if later_ok:
+            return slots[cand[0]]
+    return None
 
 
 def to_midi(sc: Score, path: Path, program: int = 19):
@@ -304,6 +394,12 @@ def to_midi(sc: Score, path: Path, program: int = 19):
 
 def main():
     matches = json.load(open(sys.argv[1]))
+    lyrics = {}
+    hp = Path(__file__).resolve().parent.parent / "data" / "hymns.ndjson"
+    for ln in hp.read_text(encoding="utf-8").splitlines():
+        if ln.strip():
+            r = json.loads(ln)
+            lyrics[int(r["hymn_no"])] = r["body"]
     oh, out = Path(sys.argv[2]), Path(sys.argv[3])
     out.mkdir(parents=True, exist_ok=True)
     index, cache = {}, {}
@@ -326,12 +422,18 @@ def main():
         to_midi(sc, dest)
         quarters = max(float(sc.voices[n].t) for n in names)
         bpm = float(sc.bpm or 90)
+        body = lyrics.get(int(m["no"]), "")
+        has_chorus = bool(re.search(r"(?im)^\s*(chorus|refrain|cho\.?)\s*:", body))
+        cq = find_chorus(sc) if has_chorus else None
         index[str(int(m["no"]))] = {
             "title": m["title"],
             "source": f,
             "voices": [SATB.get(n, n) if len(names) == 4 else n for n in names],
             "bpm": bpm,
             "seconds": round(quarters * 60 / bpm, 1),
+            "length": round(quarters * 60 / bpm, 3),
+            "has_chorus": has_chorus,
+            "chorus_at": round(float(cq) * 60 / bpm, 3) if cq is not None else None,
             "aligned": len(ends) == 1,
         }
     json.dump(index, open(out / "index.json", "w"), indent=1)
@@ -348,8 +450,9 @@ def main():
             v = index[k]
             voices = ", ".join(json.dumps(x) for x in v["voices"])
             lines.append(
-                f"    TuneAsset {{ hymn: {int(k)}, midi: include_bytes!(\"../assets/tunes/{int(k):04d}.mid\"), "
-                f"voices: &[{voices}], source: {json.dumps(v['source'])} }},"
+                f"    TuneAsset {{ hymn: {int(k)}, midi: include_bytes!(\"../../assets/tunes/{int(k):04d}.mid\"), "
+                f"voices: &[{voices}], source: {json.dumps(v['source'])}, length: {v['length']}, "
+                f"chorus_at: {('Some(%s)' % v['chorus_at']) if v['chorus_at'] is not None else 'None'} }},"
             )
         lines.append("];")
         rel.write_text("\n".join(lines) + "\n")

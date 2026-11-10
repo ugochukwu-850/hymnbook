@@ -1,0 +1,115 @@
+name: Release
+
+# Push a tag like v0.1.0 to build Windows, macOS and Linux downloads and attach
+# them to a GitHub Release. You can also run it by hand from the Actions tab.
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  BIN: hymnbook
+
+jobs:
+  build:
+    name: ${{ matrix.asset }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: ubuntu-22.04,   target: x86_64-unknown-linux-gnu,  asset: HymnBook-linux-x86_64.tar.gz }
+          - { os: windows-latest, target: x86_64-pc-windows-msvc,    asset: HymnBook-windows-x86_64.zip }
+          - { os: macos-latest,   target: aarch64-apple-darwin,      asset: HymnBook-macos-arm64.zip }
+          - { os: macos-latest,   target: x86_64-apple-darwin,       asset: HymnBook-macos-x86_64.zip }
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: ${{ matrix.target }}
+
+      - name: System libraries (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libasound2-dev libxkbcommon-dev libxkbcommon-x11-dev \
+            libwayland-dev libx11-xcb-dev libxcb1-dev libfontconfig-dev libfreetype-dev \
+            libvulkan-dev libssl-dev pkg-config
+
+      - name: Test
+        if: matrix.target == 'x86_64-unknown-linux-gnu'
+        run: cargo test --release
+
+      - name: Build
+        run: cargo build --release --target ${{ matrix.target }}
+
+      - name: Version
+        id: ver
+        shell: bash
+        run: |
+          v="${GITHUB_REF_NAME}"
+          case "$v" in v*) ;; *) v="v0.0.0-dev";; esac
+          echo "version=${v#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Package (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          d=HymnBook-linux-x86_64
+          mkdir "$d"
+          cp "target/${{ matrix.target }}/release/$BIN" "$d/$BIN"
+          cp packaging/linux/hymnbook.desktop packaging/linux/install.sh "$d/"
+          cp assets/icon/icon-512.png "$d/hymnbook.png"
+          cp README.md LICENSE THIRD_PARTY.md "$d/"
+          tar czf "${{ matrix.asset }}" "$d"
+
+      - name: Package (macOS)
+        if: runner.os == 'macOS'
+        run: |
+          app="Hymn Book.app"
+          mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources"
+          cp "target/${{ matrix.target }}/release/$BIN" "$app/Contents/MacOS/$BIN"
+          cp assets/icon/icon.icns "$app/Contents/Resources/icon.icns"
+          sed "s/__VERSION__/${{ steps.ver.outputs.version }}/g" packaging/macos/Info.plist > "$app/Contents/Info.plist"
+          # ad-hoc sign so Apple Silicon will run it (not notarised)
+          codesign --force --deep -s - "$app"
+          ditto -c -k --keepParent "$app" "${{ matrix.asset }}"
+
+      - name: Package (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $d = "HymnBook-windows-x86_64"
+          New-Item -ItemType Directory $d | Out-Null
+          Copy-Item "target/${{ matrix.target }}/release/$env:BIN.exe" "$d/HymnBook.exe"
+          Copy-Item README.md, LICENSE, THIRD_PARTY.md $d
+          Compress-Archive -Path $d -DestinationPath "${{ matrix.asset }}"
+
+      - name: Checksum
+        shell: bash
+        run: |
+          if command -v sha256sum >/dev/null; then sha256sum "${{ matrix.asset }}" > "${{ matrix.asset }}.sha256";
+          else shasum -a 256 "${{ matrix.asset }}" > "${{ matrix.asset }}.sha256"; fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.asset }}
+          path: |
+            ${{ matrix.asset }}
+            ${{ matrix.asset }}.sha256
+
+      - name: Attach to the GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: |
+            ${{ matrix.asset }}
+            ${{ matrix.asset }}.sha256

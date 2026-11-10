@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Hymn Book
+GenericName=Hymn Book
+Comment=Faith Tabernacle Hymn Book: read every hymn and hear its tune
+Exec=hymnbook
+Icon=hymnbook
+Terminal=false
+Categories=Audio;Music;Education;
+Keywords=hymn;hymns;church;worship;sing;

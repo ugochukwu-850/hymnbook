@@ -164,12 +164,13 @@ fn capitalize_word(w: &str) -> String {
 
 const VOICE_WORDS: [&str; 26] = [
     "s", "a", "t", "b", "sop", "soprano", "alto", "ten", "tenor", "bass", "atb", "tb", "sa", "sat",
-    "at", "sb", "st", "ab", "all", "gen", "duet", "quartet", "parts", "unison", "harmony", "others",
+    "at", "sb", "st", "ab", "all", "gen", "duet", "quartet", "parts", "unison", "harmony",
+    "others",
 ];
 
 fn is_voice_prefix(prefix: &str) -> bool {
     let mut any = false;
-    for tok in prefix.split(|c: char| c == '/' || c == '.' || c == ' ' || c == ',') {
+    for tok in prefix.split(['/', '.', ' ', ',']) {
         if tok.is_empty() {
             continue;
         }
@@ -186,7 +187,10 @@ fn is_voice_prefix(prefix: &str) -> bool {
 fn is_chorus_prefix(prefix: &str) -> bool {
     let p = prefix.trim().to_lowercase();
     let p = p.trim_end_matches(|c: char| c.is_ascii_digit() || c == ' ');
-    matches!(p, "chorus" | "refrain" | "cho" | "full chorus" | "cho." | "ref")
+    matches!(
+        p,
+        "chorus" | "refrain" | "cho" | "full chorus" | "cho." | "ref"
+    )
 }
 
 /// Split `"Prefix: rest"` at the first colon if the prefix is short.
@@ -252,9 +256,7 @@ fn soften_first_word(s: &str) -> String {
 
 fn make_line(text: &str) -> Line {
     let (voice, rest) = match split_prefix(text) {
-        Some((prefix, rest)) if is_voice_prefix(prefix) => {
-            (Some(prefix.trim().to_string()), rest)
-        }
+        Some((prefix, rest)) if is_voice_prefix(prefix) => (Some(prefix.trim().to_string()), rest),
         _ => (None, text),
     };
     let (dynamic, rest) = split_dynamic(rest);
@@ -403,12 +405,17 @@ mod tests {
             "Ye Gates Lift Up Your Heads on High"
         );
         assert_eq!(title_case("PRAISE GOD (Doxology)"), "Praise God (Doxology)");
-        assert_eq!(title_case("THE LORD'S MY SHEPHERD"), "The Lord's My Shepherd");
+        assert_eq!(
+            title_case("THE LORD'S MY SHEPHERD"),
+            "The Lord's My Shepherd"
+        );
     }
 
     #[test]
     fn parses_verses_and_chorus() {
-        let b = parse_body("Line one\r\nLine two\r\n\r\nChorus:\r\nSop: Hail\r\nATB: Hail to\r\n\r\n2. Second\r\nmore");
+        let b = parse_body(
+            "Line one\r\nLine two\r\n\r\nChorus:\r\nSop: Hail\r\nATB: Hail to\r\n\r\n2. Second\r\nmore",
+        );
         assert_eq!(b.len(), 3);
         // verse 1 is unnumbered in the source; labelled because verse 2 exists
         assert_eq!(b[0].kind, BlockKind::Verse(Some(1)));
@@ -470,13 +477,22 @@ mod tests {
     #[test]
     fn first_word_is_softened() {
         assert_eq!(make_line("ALL hail to Thee").text, "All hail to Thee");
-        assert_eq!(make_line("HALLELUJAH! HALLELUJAH!").text, "HALLELUJAH! HALLELUJAH!");
-        assert_eq!(make_line("O come all ye faithful").text, "O come all ye faithful");
+        assert_eq!(
+            make_line("HALLELUJAH! HALLELUJAH!").text,
+            "HALLELUJAH! HALLELUJAH!"
+        );
+        assert_eq!(
+            make_line("O come all ye faithful").text,
+            "O come all ye faithful"
+        );
     }
 
     #[test]
     fn o_in_title_is_capital() {
-        assert_eq!(title_case("WE LOVE THE PLACE, O GOD"), "We Love the Place, O God");
+        assert_eq!(
+            title_case("WE LOVE THE PLACE, O GOD"),
+            "We Love the Place, O God"
+        );
     }
 
     #[test]
@@ -484,7 +500,10 @@ mod tests {
         let b = parse_body("First\n\nChorus:\nHail\n\n2. Second");
         assert_eq!(b[0].kind, BlockKind::Verse(Some(1)));
         // single-verse hymn stays unnumbered
-        assert_eq!(parse_body("Only verse").first().unwrap().kind, BlockKind::Verse(None));
+        assert_eq!(
+            parse_body("Only verse").first().unwrap().kind,
+            BlockKind::Verse(None)
+        );
     }
 
     #[test]

@@ -39,6 +39,10 @@ const fn with_alpha(c: Rgba, a: f32) -> Rgba {
     Rgba { a, ..c }
 }
 
+/// Brand colours of the app icon and logo. Fixed; they do not follow the theme.
+pub const BRAND_GOLD: Rgba = hex(0xF0B35A);
+pub const BRAND_INK: Rgba = hex(0x14161C);
+
 impl Palette {
     pub const fn dark() -> Self {
         let accent = hex(0xF0B35A);
